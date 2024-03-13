@@ -1,0 +1,2372 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_Dash..create(BaseForm)
+Gui.F_Dash..caption("Project Management Dashboard - Finance")
+Gui.F_Dash..size(18270,9315)
+Gui.F_Dash..minx(0)
+Gui.F_Dash..miny(0)
+Gui.F_Dash..position(0,0)
+Gui.F_Dash..event(UnLoad,Unload)
+Gui.F_Dash..forecolor(0)
+Gui.F_Dash..BackColor(-2147483633)
+Gui.F_Dash..mousepointer(0)
+Gui.F_Dash..AlwaysOnTop(False)
+Gui.F_Dash..FontName("Tahoma")
+Gui.F_Dash..FontSize(8.25)
+Gui.F_Dash..ControlBox(True)
+Gui.F_Dash..MaxButton(True)
+Gui.F_Dash..MinButton(True)
+Gui.F_Dash..Moveable(True)
+Gui.F_Dash..Sizeable(True)
+Gui.F_Dash..ShowInTaskBar(True)
+Gui.F_Dash..TitleBar(True)
+Gui.F_Dash.lblLoadMsg.create(label,"",True,15,360,1,2805,2295,True,0,"Arial",16,-2147483633,0,0)
+Gui.F_Dash.lblLoadMsg.defaultvalue("")
+Gui.F_Dash.lblLoadMsg.BorderStyle(0)
+Gui.F_Dash.frame1.Create(Frame)
+Gui.F_Dash.frame1.Size(10560,765)
+Gui.F_Dash.frame1.Position(60,45)
+Gui.F_Dash.frame1.Caption("Date Range")
+Gui.F_Dash.frame1.FontSize(9)
+Gui.F_Dash.frame1.Enabled(True)
+Gui.F_Dash.frame1.Visible(True)
+Gui.F_Dash.frame1.Zorder(0)
+Gui.F_Dash.frame1.FontName("Tahoma")
+Gui.F_Dash.cmdRefresh.Create(Button)
+Gui.F_Dash.cmdRefresh.Size(1770,375)
+Gui.F_Dash.cmdRefresh.Position(8625,195)
+Gui.F_Dash.cmdRefresh.Parent("frame1")
+Gui.F_Dash.cmdRefresh.Caption("REFRESH")
+Gui.F_Dash.cmdRefresh.FontSize(9)
+Gui.F_Dash.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_Dash.cmdRefresh.Enabled(True)
+Gui.F_Dash.cmdRefresh.Visible(True)
+Gui.F_Dash.cmdRefresh.Zorder(0)
+Gui.F_Dash.cmdRefresh.FontName("Tahoma")
+Gui.F_Dash.dtpFrom.Create(DatePicker)
+Gui.F_Dash.dtpFrom.Size(1530,285)
+Gui.F_Dash.dtpFrom.Position(135,225)
+Gui.F_Dash.dtpFrom.Parent("frame1")
+Gui.F_Dash.dtpFrom.Enabled(True)
+Gui.F_Dash.dtpFrom.Visible(True)
+Gui.F_Dash.dtpFrom.Zorder(0)
+Gui.F_Dash.dtpFrom.CheckBox(False)
+Gui.F_Dash.dtpFrom.FontName("Tahoma")
+Gui.F_Dash.dtpFrom.FontSize(8.25)
+Gui.F_Dash.dtpUntil.Create(DatePicker)
+Gui.F_Dash.dtpUntil.Size(1530,285)
+Gui.F_Dash.dtpUntil.Position(1830,225)
+Gui.F_Dash.dtpUntil.Parent("frame1")
+Gui.F_Dash.dtpUntil.Enabled(True)
+Gui.F_Dash.dtpUntil.Visible(True)
+Gui.F_Dash.dtpUntil.Zorder(0)
+Gui.F_Dash.dtpUntil.CheckBox(False)
+Gui.F_Dash.dtpUntil.FontName("Tahoma")
+Gui.F_Dash.dtpUntil.FontSize(8.25)
+Gui.F_Dash.optClose.Create(Option)
+Gui.F_Dash.optClose.Enabled(True)
+Gui.F_Dash.optClose.Visible(True)
+Gui.F_Dash.optClose.Zorder(0)
+Gui.F_Dash.optClose.Size(1440,360)
+Gui.F_Dash.optClose.Position(5505,225)
+Gui.F_Dash.optClose.Caption("Close Projects")
+Gui.F_Dash.optClose.FontName("Tahoma")
+Gui.F_Dash.optClose.FontSize(8.25)
+Gui.F_Dash.optClose.Parent("frame1")
+Gui.F_Dash.optActive.Create(Option)
+Gui.F_Dash.optActive.Enabled(True)
+Gui.F_Dash.optActive.Visible(True)
+Gui.F_Dash.optActive.Zorder(0)
+Gui.F_Dash.optActive.Size(1485,360)
+Gui.F_Dash.optActive.Position(3990,225)
+Gui.F_Dash.optActive.Caption("Active Projects")
+Gui.F_Dash.optActive.FontName("Tahoma")
+Gui.F_Dash.optActive.FontSize(8.25)
+Gui.F_Dash.optActive.Parent("frame1")
+Gui.F_Dash.optActive.Value(True)
+Gui.F_Dash.optAll.Create(Option)
+Gui.F_Dash.optAll.Enabled(True)
+Gui.F_Dash.optAll.Visible(True)
+Gui.F_Dash.optAll.Zorder(0)
+Gui.F_Dash.optAll.Size(1260,360)
+Gui.F_Dash.optAll.Position(6975,225)
+Gui.F_Dash.optAll.Caption("All Projects")
+Gui.F_Dash.optAll.FontName("Tahoma")
+Gui.F_Dash.optAll.FontSize(8.25)
+Gui.F_Dash.optAll.Parent("frame1")
+Gui.F_Dash.lblLoading.Create(Label,"Label",False,465,225,0,10875,75,True,0,"Arial",9,-2147483633,0,0)
+Gui.F_Dash.lblLoading.BorderStyle(0)
+Gui.F_Dash.progressBar1.Create(ProgressBar)
+Gui.F_Dash.progressBar1.Visible(False)
+Gui.F_Dash.progressBar1.Size(3735,255)
+Gui.F_Dash.progressBar1.Position(10875,315)
+Gui.F_Dash.frameTab.Create(Frame)
+Gui.F_Dash.frameTab.Enabled(True)
+Gui.F_Dash.frameTab.Visible(True)
+Gui.F_Dash.frameTab.Zorder(0)
+Gui.F_Dash.frameTab.Size(18045,7365)
+Gui.F_Dash.frameTab.Position(105,1425)
+Gui.F_Dash.frameTab.Caption("")
+Gui.F_Dash.frameTab.FontName("Tahoma")
+Gui.F_Dash.frameTab.FontSize(8.25)
+Gui.F_Dash.frameTab.Anchor(15)
+Gui.F_Dash.tab1.Create(Tab)
+Gui.F_Dash.tab1.Size(18045,7365)
+Gui.F_Dash.tab1.Position(0,0)
+Gui.F_Dash.tab1.FontSize(9)
+Gui.F_Dash.tab1.Enabled(True)
+Gui.F_Dash.tab1.Visible(True)
+Gui.F_Dash.tab1.Zorder(0)
+Gui.F_Dash.tab1.FontName("Tahoma")
+Gui.F_Dash.tab1.Parent("frameTab")
+Gui.F_Dash.tab1.Dock(5)
+Gui.F_Dash.tab1.Tabs(2)
+Gui.F_Dash.tab1.SetTab(0)
+Gui.F_Dash.tab1.Caption("Project")
+Gui.F_Dash.tab1.SetTab(1)
+Gui.F_Dash.tab1.Caption("Detail")
+Gui.F_Dash.GsGCList.Create(GsGridControl)
+Gui.F_Dash.GsGCList.Size(18015,6915)
+Gui.F_Dash.GsGCList.Position(0,0)
+Gui.F_Dash.GsGCList.Parent("tab1",0)
+Gui.F_Dash.GsGCList.Event(RowCellClick,GsGCList_RowCellClick)
+Gui.F_Dash.GsGCList.Enabled(True)
+Gui.F_Dash.GsGCList.Visible(True)
+Gui.F_Dash.GsGCList.Zorder(0)
+Gui.F_Dash.GsGCList.Anchor(15)
+Gui.F_Dash.GsGCList.Dock(5)
+Gui.F_Dash.frameTabDetail.Create(Frame)
+Gui.F_Dash.frameTabDetail.Enabled(True)
+Gui.F_Dash.frameTabDetail.Visible(True)
+Gui.F_Dash.frameTabDetail.Zorder(0)
+Gui.F_Dash.frameTabDetail.Size(18015,6915)
+Gui.F_Dash.frameTabDetail.Position(0,0)
+Gui.F_Dash.frameTabDetail.Caption("")
+Gui.F_Dash.frameTabDetail.FontName("Tahoma")
+Gui.F_Dash.frameTabDetail.FontSize(8.25)
+Gui.F_Dash.frameTabDetail.Parent("tab1",1)
+Gui.F_Dash.frameTabDetail.Anchor(15)
+Gui.F_Dash.frameTabDetail.Dock(5)
+Gui.F_Dash.tab2.Create(Tab)
+Gui.F_Dash.tab2.Size(18015,6915)
+Gui.F_Dash.tab2.Position(0,0)
+Gui.F_Dash.tab2.Parent("frameTabDetail")
+Gui.F_Dash.tab2.FontSize(9)
+Gui.F_Dash.tab2.Enabled(True)
+Gui.F_Dash.tab2.Visible(True)
+Gui.F_Dash.tab2.Zorder(0)
+Gui.F_Dash.tab2.FontName("Tahoma")
+Gui.F_Dash.tab2.Dock(5)
+Gui.F_Dash.tab2.Tabs(9)
+Gui.F_Dash.tab2.SetTab(0)
+Gui.F_Dash.tab2.Caption("Requisition")
+Gui.F_Dash.tab2.SetTab(1)
+Gui.F_Dash.tab2.Caption("PO")
+Gui.F_Dash.tab2.SetTab(2)
+Gui.F_Dash.tab2.Caption("GRN")
+Gui.F_Dash.tab2.SetTab(3)
+Gui.F_Dash.tab2.Caption("WO")
+Gui.F_Dash.tab2.SetTab(4)
+Gui.F_Dash.tab2.Caption("AP Invoice")
+Gui.F_Dash.tab2.SetTab(5)
+Gui.F_Dash.tab2.Caption("GL")
+Gui.F_Dash.tab2.SetTab(6)
+Gui.F_Dash.tab2.Caption("SO")
+Gui.F_Dash.tab2.SetTab(7)
+Gui.F_Dash.tab2.Caption("Shipped")
+Gui.F_Dash.tab2.SetTab(8)
+Gui.F_Dash.tab2.Caption("Invoiced")
+Gui.F_Dash.GsGCAP.Create(GsGridControl)
+Gui.F_Dash.GsGCAP.Size(17985,6465)
+Gui.F_Dash.GsGCAP.Position(0,0)
+Gui.F_Dash.GsGCAP.Parent("tab2",4)
+Gui.F_Dash.GsGCAP.Enabled(True)
+Gui.F_Dash.GsGCAP.Visible(True)
+Gui.F_Dash.GsGCAP.Zorder(0)
+Gui.F_Dash.GsGCAP.Dock(5)
+Gui.F_Dash.GsGCPR.Create(GsGridControl)
+Gui.F_Dash.GsGCPR.Size(17985,6465)
+Gui.F_Dash.GsGCPR.Position(0,0)
+Gui.F_Dash.GsGCPR.Parent("tab2",0)
+Gui.F_Dash.GsGCPR.Enabled(True)
+Gui.F_Dash.GsGCPR.Visible(True)
+Gui.F_Dash.GsGCPR.Zorder(0)
+Gui.F_Dash.GsGCPR.Dock(5)
+Gui.F_Dash.GsGCPO.Create(GsGridControl)
+Gui.F_Dash.GsGCPO.Size(17985,6465)
+Gui.F_Dash.GsGCPO.Position(0,0)
+Gui.F_Dash.GsGCPO.Parent("tab2",1)
+Gui.F_Dash.GsGCPO.Enabled(True)
+Gui.F_Dash.GsGCPO.Visible(True)
+Gui.F_Dash.GsGCPO.Zorder(0)
+Gui.F_Dash.GsGCPO.Dock(5)
+Gui.F_Dash.GsGCGRN.Create(GsGridControl)
+Gui.F_Dash.GsGCGRN.Size(17985,6465)
+Gui.F_Dash.GsGCGRN.Position(0,0)
+Gui.F_Dash.GsGCGRN.Parent("tab2",2)
+Gui.F_Dash.GsGCGRN.Enabled(True)
+Gui.F_Dash.GsGCGRN.Visible(True)
+Gui.F_Dash.GsGCGRN.Zorder(0)
+Gui.F_Dash.GsGCGRN.Dock(5)
+Gui.F_Dash.GsGCWO.Create(GsGridControl)
+Gui.F_Dash.GsGCWO.Size(17985,6465)
+Gui.F_Dash.GsGCWO.Position(0,0)
+Gui.F_Dash.GsGCWO.Parent("tab2",3)
+Gui.F_Dash.GsGCWO.Enabled(True)
+Gui.F_Dash.GsGCWO.Visible(True)
+Gui.F_Dash.GsGCWO.Zorder(0)
+Gui.F_Dash.GsGCWO.Dock(5)
+Gui.F_Dash.GsGCGL.Create(GsGridControl)
+Gui.F_Dash.GsGCGL.Size(17985,6465)
+Gui.F_Dash.GsGCGL.Position(0,0)
+Gui.F_Dash.GsGCGL.Parent("tab2",5)
+Gui.F_Dash.GsGCGL.Enabled(True)
+Gui.F_Dash.GsGCGL.Visible(True)
+Gui.F_Dash.GsGCGL.Zorder(0)
+Gui.F_Dash.GsGCGL.Dock(5)
+Gui.F_Dash.GsGCSO.Create(GsGridControl)
+Gui.F_Dash.GsGCSO.Size(17985,6465)
+Gui.F_Dash.GsGCSO.Position(0,0)
+Gui.F_Dash.GsGCSO.Parent("tab2",6)
+Gui.F_Dash.GsGCSO.Enabled(True)
+Gui.F_Dash.GsGCSO.Visible(True)
+Gui.F_Dash.GsGCSO.Zorder(0)
+Gui.F_Dash.GsGCSO.Dock(5)
+Gui.F_Dash.GsGCShip.Create(GsGridControl)
+Gui.F_Dash.GsGCShip.Size(17985,6465)
+Gui.F_Dash.GsGCShip.Position(0,0)
+Gui.F_Dash.GsGCShip.Parent("tab2",7)
+Gui.F_Dash.GsGCShip.Enabled(True)
+Gui.F_Dash.GsGCShip.Visible(True)
+Gui.F_Dash.GsGCShip.Zorder(0)
+Gui.F_Dash.GsGCShip.Dock(5)
+Gui.F_Dash.GsGCInvoice.Create(GsGridControl)
+Gui.F_Dash.GsGCInvoice.Size(17985,6465)
+Gui.F_Dash.GsGCInvoice.Position(0,0)
+Gui.F_Dash.GsGCInvoice.Parent("tab2",8)
+Gui.F_Dash.GsGCInvoice.Event(RowCellClick,GsGCList_RowCellClick)
+Gui.F_Dash.GsGCInvoice.Enabled(True)
+Gui.F_Dash.GsGCInvoice.Visible(True)
+Gui.F_Dash.GsGCInvoice.Zorder(0)
+Gui.F_Dash.GsGCInvoice.Dock(5)
+Gui.F_Dash.lbl1.Create(Label,"Project No. ",True,945,225,0,150,975,True,0,"Arial",9,-2147483633,0,0)
+Gui.F_Dash.lbl1.BorderStyle(0)
+Gui.F_Dash.txtDescription.Create(TextBox,"",True,7725,330,0,2895,930,True,0,"Arial",9,-2147483643,1)
+Gui.F_Dash.txtDescription.Locked(True)
+Gui.F_Dash.txtProject.Create(TextBox,"",True,1410,330,0,1200,930,True,2,"Arial",9,-2147483643,1)
+Gui.F_Dash.txtProject.Locked(True)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.fOrder_Sales.Declare
+V.Global.fOrder_Cost.Declare
+V.Global.fShip_Sales.Declare
+V.Global.fShip_Cost.Declare
+V.Global.fOrdHist_Cost.Declare
+V.Global.fOrdHist_Sales.Declare
+V.Global.fPO_Rec.Declare
+V.Global.fPO_Total.Declare
+V.Global.fAP_TOT.Declare
+V.Global.fJob.Declare
+V.Global.fJobLate.Declare
+V.Global.fJobVar.Declare
+V.Global.fGL_TOT.Declare
+V.Global.fPR_Total.Declare
+V.Global.fInvoiced_Sales.Declare
+V.Global.fInvoiced_Cost.Declare
+V.Global.fShipCost_Total.Declare
+V.Global.fShip_Total.Declare
+V.Global.sSalesAccount.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sIcon.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sIcon)
+Gui.F_Dash..Icon(V.Local.sIcon)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,600)
+
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+
+'Gui.F_Dash.tab1.Anchor(15)
+'Gui.F_Dash.tab2.Anchor(15)
+'Gui.F_Dash.GsGCList.Anchor(15)
+'Gui.F_Dash.GsGCAP.Anchor(15)
+'Gui.F_Dash.GsGCGL.Anchor(15)
+'Gui.F_Dash.GsGCGRN.Anchor(15)
+'Gui.F_Dash.GsGCShip.Anchor(15)
+'Gui.F_Dash.GsGCInvoice.Anchor(15)
+'Gui.F_Dash.GsGCPO.Anchor(15)
+'Gui.F_Dash.GsGCPR.Anchor(15)
+'Gui.F_Dash.GsGCSO.Anchor(15)
+'Gui.F_Dash.GsGCWO.Anchor(15)
+Gui.F_Dash.tab1.SetTab(0)
+Gui.F_Dash.tab2.SetTab(0)
+
+F.Intrinsic.Control.CallSub(GLSalesAccount)
+
+F.Intrinsic.Control.CallSub(SetContextMenus)
+
+Gui.F_Dash..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_MGMT.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.If(V.DataTable.dtPRJ.Exists)
+	F.Data.DataTable.Close("dtPRJ")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtPRJR.Exists)
+	F.Data.DataTable.Close("dtPRJR")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtPRJP.Exists)
+	F.Data.DataTable.Close("dtPRJP")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtPRJJ.Exists)
+	F.Data.DataTable.Close("dtPRJJ")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtPRJI.Exists)
+	F.Data.DataTable.Close("dtPRJI")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtPRJF.Exists)
+	F.Data.DataTable.Close("dtPRJF")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtPRJO.Exists)
+	F.Data.DataTable.Close("dtPRJO")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtSO.Exists)
+	F.Data.DataTable.Close("dtSO")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtShip.Exists)
+	F.Data.DataTable.Close("dtShip")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtInvoiced.Exists)
+	F.Data.DataTable.Close("dtInvoiced")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtPOHist.Exists)
+	F.Data.DataTable.Close("dtPOHist")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtGRN.Exists)
+	F.Data.DataTable.Close("dtGRN")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtReq.Exists)
+	F.Data.DataTable.Close("dtReq")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtMat.Exists)
+	F.Data.DataTable.Close("dtMat")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtLOH.Exists)
+	F.Data.DataTable.Close("dtLOH")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtLate.Exists)
+	F.Data.DataTable.Close("dtLate")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtVar.Exists)
+	F.Data.DataTable.Close("dtVar")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtAPI.Exists)
+	F.Data.DataTable.Close("dtAPI")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtGL.Exists)
+	F.Data.DataTable.Close("dtGL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtDaily.Exists)
+	F.Data.DataTable.Close("dtDaily")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.cmdRefresh_Click.Start
+V.Local.dateCutoff.Declare
+V.Local.dateDefault.Declare
+V.Local.dateFrom.Declare
+V.Local.dateUntil.Declare
+V.Local.fIndex.Declare
+V.Local.i1.Declare
+V.Local.iDay.Declare
+V.Local.iMonth.Declare
+V.Local.iYear1.Declare
+V.Local.iYear2.Declare
+V.Local.iIndex.Declare
+
+V.Local.sDay1.Declare
+V.Local.sDay2.Declare
+V.Local.sFilter.Declare
+V.Local.sMonth1.Declare
+V.Local.sMonth2.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+V.Local.sYear.Declare
+
+V.Local.dateFrom.Set(V.Screen.F_Dash!dtpFrom.Value)
+V.Local.dateUntil.Set(V.Screen.F_Dash!dtpUntil.Value)
+
+'Rearrange the date into day, month and year
+'F.Intrinsic.Date.Day(V.Local.dateCutoff,V.Local.iDay)
+'F.Intrinsic.Date.Month(V.Local.dateCutoff,V.Local.iMonth)
+'F.Intrinsic.Date.Year(V.Local.dateCutoff,V.Local.iYear)
+'F.Intrinsic.String.LPad(V.Local.iDay,"0",2,V.Local.sDay)
+'F.Intrinsic.String.LPad(V.Local.iMonth,"0",2,V.Local.sMonth)
+
+GUi.F_Dash.lblLoading.Caption("Loading Projects")
+Gui.F_Dash.lblLoading.Visible(True)
+Gui.F_Dash.progressBar1.Visible(True)
+Gui.F_Dash.progressBar1.Min(0)
+GUi.F_Dash.progressBar1.Max(100)
+Gui.F_Dash.tab1.Enabled(False)
+
+F.Intrinsic.Control.If(V.DataTable.dtPRJ.Exists)
+	F.Data.DataTable.Close("dtPRJ")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(v.Screen.F_Dash!optActive.Value,=,True)
+	F.Data.DataTable.CreateFromSQL("dtPRJ","conx","select id_prj as ID, DESCR_PRJ as Description, CUSTOMER as Customer, CASE STATUS When 'A' then 'Active' when 'H' then 'Hold' when 'C' then 'Closed' end as Status, UF1 as UF1, UF2 as UF2, UF3 as UF3, UF4 as UF4, UF5 as UF5, UF6 as UF6, UF7 as UF7, UF8 as UF8, UF9 as UF9, UF10 as UF10, DATE_CREATED, USER_CREATED, DATE_CLOSED, USER_CLOSED from GAB_PRJ_DESC where STATUS <> 'C' order by id_prj",True)
+f.Intrinsic.Control.ElseIf(v.Screen.F_Dash!optClose.Value,=,True)
+	F.Data.DataTable.CreateFromSQL("dtPRJ","conx","select id_prj as ID, DESCR_PRJ as Description, CUSTOMER as Customer, CASE STATUS When 'A' then 'Active' when 'H' then 'Hold' when 'C' then 'Closed' end as Status, UF1 as UF1, UF2 as UF2, UF3 as UF3, UF4 as UF4, UF5 as UF5, UF6 as UF6, UF7 as UF7, UF8 as UF8, UF9 as UF9, UF10 as UF10, DATE_CREATED, USER_CREATED, DATE_CLOSED, USER_CLOSED from GAB_PRJ_DESC where STATUS = 'C' order by id_prj",True)
+f.Intrinsic.Control.ElseIf(v.Screen.F_Dash!optAll.Value,=,True)
+	F.Data.DataTable.CreateFromSQL("dtPRJ","conx","select id_prj as ID, DESCR_PRJ as Description, CUSTOMER as Customer, CASE STATUS When 'A' then 'Active' when 'H' then 'Hold' when 'C' then 'Closed' end as Status, UF1 as UF1, UF2 as UF2, UF3 as UF3, UF4 as UF4, UF5 as UF5, UF6 as UF6, UF7 as UF7, UF8 as UF8, UF9 as UF9, UF10 as UF10, DATE_CREATED, USER_CREATED, DATE_CLOSED, USER_CLOSED from GAB_PRJ_DESC order by id_prj",True)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.AddColumn("dtPRJ","PR","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","PO","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","GRN","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","WO","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","WOVar","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","LateCost","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","AP","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","GL","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","SO","Float",0)
+'F.Data.DataTable.AddColumn("dtPRJ","SOCost","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","Ship","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","ShipCost","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","Invoice","Float",0)
+F.Data.DataTable.AddColumn("dtPRJ","InvoiceCost","Float",0)
+
+'Project data load for every type
+F.Intrinsic.Control.If(V.DataTable.dtPRJF.Exists)
+	F.Data.DataTable.Close("dtPRJF")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPRJF","conx","Select ID_PRJ as ID, rtrim(VALUE) as VALUE, rtrim(VALUE2) as VALUE2 From GAB_PRJ_DATAS where TYPE='F'",True)
+F.Intrinsic.Control.If(V.DataTable.dtPRJI.Exists)
+	F.Data.DataTable.Close("dtPRJI")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPRJI","conx","Select ID_PRJ as ID, rtrim(VALUE) as VALUE, rtrim(VALUE2) as VALUE2, rtrim(VALUE)+rtrim(VALUE2) as PK From GAB_PRJ_DATAS where TYPE='I'",True)
+F.Intrinsic.Control.If(V.DataTable.dtPRJJ.Exists)
+	F.Data.DataTable.Close("dtPRJJ")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPRJJ","conx","Select ID_PRJ as ID, left(VALUE,6) as VALUE, left(VALUE2,3) as VALUE2, case when VALUE2 is null then rtrim(value) else rtrim(value)+rtrim(value2) end as PK From GAB_PRJ_DATAS where TYPE='J'",True)
+F.Intrinsic.Control.If(V.DataTable.dtPRJO.Exists)
+	F.Data.DataTable.Close("dtPRJO")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPRJO","conx","Select ID_PRJ as ID, rtrim(VALUE) as VALUE From GAB_PRJ_DATAS where TYPE='O'",True)
+
+F.Intrinsic.Control.If(V.DataTable.dtPRJP.Exists)
+	F.Data.DataTable.Close("dtPRJP")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPRJP","conx","Select ID_PRJ as ID, rtrim(VALUE) as VALUE, rtrim(VALUE2) as VALUE2, rtrim(VALUE)+rtrim(VALUE2) as PK From GAB_PRJ_DATAS where TYPE='P'",True)
+
+F.Data.DataTable.AddColumn("dtPRJP","Part","String","")
+F.Data.DataTable.AddColumn("dtPRJP","Description","String","")
+F.Data.DataTable.AddColumn("dtPRJP","Qty","Float",0)
+F.Data.DataTable.AddColumn("dtPRJP","UM","String","")
+F.Data.DataTable.AddColumn("dtPRJP","Cost","Float",0)
+
+'Load purchase data
+'Gui.F_Dash.lblLoading.Caption("Loading PO and GRN records")
+'GUi.F_Dash.progressBar1.Value(40)
+F.Intrinsic.Control.If(V.DataTable.dtPOHist.Exists)
+	F.Data.DataTable.Close("dtPOHist")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPOHist","conx","select ph.PURCHASE_ORDER as PO, LEFT(ph.PO_LINE,3) AS Line, ph.part as Part, ph.purchase_order+left(ph.po_line,3) as PK, ph.description as Description, ph.QTY_ORDER as Qty, ph.qty_received as QtyRec, ph.QTY_RECD_NOT_INSP as QtyNotInsp,ph.COST as Cost, ph.um_inventory as UM from v_po_history ph inner join v_po_lines pl on ph.purchase_order = pl.purchase_order and ph.po_line = pl.record_no and ph.part = pl.part and ph.cost = pl.cost_6_dec where ph.receiver_no = '';",True)
+F.Data.DataTable.AddExpressionColumn("dtPOHist","Extension","Float","Qty*Cost")
+
+'Retrieve all values to complete the grid
+F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Part")
+F.Data.Dictionary.SetDefaultReturn("dicPO","**********EMPTY**********")
+F.Data.DataTable.FillFromDictionary("dtPRJP","dicPO","PK","Part")
+F.Data.Dictionary.Close("dicPO")
+
+F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Description")
+F.Data.Dictionary.SetDefaultReturn("dicPO","")
+F.Data.DataTable.FillFromDictionary("dtPRJP","dicPO","PK","Description")
+F.Data.Dictionary.Close("dicPO")
+
+F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Qty")
+F.Data.Dictionary.SetDefaultReturn("dicPO",0)
+F.Data.DataTable.FillFromDictionary("dtPRJP","dicPO","PK","Qty")
+F.Data.Dictionary.Close("dicPO")
+
+F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","UM")
+F.Data.Dictionary.SetDefaultReturn("dicPO","")
+F.Data.DataTable.FillFromDictionary("dtPRJP","dicPO","PK","UM")
+F.Data.Dictionary.Close("dicPO")
+
+F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Cost")
+F.Data.Dictionary.SetDefaultReturn("dicPO",0)
+F.Data.DataTable.FillFromDictionary("dtPRJP","dicPO","PK","Cost")
+F.Data.Dictionary.Close("dicPO")
+
+F.Data.DataTable.AddExpressionColumn("dtPRJP","Extension","Float","QTY*COST")
+
+F.Intrinsic.Control.If(V.DataTable.dtPRJR.Exists)
+	F.Data.DataTable.Close("dtPRJR")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtPRJR","conx","Select ID_PRJ as ID, rtrim(VALUE) as VALUE, rtrim(VALUE2) as VALUE2, rtrim(VALUE)+rtrim(VALUE2) as PK From GAB_PRJ_DATAS where TYPE='R'",True)
+
+'Load order data
+Gui.F_Dash.lblLoading.Caption("Loading Open SO records")
+GUi.F_Dash.progressBar1.Value(20)
+F.Intrinsic.Control.If(V.DataTable.dtSO.Exists)
+	F.Data.DataTable.Close("dtSO")
+F.Intrinsic.Control.EndIf
+V.Local.sSQL.Set("select ORDER_NO as SO,LEFT(RECORD_NO,3) as Line, part as Part, description as Description, QTY_BO AS Qty, PRICE as Price, COST as Cost, (QTY_BO*PRICE) AS Extension from V_ORDER_LINES where line_type <> 'P'")
+F.Intrinsic.Control.If(V.Global.sSalesAccount.Trim,<>,"")
+	F.Intrinsic.String.Build("{0} and {1}",V.Local.sSQL,V.Global.sSalesAccount.Trim,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtSO","conx",V.Local.sSQL,True)
+F.Data.DataTable.AddExpressionColumn("dtSO","TotalCost","Float","Qty*Cost")
+'Load ship data
+Gui.F_Dash.lblLoading.Caption("Loading Shipped and Invoice records")
+GUi.F_Dash.progressBar1.Value(30)
+F.Intrinsic.Control.If(V.DataTable.dtShip.Exists)
+	F.Data.DataTable.Close("dtShip")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Global.sSalesAccount.Trim,=,"")
+	F.Intrinsic.String.Build("select ORDER_NO as SO, LEFT(ORDER_REC,3) AS Line, pck_no as PackingList, date_ship as ShipDate, part as Part, order_desc as Description, convert(QTY_SHIPPED,sql_float) AS Qty, convert(PRICE,sql_float) as Price,convert(COST,sql_float) as Cost, convert(EXTENSION,sql_float) as Extension from V_SHIPMENT_LINES where rtrim(invoice) = '' and date_ship between '{0}' and '{1}'",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select ORDER_NO as SO, LEFT(ORDER_REC,3) AS Line, pck_no as PackingList, date_ship as ShipDate, part as Part, order_desc as Description, convert(QTY_SHIPPED,sql_float) AS Qty, convert(PRICE,sql_float) as Price,convert(COST,sql_float) as Cost, convert(EXTENSION,sql_float) as Extension from V_SHIPMENT_LINES where rtrim(invoice) = '' and date_ship between '{0}' and '{1}' and {2}",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Global.sSalesAccount.Trim,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtShip","conx",V.Local.sSQL,True)
+F.Data.DataTable.AddExpressionColumn("dtShip","TotalCost","Float","Qty*Cost")
+'Load ship and invoiced data
+F.Intrinsic.Control.If(V.DataTable.dtInvoiced.Exists)
+	F.Data.DataTable.Close("dtInvoiced")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Date.Day(V.Local.dateUntil,V.Local.iDay)
+F.Intrinsic.String.LPad(V.Local.iDay,"0",2,V.Local.sDay2)
+F.Intrinsic.Date.Month(V.Local.dateUntil,V.Local.iMonth)
+F.Intrinsic.String.LPad(V.Local.iMonth,"0",2,V.Local.sMonth2)
+F.Intrinsic.Date.Year(V.Local.dateUntil,V.Local.iYear2)
+
+F.Intrinsic.Date.Day(V.Local.dateFrom,V.Local.iDay)
+F.Intrinsic.String.LPad(V.Local.iDay,"0",2,V.Local.sDay1)
+F.Intrinsic.Date.Month(V.Local.dateFrom,V.Local.iMonth)
+F.Intrinsic.String.LPad(V.Local.iMonth,"0",2,V.Local.sMonth1)
+F.Intrinsic.Date.Year(V.Local.dateFrom,V.Local.iYear1)
+F.Intrinsic.String.Build("select SL.ORDER_NO as SO, LEFT(SL.ORDER_REC,3) AS Line, SL.invoice as Invoice, convert(right(IV.inv_date,4)+'-'+left(IV.inv_date,2)+'-'+substring(IV.inv_date,3,2),sql_date) as InvoiceDate, SL.pck_no as PackingList, SL.date_ship as ShipDate, SL.Part as Part, SL.order_desc as Description, convert(SL.QTY_SHIPPED,sql_float) AS Qty, convert(SL.PRICE,sql_float) as Price,convert(SL.COST,sql_float) as Cost, convert(SL.EXTENSION,sql_float) as Extension from V_SHIPMENT_LINES SL left join inv_batch_ctrl IV on rtrim(SL.ivc_batch) = rtrim(IV.number) where rtrim(SL.invoice) <> '' and right(IV.inv_date,4) <= '{0}' and right(IV.inv_date,4) >= '{3}' and left(IV.inv_date,2) <= '{1}' and left(IV.inv_date,2) >= '{4}' and substring(IV.inv_date,3,2) <= '{2}' and substring(IV.inv_date,3,2) >= '{5}'",V.Local.iYear2,V.Local.sMonth2.Trim,V.Local.sDay2.Trim,V.Local.iYear1,V.Local.sMonth1.Trim,V.Local.sDay1.Trim,V.Local.sSQL)
+F.Intrinsic.Control.If(V.Global.sSalesAccount.Trim,<>,"")
+	F.Intrinsic.String.Build("{0} and {1}",V.Local.sSQL,V.Global.sSalesAccount.Trim,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtInvoiced","conx",V.Local.sSQL,True)
+'F.Data.DataTable.AddExpressionColumn("dtInvoiced","TotalCost","Float","Qty*Cost")
+'Load order history data
+F.Intrinsic.String.Build("select OL.ORDER_NO as SO,LEFT(OL.ORDER_LINE,3) AS Line, OL.INVOICE as Invoice, OL.date_invoice as InvoiceDate, OH.pck_no as PackingList, OH.date_shipped as ShipDate, OL.part as Part, OL.description as Description, convert(OL.QTY_SHIPPED,sql_float) AS Qty, convert(OL.PRICE,sql_float) as Price, convert(OL.COST,sql_float) as Cost, convert(OL.EXTENSION,sql_float) as Extension from V_ORDER_HIST_LINE OL left join v_order_hist_head OH on OL.order_no = OH.order_no and OL.invoice = OH.invoice and OL.order_suffix = OH.order_suffix where OL.date_invoice between '{0}' and '{1}'",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Intrinsic.Control.If(V.Global.sSalesAccount.Trim,<>,"")
+	F.Intrinsic.String.Build("{0} and {1}",V.Local.sSQL,V.Global.sSalesAccount.Trim,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtHist","conx",V.Local.sSQL,True)
+F.Data.DataTable.Merge("dtHist","dtInvoiced",True,1)
+F.Data.DataTable.Close("dtHist")
+F.Data.DataTable.AddExpressionColumn("dtInvoiced","TotalCost","Float","Qty*Cost")
+'Load purchase data
+Gui.F_Dash.lblLoading.Caption("Loading PO and GRN records")
+GUi.F_Dash.progressBar1.Value(40)
+'F.Intrinsic.Control.If(V.DataTable.dtPOHist.Exists)
+'	F.Data.DataTable.Close("dtPOHist")
+'F.Intrinsic.Control.EndIf
+'F.Data.DataTable.CreateFromSQL("dtPOHist","conx","select PURCHASE_ORDER as PO, LEFT(PO_LINE,3) AS Line, part as Part, purchase_order+left(po_line,3) as PK, description as Description, QTY_ORDER as Qty, qty_received as QtyRec, QTY_RECD_NOT_INSP as QtyNotInsp,COST as Cost, um_inventory as UM from v_po_history where receiver_no = ''",True)
+'F.Data.DataTable.AddExpressionColumn("dtPOHist","Extension","Float","Qty*Cost")
+'F.Data.DataTable.AddExpressionColumn("dtPOHist","ExtRec","Float","(QtyRec+QtyNotInsp)*Cost")
+'Load PO received based on AP accrual batch
+F.Intrinsic.Control.If(V.DataTable.dtGRN.Exists)
+	F.Data.DataTable.Close("dtGRN")
+F.Intrinsic.Control.EndIf
+GUi.F_Dash.progressBar1.Value(50)
+F.Data.DataTable.CreateFromSQL("dtGRN","conx","select ph.purchase_order+ph.receiver_no as POR, ph.purchase_order as PO, LEFT(ph.PO_LINE,3) AS Line, ph.part as Part, ph.description as Description, convert(ph.qty_received,sql_float) as Qty, ph.um_inventory as UM, convert(ph.cost,sql_float) as Cost, ph.date_received as DateReceived from v_po_history ph inner join v_po_lines pl on ph.purchase_order = pl.purchase_order and ph.po_line = pl.record_no and ph.part = pl.part and ph.cost = pl.cost_6_dec where ph.receiver_no <> ''",True)
+F.Data.DataTable.AddColumn("dtGRN","DateBatch","Date")
+F.Data.DataTable.AddExpressionColumn("dtGRN","Extension","Float","Qty*Cost")
+F.Intrinsic.Date.ConvertDString("29991231","YYYYMMDD",V.Local.dateDefault)
+'F.Data.Dictionary.CreateFromSQL("dicAP","conx","select rtrim(invoice) as POR, date_batch from v_ap_open_items where batch_code = '09' and flag_pay_select = 'R'")
+F.Data.Dictionary.CreateFromSQL("dicAP","conx","select rtrim(invoice) as POR, date_batch from v_ap_open_items where batch_code = '09' and receiver <> ''")
+F.Data.Dictionary.SetDefaultReturn("dicAP",V.Local.dateDefault)
+F.Data.DataTable.FillFromDictionary("dtGRN","dicAP","POR","DateBatch")
+F.Data.Dictionary.Close("dicAP")
+'Load purchase requisition data
+Gui.F_Dash.lblLoading.Caption("Loading Purchase Requisition records")
+GUi.F_Dash.progressBar1.Value(60)
+F.Intrinsic.Control.If(V.DataTable.dtReq.Exists)
+	F.Data.DataTable.Close("dtReq")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("dtReq","conx","select po_req_number as PR, convert(po_req_line,sql_integer) as Line, part as Part, description as Description, quantity as Qty, unit_price as Cost, inventory_um as UM from purchase_reqs",True)
+F.Data.DataTable.AddExpressionColumn("dtReq","Extension","Float","Qty*Cost")
+F.Data.DataTable.AddExpressionColumn("dtReq","PK","String","PR+CONVERT(Line,'System.String')")
+'Load Job records
+F.Intrinsic.Control.If(V.DataTable.dtMat.Exists)
+	F.Data.DataTable.Close("dtMat")
+F.Intrinsic.Control.EndIf
+GUi.F_Dash.progressBar1.Value(70)
+F.Intrinsic.String.Build("select JOB as Job, SUFFIX as Suffix, rtrim(job)+rtrim(suffix) as PK, sum(amount_labor) as Cost from v_job_detail where lmo <> 'L' and lmo <> 'Z' and charge_date between '{0}' and '{1}' group by job, suffix",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtMat","conx",V.Local.sSQL,True)
+F.Intrinsic.Control.If(V.DataTable.dtLOH.Exists)
+	F.Data.DataTable.Close("dtLOH")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("select JOB as Job, SUFFIX as Suffix, rtrim(job)+rtrim(suffix) as PK, sum(amount_labor) as Labor, sum(amt_overhead) as Overhead from v_job_detail where lmo = 'L' and charge_date between '{0}' and '{1}' group by job, suffix",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtLOH","conx",V.Local.sSQL,True)
+F.Intrinsic.Control.If(V.DataTable.dtLate.Exists)
+	F.Data.DataTable.Close("dtLate")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("select job as Job, suffix as Suffix, -1*sum(amount_labor) as Cost, rtrim(job)+rtrim(suffix) as PK from v_job_detail where seq = '999999' and ucase(description) = 'LATE COSTS TO JOBS' and charge_date between '{0}' and '{1}' group by job, suffix",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtLate","conx",V.Local.sSQL,True)
+F.Intrinsic.Control.If(V.DataTable.dtVar.Exists)
+	F.Data.DataTable.Close("dtVar")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("select job as Job, suffix as Suffix, -1*sum(amount_labor) as Cost, rtrim(job)+rtrim(suffix) as PK from v_job_detail where seq = '999999' and ucase(description) = 'STD COST VARIANCE' and charge_date between '{0}' and '{1}' group by job, suffix",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtVar","conx",V.Local.sSQL,True)
+'Load AP Invoice records
+F.Intrinsic.Control.If(V.DataTable.dtAPI.Exists)
+	F.Data.DataTable.Close("dtAPI")
+F.Intrinsic.Control.EndIf
+GUi.F_Dash.progressBar1.Value(80)
+F.Intrinsic.String.Build("select VENDOR as Vendor,rtrim(INVOICE) as Invoice, date_invoice as DateInvoice, AMT_INVOICE as Amount, batch_num as Batch, batch_line as BatchLine, RTRIM(INVOICE)+RTRIM(VENDOR) AS PK from v_AP_OPEN_ITEMS where batch_code = '10' and date_batch between '{0}' and '{1}'",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtAPI","conx",V.Local.sSQL,True)
+F.Intrinsic.String.Build("select VENDOR as Vendor,rtrim(INVOICE) as Invoice, date_invoice as DateInvoice, AMT_INVOICE as Amount, batch_num as Batch, batch_line as BatchLine, RTRIM(INVOICE)+RTRIM(VENDOR) AS PK from v_AP_HIST where batch_code = '10' and date_batch between '{0}' and '{1}'",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtAPIH","conx",V.Local.sSQL,True)
+F.Data.DataTable.Merge("dtAPIH","dtAPI",True,1)
+F.Data.DataTable.Close("dtAPIH")
+'Load GL detail
+F.Intrinsic.Control.If(V.DataTable.dtGL.Exists)
+	F.Data.DataTable.Close("dtGL")
+F.Intrinsic.Control.EndIf
+GUi.F_Dash.progressBar1.Value(90)
+'F.Intrinsic.String.Build("select batch as Batch, line as Line, post_date as PostDate, post_date_sql as PostDateSQL, gl_number as GLAccount, amount_cmpny as Amount from gl_journal_dtl where post_date_sql between '{0}' and '{1}'",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Intrinsic.String.Build("select batch as Batch, convert(line,sql_char) as Line, post_date as PostDate, post_date_sql as PostDateSQL, gl_number as GLAccount, convert(amount_cmpny,sql_float) as Amount from gl_journal_dtl where post_date_sql between '{0}' and '{1}'",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtGL","conx",V.Local.sSQL,True)
+'Load saved records
+F.Intrinsic.Control.If(V.DataTable.dtDaily.Exists)
+	F.Data.DataTable.Close("dtDaily")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("select id_prj as ID, sum(ship_sales) as ShipSales, sum(ship_cost) as ShipCost, sum(invoice_sales) as InvoiceSales, sum(invoice_cost) as InvoiceCost, sum(po_received) as GRN, sum(ap_total) as API, sum(gl_total) as GL, sum(job_total) as WO, sum(job_var) as WOVar, sum(job_late) as WOLate from GAB_4996_PRJ_FIN where date_record between '{0}' and '{1}' group by id_prj",V.Local.dateFrom.PervasiveDate,V.Local.dateUntil.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtDaily","conx",V.Local.sSQL,True)
+
+Gui.F_Dash.lblLoading.Caption("Reconciling project records")
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtPRJ.RowCount--,1)
+	F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iIndex)
+	F.Intrinsic.Math.Div(V.Local.iIndex,V.DataTable.dtPRJ.RowCount,V.Local.fIndex)
+	F.Intrinsic.Math.Mult(V.Local.fIndex,100,V.Local.fIndex)
+	GUi.F_Dash.progressBar1.Value(V.Local.fIndex)
+	V.Global.fOrder_Sales.Set(0)
+	V.Global.fShip_Sales.Set(0)
+	V.Global.fShip_Cost.Set(0)
+'	V.Global.fOrder_Cost.Set(0)
+	V.Global.fPO_Total.Set(0)
+	V.Global.fPR_Total.Set(0)
+	
+	F.Intrinsic.Control.CallSub(subloadorder,"RowIndex",V.Local.i1)
+	F.Intrinsic.Control.CallSub(subloadpo,"RowIndex",V.Local.i1)
+	F.Intrinsic.Control.CallSub(subloadpr,"RowIndex",V.Local.i1)
+	
+	F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Local.i1).ID!FieldVal,V.Local.sFilter)
+	F.Data.DataTable.Select("dtDaily",V.Local.sFilter,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+		F.Data.DataTable.SetValue("dtPRJ",V.Local.i1,"PR",V.Global.fPR_Total,"PO",V.Global.fPO_Total,"GRN",V.DataTable.dtDaily(V.Local.sRet).GRN!FieldVal,"WO",V.DataTable.dtDaily(V.Local.sRet).WO!FieldVal,"WOVar",V.DataTable.dtDaily(V.Local.sRet).WOVar!FieldVal,"LateCost",V.DataTable.dtDaily(V.Local.sRet).WOLate!FieldVal,"AP",V.DataTable.dtDaily(V.Local.sRet).API!FieldVal,"GL",V.DataTable.dtDaily(V.Local.sRet).GL!FieldVal,"SO",V.Global.fOrder_Sales,"Ship",V.Global.fShip_Sales,"ShipCost",V.Global.fShip_Cost,"Invoice",V.DataTable.dtDaily(V.Local.sRet).InvoiceSales!FieldVal,"InvoiceCost",V.DataTable.dtDaily(V.Local.sRet).InvoiceCost!FieldVal)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.SetValue("dtPRJ",V.Local.i1,"PR",V.Global.fPR_Total,"PO",V.Global.fPO_Total,"GRN",0,"WO",0,"WOVar",0,"LateCost",0,"AP",0,"GL",0,"SO",V.Global.fOrder_Sales,"Ship",0,"ShipCost",0,"Invoice",0,"InvoiceCost",0)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+
+F.Data.DataTable.AddExpressionColumn("dtPrj", "SlsPurch", "Float", "SO+Invoice-PO")
+
+'Remove UF fields that are not enabled
+F.Intrinsic.Control.CallSub(CheckUF)
+
+Gui.F_Dash.lblLoading.Caption("Setting up grid")
+Gui.F_Dash.GsGCList.AddGridviewFromDatatable("gvPRJ","dtPRJ")
+Gui.F_Dash.GsGCList.MainView("gvPRJ")
+
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","ShowGroupPanel",True)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","AllowSort",True)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","AllowFilter",True)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCList.SetGridviewProperty("gvPRJ","OptionsViewRowAutoHeight",true)
+
+F.Intrinsic.Control.CallSub(GridViewStyle)
+
+Gui.F_Dash.tab1.Enabled(True)
+Gui.F_Dash.progressBar1.Visible(False)
+Gui.F_Dash.lblLoading.Visible(False)
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.CheckExistingRecord.Start
+V.Local.sSQL.Declare
+V.Local.sUser.Declare
+
+V.Local.sUser.Set(V.Caller.User)
+
+F.Intrinsic.String.Build("select date_cutoff from GAB_4996_PRJ_FIN where gs_user = '{0}'",V.Local.sUser.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+	gui.F_Dash.dtpFrom.Value(V.ODBC.conx!rst.FieldVal!date_cutoff)
+	F.Intrinsic.Control.CallSub(LoadExistingData)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+Program.Sub.CheckExistingRecord.End
+
+Program.Sub.CheckUF.Start
+V.Local.iC.Declare
+V.Local.iUF.Declare
+V.Local.sValue.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtUF.Exists)
+	F.Data.DataTable.Close("dtUF")
+F.Intrinsic.Control.EndIf
+
+'Check UF that is enabled
+F.Data.DataTable.CreateFromSQL("dtUF","conx","select substring(type,2) as Type, left(value,1) as SValue, substring(value,3) as Value  from gab_prj_uf where left(type,1) = 'T' order by type",True)
+F.Intrinsic.Control.If(V.DataTable.dtUF.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.iC,1,10,1)
+		F.Intrinsic.Control.If(V.DataTable.dtUF.RowCount,<,V.Local.iC)
+			F.Intrinsic.String.Build("UF{0}",V.Local.iC,V.Local.sValue)
+			F.Data.DataTable.RemoveColumn("dtPRJ",V.Local.sValue)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Sub(V.Local.iC,1,V.Local.iUF)
+			F.Intrinsic.Control.If(V.DataTable.dtUF(V.Local.iUF).SValue!FieldValTrim,<>,"Y")
+				F.Intrinsic.String.Build("UF{0}",V.Local.iC,V.Local.sValue)
+				F.Data.DataTable.RemoveColumn("dtPRJ",V.Local.sValue)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf	
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+Program.Sub.CheckUF.End
+
+Program.Sub.subLoadOrder.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadOrder_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+V.Local.sSql.Declare(String)
+V.Local.sSql2.Declare(String)
+V.Local.sSqlOrd.Declare(String)
+V.Local.fOrderTot.Declare(Float)
+V.Local.fOrderCost.Declare(Float)
+V.Local.fOrderTotCost.Declare(Float)
+V.Local.fOrderMargin.Declare(Float)
+V.Local.iC.Declare(Long,0)
+V.Local.iC2.Declare(Long,0)
+V.Local.iCount.Declare(Long,-1)
+V.Local.sLocD.Declare(String)
+V.Local.dDateD.Declare(Date)
+V.Local.sLine.Declare(String)
+V.Local.fExt.Declare(Float)
+V.Local.sOrder.Declare(String)
+
+V.Local.fShipTot.Declare
+V.Local.fShipTotCost.Declare
+V.Local.iIndex.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Select("dtPRJO",V.Local.sFilter,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+		F.Intrinsic.String.Build("SO = '{0}'",V.DataTable.dtPRJO(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.Local.sFilter)
+		F.Data.DataTable.Compute("dtSO","SUM(Extension)",V.Local.sFilter,V.Local.fOrderTot)
+		F.Data.DataTable.Compute("dtSO","SUM(TotalCost)",V.Local.sFilter,V.Local.fOrderTotCost)
+		F.Intrinsic.Math.Add(V.Global.fOrder_Sales,V.Local.fOrderTot,V.Global.fOrder_Sales)
+		
+		F.Data.DataTable.Compute("dtShip","SUM(Extension)",V.Local.sFilter,V.Local.fShipTot)
+		F.Data.DataTable.Compute("dtShip","SUM(TotalCost)",V.Local.sFilter,V.Local.fShipTotCost)
+		F.Intrinsic.Math.Add(V.Global.fShip_Sales,V.Local.fShipTot,V.Global.fShip_Sales)
+		F.Intrinsic.Math.Add(V.Global.fShip_Cost,V.Local.fShipTotCost,V.Global.fShip_Cost)
+'		
+'		F.Data.DataTable.Compute("dtInvoiced","SUM(Extension)",V.Local.sFilter,V.Local.fOrderTot)
+'		F.Data.DataTable.Compute("dtInvoiced","SUM(TotalCost)",V.Local.sFilter,V.Local.fOrderTotCost)
+'		F.Intrinsic.Math.Add(V.Global.fInvoiced_Sales,V.Local.fOrderTot,V.Global.fInvoiced_Sales)
+'		F.Intrinsic.Math.Add(V.Global.fInvoiced_Cost,V.Local.fOrderTotCost,V.Global.fInvoiced_Cost)
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadOrder_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_MGMT_FIN.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.subLoadOrder.End
+
+Program.Sub.subLoadPO.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadPO_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.fPOTot.Declare(Float)
+V.Local.sPOTot.Declare(String)
+V.Local.fPORecdTot.Declare(Float)
+V.Local.sPORecdTot.Declare(String)
+V.Local.fPOOpenTot.Declare(Float)
+V.Local.sPOOpenTot.Declare(String)
+V.Local.sPO.Declare(String)
+V.Local.sPOLine.Declare(String)
+V.Local.iC.Declare(Long,0)
+V.Local.sSqlPO.Declare(String)
+
+V.Local.iC2.Declare
+V.Local.iIndex.Declare
+V.Local.sCutoff.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Compute("dtPRJP","SUM(Extension)",V.Local.sFilter,V.Global.fPO_Total)
+'F.Data.DataTable.Select("dtPRJP",V.Local.sFilter,V.Local.sRet)
+
+'F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+'	F.Intrinsic.String.Format(V.Screen.F_Dash!dtpFrom.Value,"M/D/YYYY",V.Local.sCutoff)
+'	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+'	
+'	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+'		F.Intrinsic.String.Build("PO = '{0}' and Line = '{1}'",V.DataTable.dtPRJP(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.DataTable.dtPRJP(V.Local.iIndex(V.Local.iC)).VALUE2!FieldValTrim,V.Local.sFilter)
+'		F.Data.DataTable.Compute("dtPOHist","SUM(Extension)",V.Local.sFilter,V.Local.fPOOpenTot)
+'		F.Intrinsic.Math.Add(V.Global.fPO_Total,V.Local.fPOOpenTot,V.Global.fPO_Total)
+'		
+''		F.Intrinsic.String.Build("PO = '{0}' and Line = '{1}' and DateBatch <= #{2}#",V.DataTable.dtPRJP(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.DataTable.dtPRJP(V.Local.iIndex(V.Local.iC)).VALUE2!FieldValTrim,V.Local.sCutoff,V.Local.sFilter)
+''		F.Data.DataTable.Compute("dtGRN","SUM(Extension)",V.Local.sFilter,V.Local.fPORecdTot)
+''		F.Intrinsic.Math.Add(V.Global.fPO_Rec,V.Local.fPORecdTot,V.Global.fPO_Rec)
+'	F.Intrinsic.Control.Next(V.Local.iC)
+'	
+'	F.Intrinsic.Control.If(V.DataTable.dtPO.Exists,=,True)
+'		F.Data.DataTable.Close("dtPO")
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadPO_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_MGMT_FIN.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.subLoadPO.End
+
+Program.Sub.subLoadPR.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadPR_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.fPRTot.Declare
+V.Local.fPOTot.Declare(Float)
+V.Local.sPOTot.Declare(String)
+V.Local.fPORecdTot.Declare(Float)
+V.Local.sPORecdTot.Declare(String)
+V.Local.fPOOpenTot.Declare(Float)
+V.Local.sPOOpenTot.Declare(String)
+V.Local.sPO.Declare(String)
+V.Local.sPOLine.Declare(String)
+V.Local.iC.Declare(Long,0)
+V.Local.sSqlPO.Declare(String)
+
+V.Local.iC2.Declare
+V.Local.iIndex.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Select("dtPRJR",V.Local.sFilter,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+		F.Intrinsic.String.Build("PR = '{0}' and Line = {1}",V.DataTable.dtPRJR(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.DataTable.dtPRJR(V.Local.iIndex(V.Local.iC)).VALUE2!FieldValTrim,V.Local.sFilter)
+		F.Data.DataTable.Compute("dtReq","SUM(Extension)",V.Local.sFilter,V.Local.fPRTot)
+		F.Intrinsic.Math.Add(V.Global.fPR_Total,V.Local.fPRTot,V.Global.fPR_Total)
+	F.Intrinsic.Control.Next(V.Local.iC)
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadPR_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_MGMT_FIN.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.subLoadPR.End
+
+Program.Sub.GridViewStyle.Start
+F.Intrinsic.Control.SetErrorHandler("GridViewStyle_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.iC.Declare
+V.Local.sField.Declare
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SlsPurch","Visible",False)
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Customer","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Description","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Status","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PO","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GRN","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WO","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","LateCost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WOVar","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","AP","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GL","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SO","HeaderHAlignment","Center")
+'Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SOCost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Ship","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ShipCost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Invoice","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","InvoiceCost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PR","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CLOSED","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CLOSED","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CREATED","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CREATED","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Customer","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Description","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Status","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PO","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GRN","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WO","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","LateCost","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WOVar","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","AP","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GL","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SO","HeaderFontBold",True)
+'Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SOCost","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Ship","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ShipCost","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Invoice","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","InvoiceCost","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PR","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CREATED","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CREATED","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CLOSED","HeaderFontBold",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CLOSED","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","CellHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Customer","CellHAlignment","Center")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Status","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","Caption","Project")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WO","Caption","Work Order")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","LateCost","Caption","Late Cost")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WOVar","Caption","Variance")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SO","Caption","Open SO")
+'Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SOCost","Caption","Cost SO")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","AP","Caption","AP Invoice")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GL","Caption","General Ledger")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PR","Caption","Purch. Request")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Ship","Caption","Shipped")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ShipCost","Caption","Cost Shipped")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Invoice","Caption","Invoiced")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","InvoiceCost","Caption","Cost Invoiced")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CLOSED","Caption","Closed Date")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CLOSED","Caption","Closed User")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CREATED","Caption","Created Date")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CREATED","Caption","Created User")
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","MinWidth","50")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Customer","MinWidth","80")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Description","MinWidth","400")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Status","MinWidth","50")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PO","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GRN","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WO","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WOVar","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","LateCost","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","AP","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GL","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SO","MinWidth","100")
+'Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SOCost","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Ship","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ShipCost","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Invoice","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","InvoiceCost","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PR","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CREATED","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CREATED","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CLOSED","MinWidth","100")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","USER_CLOSED","MinWidth","100")
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CREATED","DisplayCustomDatetime","d")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","DATE_CLOSED","DisplayCustomDatetime","d")
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PO","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GRN","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WO","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","LateCost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","WOVar","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","AP","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","GL","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SO","DisplayCustomNumeric","##,###,##0.00")
+'Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","SOCost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Ship","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ShipCost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Invoice","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","InvoiceCost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","PR","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","CellForeColor",V.Color.Blue)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","CellFontUnderline",True)
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","AllowEdit",False)
+
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","ID","Fixed","Left")
+Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ","Description","Fixed","Left")
+
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","PO","PurchaseSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","GRN","GRNSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","WO","JobSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","WOVar","VarSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","LateCost","LateSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","AP","APISUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","GL","GLSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","SO","SalesSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","Ship","ShippedSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","Invoice","InvoicedSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCList.AddSummaryItem("gvPRJ","PR","PRSUM","SUM","","","##,###,##0.00")
+
+Gui.F_Dash.GsGCList.AddStyleFormatCondition("gvPRJ","SlsPurch",0,"Less",0)
+Gui.F_Dash.GsGCList.SetStyleFormatConditionProperty("gvPRJ","SlsPurch",0,"BackColor","LightPink")
+Gui.F_Dash.GsGCList.SetStyleFormatConditionProperty("gvPRJ","SlsPurch",0,"ApplyToRow",True)
+
+F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtUF.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtUF(V.Local.iC).SValue!FieldValTrim,=,"Y")
+		F.Intrinsic.String.Build("UF{0}",V.DataTable.dtUF(V.Local.iC).Type!FieldValTrim,V.Local.sField)
+		Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ",V.Local.sField,"HeaderHAlignment","Center")
+		Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ",V.Local.sField,"HeaderFontBold",True)
+		Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ",V.Local.sField,"Caption",V.DataTable.dtUF(V.Local.iC).Value!FieldValTrim)
+		Gui.F_Dash.GsGCList.SetColumnProperty("gvPRJ",V.Local.sField,"MinWidth","100")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Data.DataTable.Close("dtUF")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GridViewStyle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_MGMT_FIN.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.GridViewStyle.End
+
+Program.Sub.GsGCList_RowCellClick.Start
+F.Intrinsic.Control.SetErrorHandler("GsGCList_RowCellClick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sMessage.Declare
+F.Intrinsic.Control.If(V.Args.Column,=,"ID")
+	Gui.F_Dash.tab1.Enabled(False)
+	F.Intrinsic.String.Build("Loading details for Project No. {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	GUi.F_Dash.lblLoading.Visible(True)
+	Gui.F_Dash.progressBar1.Visible(True)
+	
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - Purchase Requisition",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(11)
+	F.Intrinsic.Control.CallSub(LoadPRDetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - Purchase Order",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(22)
+	F.Intrinsic.Control.CallSub(LoadPODetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - Purchase Order Receipt",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(33)
+	F.Intrinsic.Control.CallSub(LoadGRNDetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - Work Order",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(44)
+	F.Intrinsic.Control.CallSub(LoadJobDetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - AP Invoice",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(55)
+	F.Intrinsic.Control.CallSub(LoadAPIDetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - General Ledger",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(66)
+	F.Intrinsic.Control.CallSub(LoadGLDetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - Open Order",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(77)
+	F.Intrinsic.Control.CallSub(LoadSODetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - Open Shipment",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(88)
+	F.Intrinsic.Control.CallSub(LoadShipDetail,"RowIndex",V.Args.RowIndex)
+	F.Intrinsic.String.Build("Loading details for Project No. {0} - Invoiced and Order History",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sMessage)
+	Gui.F_Dash.lblLoading.Caption(V.Local.sMessage)
+	Gui.F_Dash.progressBar1.Value(99)
+	F.Intrinsic.Control.CallSub(LoadInvoiceDetail,"RowIndex",V.Args.RowIndex)
+	
+	Gui.F_Dash.progressBar1.Visible(False)
+	GUi.F_Dash.lblLoading.Visible(False)
+	
+	Gui.F_Dash.txtProject.Text(V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal)
+	Gui.F_Dash.txtDescription.Text(V.DataTable.dtPRJ(V.Args.RowIndex).Description!FieldVal)
+
+	Gui.F_Dash.tab1.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GsGCList_RowCellClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_MGMT_FIN.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.GsGCList_RowCellClick.End
+
+Program.Sub.LoadPRDetail.Start
+F.Intrinsic.Control.SetErrorHandler("LoadPRDetail_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sFilter.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVPR.Exists)
+	F.Intrinsic.Control.If(V.DataView.dtVPR!dvVPR.Exists)
+		F.Data.DataView.Close("dtVPR","dvVPR")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtVPR")
+F.Intrinsic.Control.EndIf
+
+'Load PR for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataView.Create("dtPRJR","dvPR",22,V.Local.sFilter,"VALUE ASC, VALUE2 ASC")
+
+F.Data.DataView.ToDataTable("dtPRJR","dvPR","dtVPR",True)
+F.Data.DataView.Close("dtPRJR","dvPR")
+F.Data.DataTable.AddColumn("dtVPR","Part","String","")
+F.Data.DataTable.AddColumn("dtVPR","Description","String","")
+F.Data.DataTable.AddColumn("dtVPR","Qty","Float",0)
+F.Data.DataTable.AddColumn("dtVPR","UM","String","")
+F.Data.DataTable.AddColumn("dtVPR","Cost","Float",0)
+
+'Retrieve all values to complete the grid
+F.Data.Dictionary.CreateFromDataTable("dicPR","dtReq","PK","Part")
+F.Data.Dictionary.SetDefaultReturn("dicPR","**********EMPTY**********")
+F.Data.DataTable.FillFromDictionary("dtVPR","dicPR","PK","Part")
+F.Data.Dictionary.Close("dicPR")
+
+F.Data.Dictionary.CreateFromDataTable("dicPR","dtReq","PK","Description")
+F.Data.Dictionary.SetDefaultReturn("dicPR","")
+F.Data.DataTable.FillFromDictionary("dtVPR","dicPR","PK","Description")
+F.Data.Dictionary.Close("dicPR")
+
+F.Data.Dictionary.CreateFromDataTable("dicPR","dtReq","PK","Qty")
+F.Data.Dictionary.SetDefaultReturn("dicPR",0)
+F.Data.DataTable.FillFromDictionary("dtVPR","dicPR","PK","Qty")
+F.Data.Dictionary.Close("dicPR")
+
+F.Data.Dictionary.CreateFromDataTable("dicPR","dtReq","PK","UM")
+F.Data.Dictionary.SetDefaultReturn("dicPR","")
+F.Data.DataTable.FillFromDictionary("dtVPR","dicPR","PK","UM")
+F.Data.Dictionary.Close("dicPR")
+
+F.Data.Dictionary.CreateFromDataTable("dicPR","dtReq","PK","Cost")
+F.Data.Dictionary.SetDefaultReturn("dicPR",0)
+F.Data.DataTable.FillFromDictionary("dtVPR","dicPR","PK","Cost")
+F.Data.Dictionary.Close("dicPR")
+
+F.Data.DataTable.AddExpressionColumn("dtVPR","Extension","Float","QTY*COST")
+
+F.Data.DataView.Create("dtVPR","dvVPR",22,"Part <> '**********EMPTY**********'","")
+
+Gui.F_Dash.GsGCPR.AddGridviewFromDataview("gvPR","dtVPR","dvVPR")
+Gui.F_Dash.GsGCPR.MainView("gvPR")
+
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","ShowGroupPanel",True)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","AllowSort",True)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","AllowFilter",True)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCPR.SetGridviewProperty("gvPR","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","PK","Visible",False)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","ID","Visible",False)
+
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE2","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Part","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Description","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Qty","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","UM","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Cost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Extension","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE","CellHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE2","CellHAlignment","Center")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","UM","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE","HeaderFontBold",True)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE2","HeaderFontBold",True)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Part","HeaderFontBold",True)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Description","HeaderFontBold",True)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Qty","HeaderFontBold",True)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","UM","HeaderFontBold",True)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Cost","HeaderFontBold",True)
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Extension","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE","Caption","PR")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE2","Caption","Line")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Part","Caption","Part")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Description","Caption","Description")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Qty","Caption","Quantity")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Cost","Caption","Cost")
+
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE","MinWidth","70")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","VALUE2","MinWidth","60")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Part","MinWidth","120")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Description","MinWidth","220")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Qty","MinWidth","110")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","UM","MinWidth","40")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Cost","MinWidth","110")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Extension","MinWidth","110")
+
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Qty","DisplayCustomNumeric","##,###,##0.00000")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Cost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCPR.SetColumnProperty("gvPR","Extension","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCPR.AddSummaryItem("gvPR","Extension","PRSUM","SUM","","","##,###,##0.00")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadPRDetail_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_MGMT_FIN.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.LoadPRDetail.End
+
+Program.Sub.LoadPODetail.Start
+V.Local.sFilter.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVPO.Exists)
+	F.Intrinsic.Control.If(V.DataView.dtVPO!dvVPO.Exists)
+		F.Data.DataView.Close("dtVPO","dvVPO")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtVPO")
+F.Intrinsic.Control.EndIf
+
+'Load PO for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataView.Create("dtPRJP","dvPO",22,V.Local.sFilter,"VALUE ASC, VALUE2 ASC")
+
+F.Data.DataView.ToDataTable("dtPRJP","dvPO","dtVPO",True)
+F.Data.DataView.Close("dtPRJP","dvPO")
+'F.Data.DataTable.AddColumn("dtVPO","Part","String","")
+'F.Data.DataTable.AddColumn("dtVPO","Description","String","")
+'F.Data.DataTable.AddColumn("dtVPO","Qty","Float",0)
+'F.Data.DataTable.AddColumn("dtVPO","UM","String","")
+'F.Data.DataTable.AddColumn("dtVPO","Cost","Float",0)
+
+''Retrieve all values to complete the grid
+'F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Part")
+'F.Data.Dictionary.SetDefaultReturn("dicPO","**********EMPTY**********")
+'F.Data.DataTable.FillFromDictionary("dtVPO","dicPO","PK","Part")
+'F.Data.Dictionary.Close("dicPO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Description")
+'F.Data.Dictionary.SetDefaultReturn("dicPO","")
+'F.Data.DataTable.FillFromDictionary("dtVPO","dicPO","PK","Description")
+'F.Data.Dictionary.Close("dicPO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Qty")
+'F.Data.Dictionary.SetDefaultReturn("dicPO",0)
+'F.Data.DataTable.FillFromDictionary("dtVPO","dicPO","PK","Qty")
+'F.Data.Dictionary.Close("dicPO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","UM")
+'F.Data.Dictionary.SetDefaultReturn("dicPO","")
+'F.Data.DataTable.FillFromDictionary("dtVPO","dicPO","PK","UM")
+'F.Data.Dictionary.Close("dicPO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Cost")
+'F.Data.Dictionary.SetDefaultReturn("dicPO",0)
+'F.Data.DataTable.FillFromDictionary("dtVPO","dicPO","PK","Cost")
+'F.Data.Dictionary.Close("dicPO")
+
+'F.Data.DataTable.AddExpressionColumn("dtVPO","Extension","Float","QTY*COST")
+
+F.Data.DataView.Create("dtVPO","dvVPO",22,"Part <> '**********EMPTY**********'","")
+
+Gui.F_Dash.GsGCPO.AddGridviewFromDataview("gvPO","dtVPO","dvVPO")
+Gui.F_Dash.GsGCPO.MainView("gvPO")
+
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","ShowGroupPanel",True)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","AllowSort",True)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","AllowFilter",True)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCPO.SetGridviewProperty("gvPO","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","PK","Visible",False)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","ID","Visible",False)
+
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE2","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Part","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Description","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Qty","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","UM","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Cost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Extension","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE","CellHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE2","CellHAlignment","Center")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","UM","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE","HeaderFontBold",True)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE2","HeaderFontBold",True)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Part","HeaderFontBold",True)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Description","HeaderFontBold",True)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Qty","HeaderFontBold",True)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","UM","HeaderFontBold",True)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Cost","HeaderFontBold",True)
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Extension","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE","Caption","PO")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE2","Caption","Line")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Part","Caption","Part")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Description","Caption","Description")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Qty","Caption","Quantity")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Cost","Caption","Cost")
+
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE","MinWidth","70")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","VALUE2","MinWidth","60")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Part","MinWidth","120")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Description","MinWidth","220")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Qty","MinWidth","110")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","UM","MinWidth","40")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Cost","MinWidth","110")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Extension","MinWidth","110")
+
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Qty","DisplayCustomNumeric","##,###,##0.00000")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Cost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCPO.SetColumnProperty("gvPO","Extension","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCPO.AddSummaryItem("gvPO","Extension","POSUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadPODetail.End
+
+Program.Sub.LoadGRNDetail.Start
+V.Local.dateDefault.Declare
+V.Local.iC.Declare
+V.Local.iIndex.Declare
+V.Local.sFilter.Declare
+V.Local.sFrom.Declare
+V.Local.sRet.Declare
+V.Local.sUntil.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVGRN.Exists)
+	F.Data.DataTable.Close("dtVGRN")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Create("dtVGRN",True)
+F.Data.DataTable.AddColumn("dtVGRN","POR","String","")
+F.Data.DataTable.AddColumn("dtVGRN","PO","String","")
+F.Data.DataTable.AddColumn("dtVGRN","Line","String","")
+F.Data.DataTable.AddColumn("dtVGRN","Part","String","")
+F.Data.DataTable.AddColumn("dtVGRN","Description","String","")
+F.Data.DataTable.AddColumn("dtVGRN","Qty","Float",0)
+F.Data.DataTable.AddColumn("dtVGRN","UM","String","")
+F.Data.DataTable.AddColumn("dtVGRN","Cost","Float",0)
+F.Data.DataTable.AddColumn("dtVGRN","DateReceived","Date")
+F.Data.DataTable.AddColumn("dtVGRN","DateBatch","Date")
+F.Data.DataTable.AddColumn("dtVGRN","Extension","Float")
+
+'Load GRN for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Select("dtPRJP",V.Local.sFilter,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+	F.Intrinsic.String.Format(V.Screen.F_Dash!dtpFrom.Value,"M/D/YYYY",V.Local.sFrom)
+	F.Intrinsic.String.Format(V.Screen.F_Dash!dtpUntil.Value,"M/D/YYYY",V.Local.sUntil)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+		F.Intrinsic.String.Build("PO = '{0}' and Line = '{1}' and DateBatch <= #{2}# and DateBatch >= #{3}#",V.DataTable.dtPRJP(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.DataTable.dtPRJP(V.Local.iIndex(V.Local.iC)).VALUE2!FieldValTrim,V.Local.sUntil,V.Local.sFrom,V.Local.sFilter)
+		F.Data.DataView.Create("dtGRN","dvGRN",22,V.Local.sFilter,"")
+		F.Data.DataView.ToDataTable("dtGRN","dvGRN","dtTemp",True)
+		F.Data.DataTable.Merge("dtTemp","dtVGRN",True,1)
+		F.Data.DataTable.Close("dtTemp")
+		F.Data.DataView.Close("dtGRN","dvGRN")
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Dash.GsGCGRN.AddGridviewFromDatatable("gvGRN","dtVGRN")
+Gui.F_Dash.GsGCGRN.MainView("gvGRN")
+
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","ShowGroupPanel",True)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","AllowSort",True)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","AllowFilter",True)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCGRN.SetGridviewProperty("gvGRN","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","POR","Visible",False)
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","PO","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Line","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateReceived","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateBatch","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Part","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Description","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Qty","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","UM","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Cost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Extension","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","PO","CellHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Line","CellHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateReceived","CellHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateBatch","CellHAlignment","Center")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","UM","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","PO","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Line","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateReceived","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateBatch","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Part","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Description","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Qty","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","UM","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Cost","HeaderFontBold",True)
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Extension","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","PO","Caption","PO")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Line","Caption","Line")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateReceived","Caption","Received Date")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateBatch","Caption","Batch Date")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Part","Caption","Part")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Description","Caption","Description")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Qty","Caption","Quantity")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Cost","Caption","Cost")
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","PO","MinWidth","70")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Line","MinWidth","60")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateReceived","MinWidth","120")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateBatch","MinWidth","120")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Part","MinWidth","120")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Description","MinWidth","220")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Qty","MinWidth","110")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","UM","MinWidth","40")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Cost","MinWidth","110")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Extension","MinWidth","110")
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Qty","DisplayCustomNumeric","##,###,##0.00000")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Cost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","Extension","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateReceived","DisplayCustomDatetime","d")
+Gui.F_Dash.GsGCGRN.SetColumnProperty("gvGRN","DateBatch","DisplayCustomDatetime","d")
+
+Gui.F_Dash.GsGCGRN.AddSummaryItem("gvGRN","Extension","GRNSUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadGRNDetail.End
+
+Program.Sub.LoadJobDetail.Start
+V.Local.sFilter.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVWO.Exists)
+	F.Intrinsic.Control.If(V.DataView.dtVWO!dvVWO.Exists)
+		F.Data.DataView.Close("dtVWO","dvVWO")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtVWO")
+F.Intrinsic.Control.EndIf
+
+'Load WO for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataView.Create("dtPRJJ","dvWO",22,V.Local.sFilter,"VALUE ASC, VALUE2 ASC")
+
+F.Data.DataView.ToDataTable("dtPRJJ","dvWO","dtVWO",True)
+F.Data.DataView.Close("dtPRJJ","dvWO")
+F.Data.DataTable.AddColumn("dtVWO","Material","Float")
+F.Data.DataTable.AddColumn("dtVWO","Labor","Float")
+F.Data.DataTable.AddColumn("dtVWO","Overhead","Float")
+F.Data.DataTable.AddExpressionColumn("dtVWO","TotalCost","Float","Material+Labor+Overhead")
+F.Data.DataTable.AddColumn("dtVWO","Variance","Float")
+F.Data.DataTable.AddColumn("dtVWO","LateCost","Float")
+
+'Retrieve all values to complete the grid
+F.Data.Dictionary.CreateFromDataTable("dicWO","dtMat","PK","Cost")
+F.Data.Dictionary.SetDefaultReturn("dicWO",0)
+F.Data.DataTable.FillFromDictionary("dtVWO","dicWO","PK","Material")
+F.Data.Dictionary.Close("dicWO")
+
+F.Data.Dictionary.CreateFromDataTable("dicWO","dtLOH","PK","Labor")
+F.Data.Dictionary.SetDefaultReturn("dicWO",0)
+F.Data.DataTable.FillFromDictionary("dtVWO","dicWO","PK","Labor")
+F.Data.Dictionary.Close("dicWO")
+
+F.Data.Dictionary.CreateFromDataTable("dicWO","dtLOH","PK","Overhead")
+F.Data.Dictionary.SetDefaultReturn("dicWO",0)
+F.Data.DataTable.FillFromDictionary("dtVWO","dicWO","PK","Overhead")
+F.Data.Dictionary.Close("dicWO")
+
+F.Data.Dictionary.CreateFromDataTable("dicWO","dtVar","PK","Cost")
+F.Data.Dictionary.SetDefaultReturn("dicWO",0)
+F.Data.DataTable.FillFromDictionary("dtVWO","dicWO","PK","Variance")
+F.Data.Dictionary.Close("dicWO")
+
+F.Data.Dictionary.CreateFromDataTable("dicWO","dtLate","PK","Cost")
+F.Data.Dictionary.SetDefaultReturn("dicWO",0)
+F.Data.DataTable.FillFromDictionary("dtVWO","dicWO","PK","LateCost")
+F.Data.Dictionary.Close("dicWO")
+
+F.Data.DataView.Create("dtVWO","dvVWO",22,"","")
+
+Gui.F_Dash.GsGCWO.AddGridviewFromDataview("gvWO","dtVWO","dvVWO")
+Gui.F_Dash.GsGCWO.MainView("gvWO")
+
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","ShowGroupPanel",True)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","AllowSort",True)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","AllowFilter",True)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCWO.SetGridviewProperty("gvWO","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","PK","Visible",False)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","ID","Visible",False)
+
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE2","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Material","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Labor","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Overhead","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","TotalCost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Variance","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","LateCost","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE","CellHAlignment","Center")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE2","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE","HeaderFontBold",True)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE2","HeaderFontBold",True)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Material","HeaderFontBold",True)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Labor","HeaderFontBold",True)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Overhead","HeaderFontBold",True)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","TotalCost","HeaderFontBold",True)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Variance","HeaderFontBold",True)
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","LateCost","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE","Caption","WO")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE2","Caption","Suffix")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Material","Caption","Material")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Labor","Caption","Labor")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Overhead","Caption","Overhead")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","TotalCost","Caption","Total Cost")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Variance","Caption","Variance")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","LateCost","Caption","Late Cost")
+
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE","MinWidth","70")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","VALUE2","MinWidth","60")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Material","MinWidth","110")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Labor","MinWidth","110")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Overhead","MinWidth","110")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","TotalCost","MinWidth","110")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Variance","MinWidth","110")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","LateCost","MinWidth","110")
+
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Material","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Labor","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Overhead","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","TotalCost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","Variance","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCWO.SetColumnProperty("gvWO","LateCost","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCWO.AddSummaryItem("gvWO","Material","MATSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCWO.AddSummaryItem("gvWO","Labor","LABSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCWO.AddSummaryItem("gvWO","Overhead","OHSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCWO.AddSummaryItem("gvWO","TotalCost","JOBSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCWO.AddSummaryItem("gvWO","Variance","JOBVARSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCWO.AddSummaryItem("gvWO","LateCost","JOBLATESUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadJobDetail.End
+
+Program.Sub.LoadAPIDetail.Start
+V.Local.dateDefault.Declare
+V.Local.sFilter.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVAP.Exists)
+	F.Intrinsic.Control.If(V.DataView.dtVAP!dvVAP.Exists)
+		F.Data.DataView.Close("dtVAP","dvVAP")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtVAP")
+F.Intrinsic.Control.EndIf
+
+'Load AP Invoice for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataView.Create("dtPRJI","dvAP",22,V.Local.sFilter,"VALUE ASC")
+
+F.Data.DataView.ToDataTable("dtPRJI","dvAP","dtVAP",True)
+F.Data.DataView.Close("dtPRJI","dvAP")
+'F.Data.DataTable.AddColumn("dtVAP","Vendor","String")
+F.Data.DataTable.AddColumn("dtVAP","VendorName","String")
+F.Data.DataTable.AddColumn("dtVAP","DateInvoice","Date")
+F.Data.DataTable.AddColumn("dtVAP","Batch","String")
+F.Data.DataTable.AddColumn("dtVAP","BatchLine","String")
+F.Data.DataTable.AddColumn("dtVAP","Amount","Float")
+
+'Retrieve all values to complete the grid
+'F.Data.Dictionary.CreateFromDataTable("dicAP","dtAPI","Invoice","Vendor")
+'F.Data.Dictionary.SetDefaultReturn("dicAP","**********EMPTY**********")
+'F.Data.DataTable.FillFromDictionary("dtVAP","dicAP","VALUE","Vendor")
+'F.Data.Dictionary.Close("dicAP")
+
+F.Data.Dictionary.CreateFromSQL("dicVendor","conx","select vendor, name_vendor from v_Vendor_master where vendor <> ''")
+F.Data.Dictionary.SetDefaultReturn("dicVendor","")
+F.Data.DataTable.FillFromDictionary("dtVAP","dicVendor","VALUE2","VendorName")
+F.Data.Dictionary.Close("dicVendor")
+
+F.Data.Dictionary.CreateFromDataTable("dicAP","dtAPI","PK","DateInvoice")
+F.Intrinsic.Date.ConvertDString("29991231","YYYYMMDD",V.Local.dateDefault)
+F.Data.Dictionary.SetDefaultReturn("dicAP",V.Local.dateDefault)
+F.Data.DataTable.FillFromDictionary("dtVAP","dicAP","PK","DateInvoice")
+F.Data.Dictionary.Close("dicAP")
+
+F.Data.Dictionary.CreateFromDataTable("dicAP","dtAPI","PK","Amount")
+F.Data.Dictionary.SetDefaultReturn("dicAP",0)
+F.Data.DataTable.FillFromDictionary("dtVAP","dicAP","PK","Amount")
+F.Data.Dictionary.Close("dicAP")
+
+F.Data.Dictionary.CreateFromDataTable("dicAP","dtAPI","PK","Batch")
+F.Data.Dictionary.SetDefaultReturn("dicAP","")
+F.Data.DataTable.FillFromDictionary("dtVAP","dicAP","PK","Batch")
+F.Data.Dictionary.Close("dicAP")
+
+F.Data.Dictionary.CreateFromDataTable("dicAP","dtAPI","PK","BatchLine")
+F.Data.Dictionary.SetDefaultReturn("dicAP","")
+F.Data.DataTable.FillFromDictionary("dtVAP","dicAP","PK","BatchLine")
+F.Data.Dictionary.Close("dicAP")
+
+F.Data.DataView.Create("dtVAP","dvVAP",22,"VALUE2 <> ''","VALUE2 ASC, VALUE ASC")
+
+Gui.F_Dash.GsGCAP.AddGridviewFromDataview("gvAP","dtVAP","dvVAP")
+Gui.F_Dash.GsGCAP.MainView("gvAP")
+
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","ShowGroupPanel",True)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","AllowSort",True)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","AllowFilter",True)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCAP.SetGridviewProperty("gvAP","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","ID","Visible",False)
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","PK","Visible",False)
+
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE2","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VendorName","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","DateInvoice","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Amount","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Batch","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","BatchLine","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE","CellHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE2","CellHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","DateInvoice","CellHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Batch","CellHAlignment","Center")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","BatchLine","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE","HeaderFontBold",True)
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE2","HeaderFontBold",True)
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VendorName","HeaderFontBold",True)
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","DateInvoice","HeaderFontBold",True)
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Amount","HeaderFontBold",True)
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Batch","HeaderFontBold",True)
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","BatchLine","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE","Caption","Invoice No.")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE2","Caption","Vendor")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VendorName","Caption","Vendor Name")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","DateInvoice","Caption","Invoice Date")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Batch","Caption","Batch Line")
+
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE","MinWidth","100")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VALUE2","MinWidth","70")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","VendorName","MinWidth","200")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","DateInvoice","MinWidth","110")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Amount","MinWidth","110")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Batch","MinWidth","60")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","BatchLine","MinWidth","70")
+
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","Amount","DisplayCustomNumeric","##,###,##0.00000")
+Gui.F_Dash.GsGCAP.SetColumnProperty("gvAP","DateInvoice","DisplayCustomDatetime","d")
+
+Gui.F_Dash.GsGCAP.AddSummaryItem("gvAP","Amount","APINVSUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadAPIDetail.End
+
+Program.Sub.LoadGLDetail.Start
+V.Local.dateDefault.Declare
+V.Local.iBatchLine.Declare
+V.Local.iC.Declare
+V.Local.iIndex.Declare
+V.Local.sBatch.Declare
+V.Local.sCutoff.Declare
+V.Local.sFilter.Declare
+V.Local.sPostDate.Declare
+V.Local.sRet.Declare
+V.Local.sBatchLine.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVGL.Exists)
+	F.Data.DataTable.Close("dtVGL")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Create("dtVGL",True)
+F.Data.DataTable.AddColumn("dtVGL","Batch","String","")
+F.Data.DataTable.AddColumn("dtVGL","Line","String","")
+F.Data.DataTable.AddColumn("dtVGL","PostDate","String","")
+F.Data.DataTable.AddColumn("dtVGL","PostDateSQL","Date")
+F.Data.DataTable.AddColumn("dtVGL","GLAccount","String","")
+F.Data.DataTable.AddColumn("dtVGL","Amount","Float")
+
+'Load GRN for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Select("dtPRJF",V.Local.sFilter,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+		F.Intrinsic.String.Split(V.DataTable.dtPRJF(V.Local.iIndex(V.Local.iC)).VALUE!FieldVal,"*!*",V.Local.sBatch)
+		V.Local.iBatchLine.Set(V.Local.sBatch(1))
+		V.Local.sBatchLine.Set(V.Local.sBatch(1))
+		V.Local.sBatch.Set(V.Local.sBatch(0))
+		F.Intrinsic.String.Split(V.DataTable.dtPRJF(V.Local.iIndex(V.Local.iC)).VALUE2!FieldValTrim,"-",V.Local.sPostDate)
+		F.Intrinsic.String.Concat(V.Local.sPostDate(0).trim,V.Local.sPostDate(1).trim,V.Local.sPostDate(2).trim,V.Local.sPostDate)
+		
+		F.Intrinsic.String.Build("Batch = '{0}' and Line = '{1}' and PostDate = '{2}'",V.Local.sBatch.Trim,V.Local.sBatchLine,V.Local.sPostDate.Trim,V.Local.sFilter)
+'		f.Intrinsic.Debug.ShowCallerInfo		
+		F.Data.DataView.Create("dtGL","dvGL",22,V.Local.sFilter,"")
+		F.Data.DataView.ToDataTable("dtGL","dvGL","dtTemp",True)
+		F.Data.DataTable.Merge("dtTemp","dtVGL",True,1)
+		F.Data.DataTable.Close("dtTemp")
+		F.Data.DataView.Close("dtGL","dvGL")
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+Gui.F_Dash.GsGCGL.AddGridviewFromDatatable("gvGL","dtVGL")
+Gui.F_Dash.GsGCGL.MainView("gvGL")
+
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","ShowGroupPanel",True)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","AllowSort",True)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","AllowFilter",True)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCGL.SetGridviewProperty("gvGL","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","PostDate","Visible",False)
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Batch","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Line","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","PostDateSQL","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","GLAccount","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Amount","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Batch","CellHAlignment","Center")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Line","CellHAlignment","Center")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","PostDateSQL","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Batch","HeaderFontBold",True)
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Line","HeaderFontBold",True)
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","PostDateSQL","HeaderFontBold",True)
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","GLAccount","HeaderFontBold",True)
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Amount","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","PostDateSQL","Caption","Post Date")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","GLAccount","Caption","GL Account")
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Batch","MinWidth","70")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Line","MinWidth","60")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","PostDateSQL","MinWidth","110")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","GLAccount","MinWidth","150")
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Amount","MinWidth","110")
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","Amount","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCGL.SetColumnProperty("gvGL","PostDateSQL","DisplayCustomDatetime","d")
+
+Gui.F_Dash.GsGCGL.AddSummaryItem("gvGL","Amount","GLAMTSUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadGLDetail.End
+
+Program.Sub.LoadSODetail.Start
+V.Local.i1.Declare
+V.Local.iC.Declare
+V.Local.iIndex.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVSO.Exists)
+	F.Intrinsic.Control.If(V.DataView.dtVSO!dvVSO.Exists)
+		F.Data.DataView.Close("dtVSO","dvVSO")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtVSO")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Clone("dtSO","dtVSO",True)
+
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Select("dtPRJO",V.Local.sFilter,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+		F.Intrinsic.String.Build("SO = '{0}'",V.DataTable.dtPRJO(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.Local.sFilter)
+		
+		F.Data.DataView.Create("dtSO","dvSO",22,V.Local.sFilter,"Line ASC")
+		F.Data.DataView.ToDataTable("dtSO","dvSO","dtTemp",True)
+		F.Data.DataView.Close("dtSO","dvSO")
+		F.Data.DataTable.Merge("dtTemp","dtVSO",True,1)
+		F.Data.DataTable.Close("dtTemp")
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+'Load open SO for the selected project number
+'F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+'F.Data.DataView.Create("dtPRJO","dvSO",22,V.Local.sFilter,"VALUE ASC")
+
+'F.Data.DataTable.Create("dtVSO",True)
+'F.Data.DataTable.AddColumn("dtVSO","SO","String")
+'F.Data.DataTable.AddColumn("dtVSO","Line","String")
+'F.Data.DataTable.AddColumn("dtVSO","Part","String")
+'F.Data.DataTable.AddColumn("dtVSO","Description","String")
+'F.Data.DataTable.AddColumn("dtVSO","Qty","Float")
+'F.Data.DataTable.AddColumn("dtVSO","Price","Float")
+
+
+'F.Data.DataView.ToDataTable("dtPRJO","dvSO","dtVSO",True)
+'F.Data.DataView.Close("dtPRJO","dvSO")
+'F.Data.DataTable.AddColumn("dtVSO","Line","String")
+'F.Data.DataTable.AddColumn("dtVSO","Part","String")
+'F.Data.DataTable.AddColumn("dtVSO","Description","String")
+'F.Data.DataTable.AddColumn("dtVSO","Qty","Float")
+'F.Data.DataTable.AddColumn("dtVSO","Price","Float")
+
+''Retrieve all values to complete the grid
+'F.Data.Dictionary.CreateFromDataTable("dicSO","dtSO","SO","Line")
+'F.Data.Dictionary.SetDefaultReturn("dicSO","**********EMPTY**********")
+'F.Data.DataTable.FillFromDictionary("dtVSO","dicSO","VALUE","Line")
+'F.Data.Dictionary.Close("dicSO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicSO","dtSO","SO","Part")
+'F.Data.Dictionary.SetDefaultReturn("dicSO","**********EMPTY**********")
+'F.Data.DataTable.FillFromDictionary("dtVSO","dicSO","VALUE","Part")
+'F.Data.Dictionary.Close("dicSO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicSO","dtSO","SO","Description")
+'F.Data.Dictionary.SetDefaultReturn("dicSO","**********EMPTY**********")
+'F.Data.DataTable.FillFromDictionary("dtVSO","dicSO","VALUE","Description")
+'F.Data.Dictionary.Close("dicSO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicSO","dtSO","SO","Qty")
+'F.Data.Dictionary.SetDefaultReturn("dicSO",0)
+'F.Data.DataTable.FillFromDictionary("dtVSO","dicSO","VALUE","Qty")
+'F.Data.Dictionary.Close("dicSO")
+
+'F.Data.Dictionary.CreateFromDataTable("dicSO","dtSO","SO","Price")
+'F.Data.Dictionary.SetDefaultReturn("dicSO",0)
+'F.Data.DataTable.FillFromDictionary("dtVSO","dicSO","VALUE","Price")
+'F.Data.Dictionary.Close("dicSO")
+
+'F.Data.DataTable.AddExpressionColumn("dtVSO","Extension","Float","Qty*Price")
+
+'F.Data.DataView.Create("dtVSO","dvVSO",22,"Line <> '**********EMPTY**********'","VALUE ASC, Line ASC")
+
+Gui.F_Dash.GsGCSO.AddGridviewFromDatatable("gvSO","dtVSO")
+Gui.F_Dash.GsGCSO.MainView("gvSO")
+
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","ShowGroupPanel",True)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","AllowSort",True)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","AllowFilter",True)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCSO.SetGridviewProperty("gvSO","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Cost","Visible",False)
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","TotalCost","Visible",False)
+
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","SO","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Line","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Part","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Description","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Qty","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Price","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Extension","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","SO","CellHAlignment","Center")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Line","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","SO","HeaderFontBold",True)
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Line","HeaderFontBold",True)
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Part","HeaderFontBold",True)
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Description","HeaderFontBold",True)
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Qty","HeaderFontBold",True)
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Price","HeaderFontBold",True)
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Extension","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","SO","Caption","SO")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Line","Caption","Line")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Part","Caption","Part")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Description","Caption","Description")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Qty","Caption","Quantity")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Price","Caption","Price")
+
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","SO","MinWidth","70")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Line","MinWidth","60")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Part","MinWidth","120")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Description","MinWidth","220")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Qty","MinWidth","110")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Price","MinWidth","110")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Extension","MinWidth","110")
+
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Qty","DisplayCustomNumeric","##,###,##0.00000")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Price","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCSO.SetColumnProperty("gvSO","Extension","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCSO.AddSummaryItem("gvSO","Extension","OPENSOSUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadSODetail.End
+
+Program.Sub.LoadShipDetail.Start
+V.Local.dateDefault.Declare
+V.Local.iC.Declare
+V.Local.iIndex.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVShip.Exists)
+	F.Intrinsic.Control.If(V.DataView.dtVShip!dvVShip.Exists)
+		F.Data.DataView.Close("dtVShip","dvVShip")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtVShip")
+F.Intrinsic.Control.EndIf
+
+'Load open SO for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Select("dtPRJO",V.Local.sFilter,V.Local.sRet)
+
+F.Data.DataTable.Create("dtVShip",True)
+F.Data.DataTable.AddColumn("dtVShip","SO","String")
+F.Data.DataTable.AddColumn("dtVShip","Line","String")
+F.Data.DataTable.AddColumn("dtVShip","PackingList","String")
+F.Data.DataTable.AddColumn("dtVShip","ShipDate","Date")
+F.Data.DataTable.AddColumn("dtVShip","Part","String")
+F.Data.DataTable.AddColumn("dtVShip","Description","String")
+F.Data.DataTable.AddColumn("dtVShip","Qty","Float")
+F.Data.DataTable.AddColumn("dtVShip","Price","Float")
+F.Data.DataTable.AddColumn("dtVShip","Cost","Float")
+F.Data.DataTable.AddColumn("dtVShip","Extension","Float")
+F.Data.DataTable.AddColumn("dtVShip","TotalCost","Float")
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+		F.Intrinsic.String.Build("SO = '{0}'",V.DataTable.dtPRJO(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.Local.sFilter)
+		F.Data.DataView.Create("dtShip","dvSO",22,V.Local.sFilter,"")
+		F.Data.DataView.ToDataTable("dtShip","dvSO","dtTemp",True)
+		F.Data.DataTable.Merge("dtTemp","dtVShip",True,1)
+		F.Data.DataTable.Close("dtTemp")
+		F.Data.DataView.Close("dtShip","dvSO")
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.Create("dtVShip","dvVShip",22,"","SO ASC, Line ASC")
+
+Gui.F_Dash.GsGCShip.AddGridviewFromDataview("gvShip","dtVShip","dvVShip")
+Gui.F_Dash.GsGCShip.MainView("gvShip")
+
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","ShowGroupPanel",True)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","AllowSort",True)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","AllowFilter",True)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCShip.SetGridviewProperty("gvShip","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","SO","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Line","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","PackingList","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","ShipDate","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Part","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Description","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Qty","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Price","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Cost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Extension","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","TotalCost","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","SO","CellHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Line","CellHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","PackingList","CellHAlignment","Center")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","ShipDate","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","SO","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Line","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","PackingList","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","ShipDate","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Part","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Description","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Qty","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Price","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Cost","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Extension","HeaderFontBold",True)
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","TotalCost","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","PackingList","Caption","DO")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Line","Caption","Line")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","ShipDate","Caption","Ship Date")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Description","Caption","Description")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Qty","Caption","Quantity")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","TotalCost","Caption","Total Cost")
+
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","SO","MinWidth","70")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Line","MinWidth","60")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","PackingList","MinWidth","70")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","ShipDate","MinWidth","110")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Part","MinWidth","120")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Description","MinWidth","220")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Qty","MinWidth","110")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Price","MinWidth","110")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Cost","MinWidth","110")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Extension","MinWidth","110")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","TotalCost","MinWidth","110")
+
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Qty","DisplayCustomNumeric","##,###,##0.00000")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Price","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Cost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","Extension","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","TotalCost","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCShip.SetColumnProperty("gvShip","ShipDate","DisplayCustomDatetime","d")
+
+Gui.F_Dash.GsGCShip.AddSummaryItem("gvShip","Extension","OPENSSHIPSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCShip.AddSummaryItem("gvShip","TotalCost","COSTSHIPSUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadShipDetail.End
+
+Program.Sub.SetContextMenus.Start
+Gui.F_Dash..ContextMenuCreate("CTXPRJ")
+Gui.F_Dash.GsGCList.ContextMenuAttach("CTXPRJ")
+Gui.F_Dash..ContextMenuAddItem("CTXPRJ","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXPRJ","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXPR")
+Gui.F_Dash.GsGCPR.ContextMenuAttach("CTXPR")
+Gui.F_Dash..ContextMenuAddItem("CTXPR","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXPR","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXPO")
+Gui.F_Dash.GsGCPO.ContextMenuAttach("CTXPO")
+Gui.F_Dash..ContextMenuAddItem("CTXPO","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXPO","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXGRN")
+Gui.F_Dash.GsGCGRN.ContextMenuAttach("CTXGRN")
+Gui.F_Dash..ContextMenuAddItem("CTXGRN","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXGRN","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXWO")
+Gui.F_Dash.GsGCWO.ContextMenuAttach("CTXWO")
+Gui.F_Dash..ContextMenuAddItem("CTXWO","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXWO","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXAP")
+Gui.F_Dash.GsGCAP.ContextMenuAttach("CTXAP")
+Gui.F_Dash..ContextMenuAddItem("CTXAP","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXAP","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXGL")
+Gui.F_Dash.GsGCGL.ContextMenuAttach("CTXGL")
+Gui.F_Dash..ContextMenuAddItem("CTXGL","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXGL","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXSO")
+Gui.F_Dash.GsGCSO.ContextMenuAttach("CTXSO")
+Gui.F_Dash..ContextMenuAddItem("CTXSO","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXSO","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXSHIP")
+Gui.F_Dash.GsGCShip.ContextMenuAttach("CTXSHIP")
+Gui.F_Dash..ContextMenuAddItem("CTXSHIP","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXSHIP","Export","ContextMenuExport")
+
+Gui.F_Dash..ContextMenuCreate("CTXINV")
+Gui.F_Dash.GsGCInvoice.ContextMenuAttach("CTXINV")
+Gui.F_Dash..ContextMenuAddItem("CTXINV","Export",0,"Export")
+Gui.F_Dash..ContextMenuSetItemEventHandler("CTXINV","Export","ContextMenuExport")
+Program.Sub.SetContextMenus.End
+
+Program.Sub.ContextMenuExport.Start
+V.Local.bExist.Declare
+V.Local.sControl.Declare
+V.Local.sFilename.Declare
+V.Local.sRet.Declare
+
+'Export every grid to csv or excel
+F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+	F.Intrinsic.Control.Case("CTXPRJ")
+		V.Local.sControl.Set("GsGCList")
+	F.Intrinsic.Control.Case("CTXPR")
+		V.Local.sControl.Set("GsGCPR")
+	F.Intrinsic.Control.Case("CTXPO")
+		V.Local.sControl.Set("GsGCPO")
+	F.Intrinsic.Control.Case("CTXGRN")
+		V.Local.sControl.Set("GsGCGRN")
+	F.Intrinsic.Control.Case("CTXWO")
+		V.Local.sControl.Set("GsGCWO")
+	F.Intrinsic.Control.Case("CTXAP")
+		V.Local.sControl.Set("GsGCAP")
+	F.Intrinsic.Control.Case("CTXGL")
+		V.Local.sControl.Set("GsGCGL")
+	F.Intrinsic.Control.Case("CTXSO")
+		V.Local.sControl.Set("GsGCSO")
+	F.Intrinsic.Control.Case("CTXSHIP")
+		V.Local.sControl.Set("GsGCShip")
+	F.Intrinsic.Control.Case("CTXINV")
+		V.Local.sControl.Set("GsGCInvoice")
+F.Intrinsic.Control.EndSelect
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFilename)
+	F.Intrinsic.Control.If(V.Local.sFileName,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFilename,".xlsx",V.Local.sFilename)
+		Gui.F_Dash.[V.Local.sControl].Export(V.Local.sFilename,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFilename,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFilename)
+	F.Intrinsic.Control.If(V.Local.sFileName,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFilename,".csv",V.Local.sFilename)
+		Gui.F_Dash.[V.Local.sControl].Export(V.Local.sFilename,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFilename,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.ContextMenuExport.End
+
+Program.Sub.LoadInvoiceDetail.Start
+V.Local.dateDefault.Declare
+V.Local.iC.Declare
+V.Local.iIndex.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtVInvc.Exists)
+	F.Intrinsic.Control.If(V.DataView.dtVInvc!dvVInvc.Exists)
+		F.Data.DataView.Close("dtVInvc","dvVInvc")
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("dtVInvc")
+F.Intrinsic.Control.EndIf
+
+'Load open SO for the selected project number
+F.Intrinsic.String.Build("ID = {0}",V.DataTable.dtPRJ(V.Args.RowIndex).ID!FieldVal,V.Local.sFilter)
+F.Data.DataTable.Select("dtPRJO",V.Local.sFilter,V.Local.sRet)
+
+F.Data.DataTable.Create("dtVInvc",True)
+F.Data.DataTable.AddColumn("dtVInvc","SO","String")
+F.Data.DataTable.AddColumn("dtVInvc","Line","String")
+F.Data.DataTable.AddColumn("dtVInvc","Invoice","String")
+F.Data.DataTable.AddColumn("dtVInvc","InvoiceDate","Date")
+F.Data.DataTable.AddColumn("dtVInvc","PackingList","String")
+F.Data.DataTable.AddColumn("dtVInvc","ShipDate","Date")
+F.Data.DataTable.AddColumn("dtVInvc","Part","String")
+F.Data.DataTable.AddColumn("dtVInvc","Description","String")
+F.Data.DataTable.AddColumn("dtVInvc","Qty","Float")
+F.Data.DataTable.AddColumn("dtVInvc","Price","Float")
+F.Data.DataTable.AddColumn("dtVInvc","Cost","Float")
+F.Data.DataTable.AddColumn("dtVInvc","Extension","Float")
+F.Data.DataTable.AddColumn("dtVInvc","TotalCost","Float")
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.iIndex)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iIndex.UBound,1)
+		F.Intrinsic.String.Build("SO = '{0}'",V.DataTable.dtPRJO(V.Local.iIndex(V.Local.iC)).VALUE!FieldValTrim,V.Local.sFilter)
+		F.Data.DataView.Create("dtInvoiced","dvSO",22,V.Local.sFilter,"")
+		F.Data.DataView.ToDataTable("dtInvoiced","dvSO","dtTemp",True)
+		F.Data.DataTable.Merge("dtTemp","dtVInvc",True,1)
+		F.Data.DataTable.Close("dtTemp")
+		F.Data.DataView.Close("dtInvoiced","dvSO")
+	F.Intrinsic.Control.Next(V.Local.iC)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.Create("dtVInvc","dvVInvc",22,"","SO ASC, Line ASC")
+
+Gui.F_Dash.GsGCInvoice.AddGridviewFromDataview("gvInvc","dtVInvc","dvVInvc")
+Gui.F_Dash.GsGCInvoice.MainView("gvInvc")
+
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","ShowGroupPanel",True)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","AllowSort",True)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","AllowFilter",True)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","OptionsFindAlwaysVisible",True)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","OptionsDetailShowDetailTabs",False)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","OptionsViewShowGroupPanel",True)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","OptionsFilterUseNewCustomFilterDialog",True)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","OptionsViewColumnAutoWidth",False)
+Gui.F_Dash.GsGCInvoice.SetGridviewProperty("gvInvc","OptionsViewRowAutoHeight",true)
+
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","SO","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Line","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Invoice","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","InvoiceDate","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","PackingList","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","ShipDate","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Part","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Description","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Qty","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Price","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Cost","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Extension","HeaderHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","TotalCost","HeaderHAlignment","Center")
+
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","SO","CellHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Line","CellHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Invoice","CellHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","InvoiceDate","CellHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","PackingList","CellHAlignment","Center")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","ShipDate","CellHAlignment","Center")
+
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","SO","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Line","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Invoice","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","InvoiceDate","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","PackingList","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","ShipDate","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Part","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Description","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Qty","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Price","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Cost","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Extension","HeaderFontBold",True)
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","TotalCost","HeaderFontBold",True)
+
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","PackingList","Caption","DO")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Line","Caption","Line")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","InvoiceDate","Caption","Inv. Date")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","ShipDate","Caption","Ship Date")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Description","Caption","Description")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Qty","Caption","Quantity")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","TotalCost","Caption","Total Cost")
+
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","SO","MinWidth","70")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Line","MinWidth","60")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Invoice","MinWidth","70")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","InvoiceDate","MinWidth","110")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","PackingList","MinWidth","70")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","ShipDate","MinWidth","110")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Part","MinWidth","120")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Description","MinWidth","220")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Qty","MinWidth","110")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Price","MinWidth","110")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Cost","MinWidth","110")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Extension","MinWidth","110")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","TotalCost","MinWidth","110")
+
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Qty","DisplayCustomNumeric","##,###,##0.00000")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Price","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Cost","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","Extension","DisplayCustomNumeric","##,###,##0.00")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","TotalCost","DisplayCustomNumeric","##,###,##0.00")
+
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","ShipDate","DisplayCustomDatetime","d")
+Gui.F_Dash.GsGCInvoice.SetColumnProperty("gvInvc","InvoiceDate","DisplayCustomDatetime","d")
+
+Gui.F_Dash.GsGCInvoice.AddSummaryItem("gvInvc","Extension","OPENSINVCSUM","SUM","","","##,###,##0.00")
+Gui.F_Dash.GsGCInvoice.AddSummaryItem("gvInvc","TotalCost","COSTINVCSUM","SUM","","","##,###,##0.00")
+Program.Sub.LoadInvoiceDetail.End
+
+Program.Sub.GLSalesAccount.Start
+V.Local.i1.Declare
+
+F.Data.DataTable.CreateFromSQL("dtSales","conx","select gl_account as Account from v_gl_master where user_1 = 'Sales'",True)
+
+F.Intrinsic.Control.If(V.DataTable.dtSales.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtSales.RowCount--,1)
+		F.Intrinsic.Control.If(V.Global.sSalesAccount.Trim,=,"")
+			F.Intrinsic.String.Build("(gl_account = '{0}'",V.DataTable.dtSales(V.Local.i1).Account!FieldValTrim,V.Global.sSalesAccount)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{1} or gl_account = '{0}'",V.DataTable.dtSales(V.Local.i1).Account!FieldValTrim,V.Global.sSalesAccount,V.Global.sSalesAccount)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Intrinsic.String.Concat(V.Global.sSalesAccount,")",V.Global.sSalesAccount)
+F.Intrinsic.Control.Else
+	V.Global.sSalesAccount.Set("")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Close("dtSales")
+Program.Sub.GLSalesAccount.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_PRJ_DASH$}$RRC$}$7/3/2014$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Table Required: GAB_PRJ_DATAS
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20230810104550568$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0Tk6dF++oqGzYdyjonuTPACNH8vDMXH1tOAaBNcflpAmQ=
+Program.Sub.Comments.End
