@@ -1,0 +1,3533 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_Dash..create
+Gui.F_Dash..caption("Project Tracking")
+Gui.F_Dash..size(9405,9450)
+Gui.F_Dash..minx(0)
+Gui.F_Dash..miny(0)
+Gui.F_Dash..position(0,0)
+Gui.F_Dash..event(UnLoad,subEnd)
+Gui.F_Dash..forecolor(0)
+Gui.F_Dash..BackColor(-2147483633)
+Gui.F_Dash..mousepointer(0)
+Gui.F_Dash.frmPrj.create(frame)
+Gui.F_Dash.frmPrj.size(8985,900)
+Gui.F_Dash.frmPrj.position(120,15)
+Gui.F_Dash.txtPRJ.create(textbox,"",True,1215,300,0,100,470,False,0,Arial,8,-2147483643,1)
+Gui.F_Dash.txtPRJ.parent("frmPrj")
+Gui.F_Dash.txtPRJ.defaultvalue("")
+Gui.F_Dash.cmdPrjBrw.create(button)
+Gui.F_Dash.cmdPrjBrw.caption("^")
+Gui.F_Dash.cmdPrjBrw.size(330,315)
+Gui.F_Dash.cmdPrjBrw.position(7415,455)
+Gui.F_Dash.cmdPrjBrw.parent("frmPrj")
+Gui.F_Dash.cmdPrjBrw.event(Click,cmdprjbrw_click)
+Gui.F_Dash.cmdPrjBrw.defaultvalue("")
+Gui.F_Dash.cmdRefresh.create(button)
+Gui.F_Dash.cmdRefresh.caption("REFRESH")
+Gui.F_Dash.cmdRefresh.size(1095,555)
+Gui.F_Dash.cmdRefresh.position(7815,210)
+Gui.F_Dash.cmdRefresh.parent("frmPrj")
+Gui.F_Dash.cmdRefresh.event(Click,cmdrefresh_click)
+Gui.F_Dash.cmdRefresh.defaultvalue("")
+Gui.F_Dash.txtProjDesc.create(textbox,"",True,5085,300,0,1345,470,False,0,Arial,8,-2147483643,1)
+Gui.F_Dash.txtProjDesc.parent("frmPrj")
+Gui.F_Dash.txtProjDesc.maxLength(150)
+Gui.F_Dash.txtProjDesc.defaultvalue("")
+Gui.F_Dash.lblPrj.create(label,"Project:",True,1050,255,1,200,200,True,0,Arial,8,-2147483633,0)
+Gui.F_Dash.lblPrj.parent("frmPrj")
+Gui.F_Dash.lblPrj.defaultvalue("")
+Gui.F_Dash.lblDesc.create(label,"Description:",True,2850,255,1,1460,200,True,0,Arial,8,-2147483633,0)
+Gui.F_Dash.lblDesc.parent("frmPrj")
+Gui.F_Dash.lblDesc.defaultvalue("")
+Gui.F_Dash.lblStatus.create(label,"Status:",True,615,255,1,6530,200,True,0,Arial,8,-2147483633,0)
+Gui.F_Dash.lblStatus.parent("frmPrj")
+Gui.F_Dash.lblStatus.defaultvalue("")
+Gui.F_Dash.txtStat.create(textbox,"",True,945,300,0,6460,460,False,0,Arial,8,-2147483643,1)
+Gui.F_Dash.txtStat.parent("frmPrj")
+Gui.F_Dash.txtStat.defaultvalue("")
+Gui.F_Dash.frmOrder.create(frame)
+Gui.F_Dash.frmOrder.size(5310,975)
+Gui.F_Dash.frmOrder.position(100,1935)
+Gui.F_Dash.cmdOrderDASH.create(button)
+Gui.F_Dash.cmdOrderDASH.caption("SALES")
+Gui.F_Dash.cmdOrderDASH.size(1365,600)
+Gui.F_Dash.cmdOrderDASH.position(100,245)
+Gui.F_Dash.cmdOrderDASH.parent("frmOrder")
+Gui.F_Dash.cmdOrderDASH.fontname("Arial Black")
+Gui.F_Dash.cmdOrderDASH.event(Click,cmdorderdash_click)
+Gui.F_Dash.cmdOrderDASH.defaultvalue("")
+Gui.F_Dash.txtOrderLblSales.create(textbox,"Sales",True,1200,300,0,1500,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtOrderLblSales.parent("frmOrder")
+Gui.F_Dash.txtOrderLblSales.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtOrderLblSales.defaultvalue("")
+Gui.F_Dash.txtOrderLblCost.create(textbox,"Cost",True,1200,300,0,2695,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtOrderLblCost.parent("frmOrder")
+Gui.F_Dash.txtOrderLblCost.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtOrderLblCost.defaultvalue("")
+Gui.F_Dash.txtOrderLblMargin.create(textbox,"Margin",True,1200,300,0,3900,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtOrderLblMargin.parent("frmOrder")
+Gui.F_Dash.txtOrderLblMargin.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtOrderLblMargin.defaultvalue("")
+Gui.F_Dash.txtOrderTxtSales.create(textbox,"",True,1200,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtOrderTxtSales.parent("frmOrder")
+Gui.F_Dash.txtOrderTxtSales.defaultvalue("")
+Gui.F_Dash.txtOrderTxtSales.controlgroup(1)
+Gui.F_Dash.txtOrderTxtCost.create(textbox,"",True,1200,300,0,2690,555,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtOrderTxtCost.parent("frmOrder")
+Gui.F_Dash.txtOrderTxtCost.defaultvalue("")
+Gui.F_Dash.txtOrderTxtCost.controlgroup(1)
+Gui.F_Dash.txtOrderTxtMargin.create(textbox,"",True,1200,300,0,3900,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtOrderTxtMargin.parent("frmOrder")
+Gui.F_Dash.txtOrderTxtMargin.defaultvalue("")
+Gui.F_Dash.txtOrderTxtMargin.controlgroup(1)
+Gui.F_Dash.frmQuote.create(frame)
+Gui.F_Dash.frmQuote.size(5310,975)
+Gui.F_Dash.frmQuote.position(100,940)
+Gui.F_Dash.cmdQuoteDASH.create(button)
+Gui.F_Dash.cmdQuoteDASH.caption("QUOTE")
+Gui.F_Dash.cmdQuoteDASH.size(1365,600)
+Gui.F_Dash.cmdQuoteDASH.position(100,245)
+Gui.F_Dash.cmdQuoteDASH.parent("frmQuote")
+Gui.F_Dash.cmdQuoteDASH.fontname("Arial Black")
+Gui.F_Dash.cmdQuoteDASH.event(Click,cmdquotedash_click)
+Gui.F_Dash.cmdQuoteDASH.defaultvalue("")
+Gui.F_Dash.txtQteLblSales.create(textbox,"Sales",True,1200,300,0,1500,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtQteLblSales.parent("frmQuote")
+Gui.F_Dash.txtQteLblSales.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtQteLblSales.defaultvalue("")
+Gui.F_Dash.txtQteLblCost.create(textbox,"Cost",True,1200,300,0,2695,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtQteLblCost.parent("frmQuote")
+Gui.F_Dash.txtQteLblCost.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtQteLblCost.defaultvalue("")
+Gui.F_Dash.txtQteLblMargin.create(textbox,"Margin",True,1200,300,0,3900,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtQteLblMargin.parent("frmQuote")
+Gui.F_Dash.txtQteLblMargin.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtQteLblMargin.defaultvalue("")
+Gui.F_Dash.txtQteTxtSales.create(textbox,"",True,1200,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtQteTxtSales.parent("frmQuote")
+Gui.F_Dash.txtQteTxtSales.defaultvalue("")
+Gui.F_Dash.txtQteTxtSales.controlgroup(1)
+Gui.F_Dash.txtQteTxtCost.create(textbox,"",True,1200,300,0,2690,555,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtQteTxtCost.parent("frmQuote")
+Gui.F_Dash.txtQteTxtCost.defaultvalue("")
+Gui.F_Dash.txtQteTxtCost.controlgroup(1)
+Gui.F_Dash.txtQteTxtMargin.create(textbox,"",True,1200,300,0,3900,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtQteTxtMargin.parent("frmQuote")
+Gui.F_Dash.txtQteTxtMargin.defaultvalue("")
+Gui.F_Dash.txtQteTxtMargin.controlgroup(1)
+Gui.F_Dash.frmPO.create(frame)
+Gui.F_Dash.frmPO.size(5310,975)
+Gui.F_Dash.frmPO.position(100,4800)
+Gui.F_Dash.cmdPODASH.create(button)
+Gui.F_Dash.cmdPODASH.caption("PURCHASING")
+Gui.F_Dash.cmdPODASH.size(1365,600)
+Gui.F_Dash.cmdPODASH.position(100,245)
+Gui.F_Dash.cmdPODASH.parent("frmPO")
+Gui.F_Dash.cmdPODASH.fontname("Arial Black")
+Gui.F_Dash.cmdPODASH.event(Click,cmdpodash_click)
+Gui.F_Dash.cmdPODASH.defaultvalue("")
+Gui.F_Dash.txtPOLblTotal.create(textbox,"Total",True,1200,300,0,1500,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtPOLblTotal.parent("frmPO")
+Gui.F_Dash.txtPOLblTotal.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtPOLblTotal.defaultvalue("")
+Gui.F_Dash.txtPOLblReceiv.create(textbox,"Received",True,1200,300,0,2695,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtPOLblReceiv.parent("frmPO")
+Gui.F_Dash.txtPOLblReceiv.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtPOLblReceiv.defaultvalue("")
+Gui.F_Dash.txtPOLblRem.create(textbox,"Remaining",True,1200,300,0,3900,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtPOLblRem.parent("frmPO")
+Gui.F_Dash.txtPOLblRem.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtPOLblRem.defaultvalue("")
+Gui.F_Dash.txtPOTxtTot.create(textbox,"",True,1200,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtPOTxtTot.parent("frmPO")
+'Gui.F_Dash.txtPOTxtTot.defaultvalue("")
+Gui.F_Dash.txtPOTxtTot.controlgroup(1)
+Gui.F_Dash.txtPOTxtReceiv.create(textbox,"",True,1200,300,0,2690,555,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtPOTxtReceiv.parent("frmPO")
+'Gui.F_Dash.txtPOTxtReceiv.defaultvalue("")
+Gui.F_Dash.txtPOTxtReceiv.controlgroup(1)
+Gui.F_Dash.txtPOTxtRem.create(textbox,"",True,1200,300,0,3900,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtPOTxtRem.parent("frmPO")
+'Gui.F_Dash.txtPOTxtRem.defaultvalue("")
+Gui.F_Dash.txtPOTxtRem.controlgroup(1)
+Gui.F_Dash.frmShip.create(frame)
+Gui.F_Dash.frmShip.size(5310,975)
+Gui.F_Dash.frmShip.position(100,2895)
+Gui.F_Dash.cmdShipDASH.create(button)
+Gui.F_Dash.cmdShipDASH.caption("SHIPMENTS")
+Gui.F_Dash.cmdShipDASH.size(1365,600)
+Gui.F_Dash.cmdShipDASH.position(100,245)
+Gui.F_Dash.cmdShipDASH.parent("frmShip")
+Gui.F_Dash.cmdShipDASH.fontname("Arial Black")
+Gui.F_Dash.cmdShipDASH.event(Click,cmdshipdash_click)
+Gui.F_Dash.cmdShipDASH.defaultvalue("")
+Gui.F_Dash.txtShipLblSales.create(textbox,"Sales",True,1200,300,0,1500,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtShipLblSales.parent("frmShip")
+Gui.F_Dash.txtShipLblSales.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtShipLblSales.defaultvalue("")
+Gui.F_Dash.txtShipLblCost.create(textbox,"Cost",True,1200,300,0,2695,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtShipLblCost.parent("frmShip")
+Gui.F_Dash.txtShipLblCost.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtShipLblCost.defaultvalue("")
+Gui.F_Dash.txtShipLblMargin.create(textbox,"Margin",True,1200,300,0,3900,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtShipLblMargin.parent("frmShip")
+Gui.F_Dash.txtShipLblMargin.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtShipLblMargin.defaultvalue("")
+Gui.F_Dash.txtShipTxtSales.create(textbox,"",True,1200,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtShipTxtSales.parent("frmShip")
+Gui.F_Dash.txtShipTxtSales.defaultvalue("")
+Gui.F_Dash.txtShipTxtSales.controlgroup(1)
+Gui.F_Dash.txtShipTxtCost.create(textbox,"",True,1200,300,0,2690,555,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtShipTxtCost.parent("frmShip")
+Gui.F_Dash.txtShipTxtCost.defaultvalue("")
+Gui.F_Dash.txtShipTxtCost.controlgroup(1)
+Gui.F_Dash.txtShipTxtMargin.create(textbox,"",True,1200,300,0,3900,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtShipTxtMargin.parent("frmShip")
+Gui.F_Dash.txtShipTxtMargin.defaultvalue("")
+Gui.F_Dash.txtShipTxtMargin.controlgroup(1)
+Gui.F_Dash.frmHist.create(frame)
+Gui.F_Dash.frmHist.size(5310,975)
+Gui.F_Dash.frmHist.position(100,3865)
+Gui.F_Dash.cmdHISTDASH.create(button)
+Gui.F_Dash.cmdHISTDASH.caption("HISTORY")
+Gui.F_Dash.cmdHISTDASH.size(1365,600)
+Gui.F_Dash.cmdHISTDASH.position(100,245)
+Gui.F_Dash.cmdHISTDASH.parent("frmHist")
+Gui.F_Dash.cmdHISTDASH.fontname("Arial Black")
+Gui.F_Dash.cmdHISTDASH.event(Click,cmdhistdash_click)
+Gui.F_Dash.cmdHISTDASH.defaultvalue("")
+Gui.F_Dash.txtHistLblSales.create(textbox,"Sales",True,1200,300,0,1500,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtHistLblSales.parent("frmHist")
+Gui.F_Dash.txtHistLblSales.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtHistLblSales.defaultvalue("")
+Gui.F_Dash.txtHistLblCost.create(textbox,"Cost",True,1200,300,0,2695,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtHistLblCost.parent("frmHist")
+Gui.F_Dash.txtHistLblCost.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtHistLblCost.defaultvalue("")
+Gui.F_Dash.txtHistLblMargin.create(textbox,"Margin",True,1200,300,0,3900,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtHistLblMargin.parent("frmHist")
+Gui.F_Dash.txtHistLblMargin.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtHistLblMargin.defaultvalue("")
+Gui.F_Dash.txtHistTxtSales.create(textbox,"",True,1200,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtHistTxtSales.parent("frmHist")
+Gui.F_Dash.txtHistTxtSales.defaultvalue("")
+Gui.F_Dash.txtHistTxtSales.controlgroup(1)
+Gui.F_Dash.txtHistTxtCost.create(textbox,"",True,1200,300,0,2690,555,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtHistTxtCost.parent("frmHist")
+Gui.F_Dash.txtHistTxtCost.defaultvalue("")
+Gui.F_Dash.txtHistTxtCost.controlgroup(1)
+Gui.F_Dash.txtHistTxtMargin.create(textbox,"",True,1200,300,0,3900,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtHistTxtMargin.parent("frmHist")
+Gui.F_Dash.txtHistTxtMargin.defaultvalue("")
+Gui.F_Dash.txtHistTxtMargin.controlgroup(1)
+Gui.F_Dash.frmAPI.create(frame)
+Gui.F_Dash.frmAPI.size(4620,975)
+Gui.F_Dash.frmAPI.position(100,5805)
+Gui.F_Dash.cmdAPIDASH.create(button)
+Gui.F_Dash.cmdAPIDASH.caption("AP")
+Gui.F_Dash.cmdAPIDASH.size(1365,600)
+Gui.F_Dash.cmdAPIDASH.position(100,245)
+Gui.F_Dash.cmdAPIDASH.parent("frmAPI")
+Gui.F_Dash.cmdAPIDASH.fontname("Arial Black")
+Gui.F_Dash.cmdAPIDASH.event(Click,cmdapidash_click)
+Gui.F_Dash.cmdAPIDASH.defaultvalue("")
+Gui.F_Dash.txtAPLblTot.create(textbox,"Total",True,3000,300,0,1500,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtAPLblTot.parent("frmAPI")
+Gui.F_Dash.txtAPLblTot.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtAPLblTot.defaultvalue("")
+Gui.F_Dash.txtAPITot.create(textbox,"",True,3000,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtAPITot.parent("frmAPI")
+Gui.F_Dash.txtAPITot.defaultvalue("")
+Gui.F_Dash.txtAPITot.controlgroup(1)
+Gui.F_Dash.frmWO.create(frame)
+Gui.F_Dash.frmWO.size(6585,975)
+Gui.F_Dash.frmWO.position(100,7800)
+Gui.F_Dash.cmdWODASH.create(button)
+Gui.F_Dash.cmdWODASH.caption("WORK ORDER")
+Gui.F_Dash.cmdWODASH.size(1365,600)
+Gui.F_Dash.cmdWODASH.position(100,245)
+Gui.F_Dash.cmdWODASH.parent("frmWO")
+Gui.F_Dash.cmdWODASH.fontname("Arial Black")
+Gui.F_Dash.cmdWODASH.event(Click,cmdwodash_click)
+Gui.F_Dash.cmdWODASH.defaultvalue("")
+Gui.F_Dash.txtLblWOLab.create(textbox,"Labor",True,1200,300,0,1500,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtLblWOLab.parent("frmWO")
+Gui.F_Dash.txtLblWOLab.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtLblWOLab.defaultvalue("")
+Gui.F_Dash.txtLblWOOH.create(textbox,"Overhead",True,1200,300,0,2695,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtLblWOOH.parent("frmWO")
+Gui.F_Dash.txtLblWOOH.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtLblWOOH.defaultvalue("")
+Gui.F_Dash.txtLblWOMat.create(textbox,"Material",True,1200,300,0,3900,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtLblWOMat.parent("frmWO")
+Gui.F_Dash.txtLblWOMat.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtLblWOMat.defaultvalue("")
+Gui.F_Dash.txtWOLab.create(textbox,"",True,1200,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtWOLab.parent("frmWO")
+Gui.F_Dash.txtWOLab.defaultvalue("")
+Gui.F_Dash.txtWOLab.controlgroup(1)
+Gui.F_Dash.txtWOOH.create(textbox,"",True,1200,300,0,2690,555,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtWOOH.parent("frmWO")
+Gui.F_Dash.txtWOOH.defaultvalue("")
+Gui.F_Dash.txtWOOH.controlgroup(1)
+Gui.F_Dash.txtWOMat.create(textbox,"",True,1200,300,0,3900,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtWOMat.parent("frmWO")
+Gui.F_Dash.txtWOMat.defaultvalue("")
+Gui.F_Dash.txtWOMat.controlgroup(1)
+Gui.F_Dash.txtWOTot.create(textbox,"",True,1350,300,0,5105,560,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtWOTot.parent("frmWO")
+Gui.F_Dash.txtWOTot.defaultvalue("")
+Gui.F_Dash.txtWOTot.controlgroup(1)
+Gui.F_Dash.txtWOLblTot.create(textbox,"Total",True,1350,300,0,5105,245,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtWOLblTot.parent("frmWO")
+Gui.F_Dash.txtWOLblTot.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtWOLblTot.defaultvalue("")
+Gui.F_Dash.frmUpdtime.create(frame)
+Gui.F_Dash.frmUpdtime.caption("Last Updated")
+Gui.F_Dash.frmUpdtime.size(2325,750)
+Gui.F_Dash.frmUpdtime.position(5925,980)
+Gui.F_Dash.lblUpdTime.create(label,"",True,1860,255,1,185,275,True,0,Arial,8,-2147483633,0)
+Gui.F_Dash.lblUpdTime.parent("frmUpdtime")
+Gui.F_Dash.lblUpdTime.defaultvalue("")
+Gui.F_Dash.lblUpdTime.controlgroup(1)
+Gui.F_Dash.cmdPerc.create(button)
+Gui.F_Dash.cmdPerc.caption("Percent Complete")
+Gui.F_Dash.cmdPerc.size(2235,600)
+Gui.F_Dash.cmdPerc.position(6000,3555)
+Gui.F_Dash.cmdPerc.fontname("Arial Black")
+Gui.F_Dash.cmdPerc.event(Click,cmdperc_click)
+Gui.F_Dash.cmdPerc.defaultvalue("")
+Gui.F_Dash.cmdPrjInfo.create(button)
+Gui.F_Dash.cmdPrjInfo.caption("Project Addl Information")
+Gui.F_Dash.cmdPrjInfo.size(2235,540)
+Gui.F_Dash.cmdPrjInfo.position(6000,1995)
+Gui.F_Dash.cmdPrjInfo.fontname("Arial Black")
+Gui.F_Dash.cmdPrjInfo.event(Click,cmdprjinfo_click)
+Gui.F_Dash.cmdPrjInfo.defaultvalue("")
+Gui.F_Dash.cmdNotes.create(button)
+Gui.F_Dash.cmdNotes.caption("NOTES")
+Gui.F_Dash.cmdNotes.size(2235,540)
+Gui.F_Dash.cmdNotes.position(6000,2760)
+Gui.F_Dash.cmdNotes.fontname("Arial Black")
+Gui.F_Dash.cmdNotes.event(Click,cmdnotes_click)
+Gui.F_Dash.cmdNotes.defaultvalue("")
+Gui.F_Dash.frmGL.create(frame)
+Gui.F_Dash.frmGL.size(4620,975)
+Gui.F_Dash.frmGL.position(100,6800)
+Gui.F_Dash.cmdGLDASH.create(button)
+Gui.F_Dash.cmdGLDASH.caption("GL")
+Gui.F_Dash.cmdGLDASH.size(1365,600)
+Gui.F_Dash.cmdGLDASH.position(105,240)
+Gui.F_Dash.cmdGLDASH.parent("frmGL")
+Gui.F_Dash.cmdGLDASH.fontname("Arial Black")
+Gui.F_Dash.cmdGLDASH.defaultvalue("")
+Gui.F_Dash.cmdGLDASH.Event(Click,cmdGLDash_Click)
+Gui.F_Dash.txtGLLblTot.create(textbox,"Total",True,3000,300,0,1500,240,False,2,Arial,8,13948116,1)
+Gui.F_Dash.txtGLLblTot.parent("frmGL")
+Gui.F_Dash.txtGLLblTot.fontstyle(True,False,False,False,False)
+Gui.F_Dash.txtGLLblTot.defaultvalue("")
+Gui.F_Dash.txtGLTot.create(textbox,"",True,3000,300,0,1500,550,False,1,Arial,8,-2147483643,1)
+Gui.F_Dash.txtGLTot.parent("frmGL")
+Gui.F_Dash.txtGLTot.defaultvalue("")
+Gui.F_Dash.txtGLTot.controlgroup(1)
+Gui.F_Ship..create
+Gui.F_Ship..caption("Project Tracking - Shipments")
+Gui.F_Ship..size(13860,7155)
+Gui.F_Ship..minx(0)
+Gui.F_Ship..miny(0)
+Gui.F_Ship..position(0,0)
+Gui.F_Ship..event(UnLoad,f_ship_unload)
+Gui.F_Ship..forecolor(0)
+Gui.F_Ship..BackColor(-2147483633)
+Gui.F_Ship..maxbutton(False)
+Gui.F_Ship..minbutton(False)
+Gui.F_Ship..mousepointer(0)
+Gui.F_Ship.frmPrj.create(frame)
+Gui.F_Ship.frmPrj.caption("Project")
+Gui.F_Ship.frmPrj.size(6585,675)
+Gui.F_Ship.frmPrj.position(105,0)
+Gui.F_Ship.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_Ship.txtPRJID.parent("frmPrj")
+Gui.F_Ship.txtPRJID.defaultvalue("")
+Gui.F_Ship.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_Ship.txtPRJIDN.parent("frmPrj")
+Gui.F_Ship.txtPRJIDN.maxLength(150)
+Gui.F_Ship.txtPRJIDN.defaultvalue("")
+Gui.F_Ship.lblLoadMsg.create(label,"lblLoadMsg",True,5550,1185,1,2800,1700,True,0,Arial,14,-2147483633,0)
+Gui.F_Ship.lblLoadMsg.defaultvalue("")
+Gui.F_Ship.cmdShipExcel.create(button)
+Gui.F_Ship.cmdShipExcel.caption("Export Grid")
+Gui.F_Ship.cmdShipExcel.size(1305,375)
+Gui.F_Ship.cmdShipExcel.position(6855,150)
+Gui.F_Ship.cmdShipExcel.event(Click,cmdshipexcel_click)
+Gui.F_Ship.cmdShipExcel.defaultvalue("")
+Gui.F_Ship.GsGCShip.Create(GsGridControl)
+Gui.F_Ship.GsGCShip.Size(13470,5790)
+Gui.F_Ship.GsGCShip.Position(105,765)
+Gui.F_HIST..create
+Gui.F_HIST..caption("Project Tracking - History")
+Gui.F_HIST..size(13920,7215)
+Gui.F_HIST..minx(0)
+Gui.F_HIST..miny(0)
+Gui.F_HIST..position(0,0)
+Gui.F_HIST..event(UnLoad,f_hist_unload)
+Gui.F_HIST..forecolor(0)
+Gui.F_HIST..BackColor(-2147483633)
+Gui.F_HIST..maxbutton(False)
+Gui.F_HIST..minbutton(False)
+Gui.F_HIST..mousepointer(0)
+Gui.F_HIST.frmPrj.create(frame)
+Gui.F_HIST.frmPrj.caption("Project")
+Gui.F_HIST.frmPrj.size(6585,675)
+Gui.F_HIST.frmPrj.position(105,0)
+Gui.F_HIST.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_HIST.txtPRJID.parent("frmPrj")
+Gui.F_HIST.txtPRJID.defaultvalue("")
+Gui.F_HIST.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_HIST.txtPRJIDN.parent("frmPrj")
+Gui.F_HIST.txtPRJIDN.maxLength(150)
+Gui.F_HIST.txtPRJIDN.defaultvalue("")
+Gui.F_HIST.lblLoadMsg.create(label,"lblLoadMsg",True,5550,1185,1,2690,1715,True,0,Arial,14,-2147483633,0)
+Gui.F_HIST.lblLoadMsg.defaultvalue("")
+Gui.F_HIST.cmdHistExcel.create(button)
+Gui.F_HIST.cmdHistExcel.caption("Export Grid")
+Gui.F_HIST.cmdHistExcel.size(1305,375)
+Gui.F_HIST.cmdHistExcel.position(6855,150)
+Gui.F_HIST.cmdHistExcel.event(Click,cmdhistexcel_click)
+Gui.F_HIST.cmdHistExcel.defaultvalue("")
+Gui.F_HIST.GsGCHist.Create(GsGridControl)
+Gui.F_HIST.GsGCHist.Size(13515,5850)
+Gui.F_HIST.GsGCHist.Position(105,765)
+Gui.F_Perc..create
+Gui.F_Perc..caption("Project Tracking - Percent Complete")
+Gui.F_Perc..size(10665,4185)
+Gui.F_Perc..minx(0)
+Gui.F_Perc..miny(0)
+Gui.F_Perc..position(0,0)
+Gui.F_Perc..event(UnLoad,f_perc_unload)
+Gui.F_Perc..forecolor(0)
+Gui.F_Perc..BackColor(-2147483633)
+Gui.F_Perc..maxbutton(False)
+Gui.F_Perc..minbutton(False)
+Gui.F_Perc..mousepointer(0)
+Gui.F_Perc.picChart1.create(picturebox)
+Gui.F_Perc.picChart1.size(5040,3495)
+Gui.F_Perc.picChart1.position(20,50)
+Gui.F_Perc.picChart1.BackColor(16777215)
+Gui.F_Perc.picChart2.create(picturebox)
+Gui.F_Perc.picChart2.size(5040,3495)
+Gui.F_Perc.picChart2.position(5110,45)
+Gui.F_Perc.picChart2.BackColor(16777215)
+Gui.F_ORDER..create
+Gui.F_ORDER..caption("Project Tracking - Sales Orders")
+Gui.F_ORDER..size(13950,7140)
+Gui.F_ORDER..minx(0)
+Gui.F_ORDER..miny(0)
+Gui.F_ORDER..position(0,0)
+Gui.F_ORDER..event(UnLoad,f_order_unload)
+Gui.F_ORDER..forecolor(0)
+Gui.F_ORDER..BackColor(-2147483633)
+Gui.F_ORDER..mousepointer(0)
+Gui.F_ORDER.frmPrj.create(frame)
+Gui.F_ORDER.frmPrj.caption("Project")
+Gui.F_ORDER.frmPrj.size(6585,675)
+Gui.F_ORDER.frmPrj.position(75,0)
+Gui.F_ORDER.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_ORDER.txtPRJID.parent("frmPrj")
+Gui.F_ORDER.txtPRJID.defaultvalue("")
+Gui.F_ORDER.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_ORDER.txtPRJIDN.parent("frmPrj")
+Gui.F_ORDER.txtPRJIDN.maxLength(150)
+Gui.F_ORDER.txtPRJIDN.defaultvalue("")
+Gui.F_ORDER.cmdOrdExcel.create(button)
+Gui.F_ORDER.cmdOrdExcel.caption("Export Grid")
+Gui.F_ORDER.cmdOrdExcel.size(1305,375)
+Gui.F_ORDER.cmdOrdExcel.position(6855,150)
+Gui.F_ORDER.cmdOrdExcel.event(Click,cmdordexcel_click)
+Gui.F_ORDER.cmdOrdExcel.defaultvalue("")
+Gui.F_ORDER.lblLoadMsg.create(label,"lblLoadMsg",True,5550,1185,1,2500,1500,True,0,Arial,14,-2147483633,0)
+Gui.F_ORDER.lblLoadMsg.defaultvalue("")
+Gui.F_ORDER.GsGCSO.Create(GsGridControl)
+Gui.F_ORDER.GsGCSO.Size(13665,5670)
+Gui.F_ORDER.GsGCSO.Position(30,840)
+Gui.F_QUOTE..create
+Gui.F_QUOTE..caption("Project Tracking - Quotes")
+Gui.F_QUOTE..size(13860,7170)
+Gui.F_QUOTE..minx(0)
+Gui.F_QUOTE..miny(0)
+Gui.F_QUOTE..position(0,0)
+Gui.F_QUOTE..event(UnLoad,f_quote_unload)
+Gui.F_QUOTE..forecolor(0)
+Gui.F_QUOTE..BackColor(-2147483633)
+Gui.F_QUOTE..mousepointer(0)
+Gui.F_QUOTE.frmPrj.create(frame)
+Gui.F_QUOTE.frmPrj.caption("Project")
+Gui.F_QUOTE.frmPrj.size(6585,675)
+Gui.F_QUOTE.frmPrj.position(75,0)
+Gui.F_QUOTE.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_QUOTE.txtPRJID.parent("frmPrj")
+Gui.F_QUOTE.txtPRJID.defaultvalue("")
+Gui.F_QUOTE.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_QUOTE.txtPRJIDN.parent("frmPrj")
+Gui.F_QUOTE.txtPRJIDN.maxLength(150)
+Gui.F_QUOTE.txtPRJIDN.defaultvalue("")
+Gui.F_QUOTE.lblLoadMsg.create(label,"lblLoadMsg",True,5550,1185,1,2595,1395,True,0,Arial,14,-2147483633,0)
+Gui.F_QUOTE.lblLoadMsg.defaultvalue("")
+Gui.F_QUOTE.GsGCQte.Create(GsGridControl)
+Gui.F_QUOTE.GsGCQte.Size(13545,5715)
+Gui.F_QUOTE.GsGCQte.Position(30,840)
+Gui.F_QUOTE.cmdqte_export.Create(Button)
+Gui.F_QUOTE.cmdqte_export.Size(1305,375)
+Gui.F_QUOTE.cmdqte_export.Position(6855,150)
+Gui.F_QUOTE.cmdqte_export.Caption("Export Grid")
+Gui.F_QUOTE.cmdqte_export.Event(Click,cmdqteexcel_click)
+Gui.F_PO..create
+Gui.F_PO..caption("Project Tracking - Purchase Orders")
+Gui.F_PO..size(11445,7215)
+Gui.F_PO..minx(0)
+Gui.F_PO..miny(0)
+Gui.F_PO..position(0,0)
+Gui.F_PO..event(UnLoad,f_po_unload)
+Gui.F_PO..forecolor(0)
+Gui.F_PO..BackColor(-2147483633)
+Gui.F_PO..mousepointer(0)
+Gui.F_PO.frmPrj.create(frame)
+Gui.F_PO.frmPrj.caption("Project")
+Gui.F_PO.frmPrj.size(6585,675)
+Gui.F_PO.frmPrj.position(75,0)
+Gui.F_PO.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_PO.txtPRJID.parent("frmPrj")
+Gui.F_PO.txtPRJID.defaultvalue("")
+Gui.F_PO.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_PO.txtPRJIDN.parent("frmPrj")
+Gui.F_PO.txtPRJIDN.maxLength(150)
+Gui.F_PO.txtPRJIDN.defaultvalue("")
+Gui.F_PO.lblLoadMsg.create(label,"lblLoadMsg",True,5550,1185,1,2700,1800,True,0,Arial,14,-2147483633,0)
+Gui.F_PO.lblLoadMsg.defaultvalue("")
+Gui.F_PO.cmdPOExcel.create(button)
+Gui.F_PO.cmdPOExcel.caption("Export Grid")
+Gui.F_PO.cmdPOExcel.size(1305,375)
+Gui.F_PO.cmdPOExcel.position(6855,150)
+Gui.F_PO.cmdPOExcel.event(Click,cmdpoexcel_click)
+Gui.F_PO.cmdPOExcel.defaultvalue("")
+Gui.F_PO.GsGCPO.Create(GsGridControl)
+Gui.F_PO.GsGCPO.Size(11115,5880)
+Gui.F_PO.GsGCPO.Position(75,720)
+Gui.F_API..create
+Gui.F_API..caption("Project Tracking - Invoices")
+Gui.F_API..size(10470,7125)
+Gui.F_API..minx(0)
+Gui.F_API..miny(0)
+Gui.F_API..position(0,0)
+Gui.F_API..event(UnLoad,f_api_unload)
+Gui.F_API..forecolor(0)
+Gui.F_API..BackColor(-2147483633)
+Gui.F_API..maxbutton(False)
+Gui.F_API..minbutton(False)
+Gui.F_API..mousepointer(0)
+Gui.F_API.frmPrj.create(frame)
+Gui.F_API.frmPrj.caption("Project")
+Gui.F_API.frmPrj.size(6585,675)
+Gui.F_API.frmPrj.position(105,0)
+Gui.F_API.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_API.txtPRJID.parent("frmPrj")
+Gui.F_API.txtPRJID.defaultvalue("")
+Gui.F_API.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_API.txtPRJIDN.parent("frmPrj")
+Gui.F_API.txtPRJIDN.maxLength(150)
+Gui.F_API.txtPRJIDN.defaultvalue("")
+Gui.F_API.lblLoadMsg.create(label,"lblLoadMsg",True,4080,1590,1,1305,2295,True,0,Arial,14,-2147483633,0)
+Gui.F_API.lblLoadMsg.defaultvalue("")
+Gui.F_API.cmdAPIExcel.create(button)
+Gui.F_API.cmdAPIExcel.caption("Export Grid")
+Gui.F_API.cmdAPIExcel.size(1305,375)
+Gui.F_API.cmdAPIExcel.position(6855,150)
+Gui.F_API.cmdAPIExcel.event(Click,cmdapiexcel_click)
+Gui.F_API.cmdAPIExcel.defaultvalue("")
+Gui.F_API.GsGCAP.Create(GsGridControl)
+Gui.F_API.GsGCAP.Size(10035,5760)
+Gui.F_API.GsGCAP.Position(105,735)
+Gui.F_WO..create
+Gui.F_WO..caption("Project Tracking - Work Orders")
+Gui.F_WO..size(11670,7410)
+Gui.F_WO..minx(0)
+Gui.F_WO..miny(0)
+Gui.F_WO..position(0,0)
+Gui.F_WO..event(UnLoad,F_WO_unload)
+Gui.F_WO..forecolor(0)
+Gui.F_WO..BackColor(-2147483633)
+Gui.F_WO..maxbutton(False)
+Gui.F_WO..minbutton(False)
+Gui.F_WO..mousepointer(0)
+Gui.F_WO.frmPrj.create(frame)
+Gui.F_WO.frmPrj.caption("Project")
+Gui.F_WO.frmPrj.size(6585,675)
+Gui.F_WO.frmPrj.position(105,0)
+Gui.F_WO.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_WO.txtPRJID.parent("frmPrj")
+Gui.F_WO.txtPRJID.defaultvalue("")
+Gui.F_WO.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_WO.txtPRJIDN.parent("frmPrj")
+Gui.F_WO.txtPRJIDN.maxLength(150)
+Gui.F_WO.txtPRJIDN.defaultvalue("")
+Gui.F_WO.lblLoadMsg.create(label,"lblLoadMsg",True,5550,1185,1,3200,1805,True,0,Arial,14,-2147483633,0)
+Gui.F_WO.lblLoadMsg.defaultvalue("")
+Gui.F_WO.cmdWOExcel.create(button)
+Gui.F_WO.cmdWOExcel.caption("Export Grid")
+Gui.F_WO.cmdWOExcel.size(1305,375)
+Gui.F_WO.cmdWOExcel.position(6855,150)
+Gui.F_WO.cmdWOExcel.event(Click,cmdwoexcel_click)
+Gui.F_WO.cmdWOExcel.defaultvalue("")
+Gui.F_WO.GsGCJob.Create(GsGridControl)
+Gui.F_WO.GsGCJob.Size(11325,6075)
+Gui.F_WO.GsGCJob.Position(75,735)
+Gui.F_PRJ..create
+Gui.F_PRJ..caption("Project Setup Screen")
+Gui.F_PRJ..size(7425,6285)
+Gui.F_PRJ..minx(0)
+Gui.F_PRJ..miny(0)
+Gui.F_PRJ..position(0,0)
+Gui.F_PRJ..event(UnLoad,f_prj_unload)
+Gui.F_PRJ..forecolor(0)
+Gui.F_PRJ..BackColor(-2147483633)
+Gui.F_PRJ..maxbutton(False)
+Gui.F_PRJ..minbutton(False)
+Gui.F_PRJ..mousepointer(0)
+Gui.F_PRJ.frm_status.create(frame)
+Gui.F_PRJ.frm_status.caption("Status")
+Gui.F_PRJ.frm_status.size(1125,1080)
+Gui.F_PRJ.frm_status.position(5390,25)
+Gui.F_PRJ.optActive.create(option)
+Gui.F_PRJ.optActive.caption("Active")
+Gui.F_PRJ.optActive.size(915,255)
+Gui.F_PRJ.optActive.position(95,200)
+Gui.F_PRJ.optActive.enabled(False)
+Gui.F_PRJ.optActive.parent("frm_status")
+Gui.F_PRJ.optActive.defaultvalue("")
+Gui.F_PRJ.optActive.tabstop(True)
+Gui.F_PRJ.optActive.tabindex(4)
+Gui.F_PRJ.optHold.create(option)
+Gui.F_PRJ.optHold.caption("Hold")
+Gui.F_PRJ.optHold.size(915,255)
+Gui.F_PRJ.optHold.position(95,470)
+Gui.F_PRJ.optHold.enabled(False)
+Gui.F_PRJ.optHold.parent("frm_status")
+Gui.F_PRJ.optHold.defaultvalue("")
+Gui.F_PRJ.optHold.tabstop(True)
+Gui.F_PRJ.optHold.tabindex(5)
+Gui.F_PRJ.optClosed.create(option)
+Gui.F_PRJ.optClosed.caption("Closed")
+Gui.F_PRJ.optClosed.size(915,255)
+Gui.F_PRJ.optClosed.position(95,740)
+Gui.F_PRJ.optClosed.enabled(False)
+Gui.F_PRJ.optClosed.parent("frm_status")
+Gui.F_PRJ.optClosed.defaultvalue("")
+Gui.F_PRJ.optClosed.tabstop(True)
+Gui.F_PRJ.optClosed.tabindex(6)
+Gui.F_PRJ.frmUF.create(frame)
+Gui.F_PRJ.frmUF.caption("User Fields:")
+Gui.F_PRJ.frmUF.size(7005,3135)
+Gui.F_PRJ.frmUF.position(70,2470)
+Gui.F_PRJ.lblUF2.create(label,"User Field 2:",False,1935,255,1,95,750,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF2.parent("frmUF")
+Gui.F_PRJ.lblUF2.defaultvalue("")
+Gui.F_PRJ.txtUF1.create(textbox,"",False,2910,300,0,50,400,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF1.parent("frmUF")
+Gui.F_PRJ.txtUF1.defaultvalue("")
+Gui.F_PRJ.txtUF1.tabstop(True)
+Gui.F_PRJ.txtUF1.tabindex(16)
+Gui.F_PRJ.lblUF3.create(label,"User Field 3:",False,1935,255,1,95,1300,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF3.parent("frmUF")
+Gui.F_PRJ.lblUF3.defaultvalue("")
+Gui.F_PRJ.lblUF4.create(label,"User Field 4:",False,1935,255,1,95,1850,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF4.parent("frmUF")
+Gui.F_PRJ.lblUF4.defaultvalue("")
+Gui.F_PRJ.lblUF5.create(label,"User Field 5:",False,1935,255,1,95,2400,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF5.parent("frmUF")
+Gui.F_PRJ.lblUF5.defaultvalue("")
+Gui.F_PRJ.lblUF6.create(label,"User Field 6:",False,1935,255,1,3520,200,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF6.parent("frmUF")
+Gui.F_PRJ.lblUF6.defaultvalue("")
+Gui.F_PRJ.txtUF2.create(textbox,"",False,2910,300,0,50,950,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF2.parent("frmUF")
+Gui.F_PRJ.txtUF2.defaultvalue("")
+Gui.F_PRJ.txtUF2.tabstop(True)
+Gui.F_PRJ.txtUF2.tabindex(18)
+Gui.F_PRJ.txtUF3.create(textbox,"",False,2910,300,0,50,1500,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF3.parent("frmUF")
+Gui.F_PRJ.txtUF3.defaultvalue("")
+Gui.F_PRJ.txtUF3.tabstop(True)
+Gui.F_PRJ.txtUF3.tabindex(20)
+Gui.F_PRJ.txtUF4.create(textbox,"",False,2910,300,0,50,2050,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF4.parent("frmUF")
+Gui.F_PRJ.txtUF4.defaultvalue("")
+Gui.F_PRJ.txtUF4.tabstop(True)
+Gui.F_PRJ.txtUF4.tabindex(22)
+Gui.F_PRJ.txtUF5.create(textbox,"",False,2910,300,0,50,2600,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF5.parent("frmUF")
+Gui.F_PRJ.txtUF5.defaultvalue("")
+Gui.F_PRJ.txtUF5.tabstop(True)
+Gui.F_PRJ.txtUF5.tabindex(24)
+Gui.F_PRJ.txtUF6.create(textbox,"",False,2910,300,0,3500,400,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF6.parent("frmUF")
+Gui.F_PRJ.txtUF6.defaultvalue("")
+Gui.F_PRJ.txtUF6.tabstop(True)
+Gui.F_PRJ.txtUF6.tabindex(26)
+Gui.F_PRJ.txtUF7.create(textbox,"",False,2910,300,0,3500,950,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF7.parent("frmUF")
+Gui.F_PRJ.txtUF7.defaultvalue("")
+Gui.F_PRJ.txtUF7.tabstop(True)
+Gui.F_PRJ.txtUF7.tabindex(28)
+Gui.F_PRJ.txtUF8.create(textbox,"",False,2910,300,0,3500,1500,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF8.parent("frmUF")
+Gui.F_PRJ.txtUF8.defaultvalue("")
+Gui.F_PRJ.txtUF8.tabstop(True)
+Gui.F_PRJ.txtUF8.tabindex(30)
+Gui.F_PRJ.txtUF9.create(textbox,"",False,2910,300,0,3500,2050,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF9.parent("frmUF")
+Gui.F_PRJ.txtUF9.defaultvalue("")
+Gui.F_PRJ.txtUF9.tabstop(True)
+Gui.F_PRJ.txtUF9.tabindex(32)
+Gui.F_PRJ.txtUF10.create(textbox,"",False,2910,300,0,3500,2600,True,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtUF10.parent("frmUF")
+Gui.F_PRJ.txtUF10.defaultvalue("")
+Gui.F_PRJ.txtUF10.tabstop(True)
+Gui.F_PRJ.txtUF10.tabindex(34)
+Gui.F_PRJ.lblUF7.create(label,"User Field 7:",False,1935,255,1,3520,750,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF7.parent("frmUF")
+Gui.F_PRJ.lblUF7.defaultvalue("")
+Gui.F_PRJ.lblUF8.create(label,"User Field 8:",False,1935,255,1,3520,1300,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF8.parent("frmUF")
+Gui.F_PRJ.lblUF8.defaultvalue("")
+Gui.F_PRJ.lblUF9.create(label,"User Field 9:",False,1935,255,1,3520,1850,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF9.parent("frmUF")
+Gui.F_PRJ.lblUF9.defaultvalue("")
+Gui.F_PRJ.lblUF10.create(label,"User Field 10:",False,1935,255,1,3520,2400,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF10.parent("frmUF")
+Gui.F_PRJ.lblUF10.defaultvalue("")
+Gui.F_PRJ.lblUF1.create(label,"User Field 1:",False,1935,255,1,95,200,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblUF1.parent("frmUF")
+Gui.F_PRJ.lblUF1.defaultvalue("")
+Gui.F_PRJ.frmAddlFlds.create(frame)
+Gui.F_PRJ.frmAddlFlds.size(6960,1320)
+Gui.F_PRJ.frmAddlFlds.position(40,1100)
+Gui.F_PRJ.lblCust.create(label,"Customer:",True,750,255,1,140,200,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblCust.parent("frmAddlFlds")
+Gui.F_PRJ.lblCust.defaultvalue("")
+Gui.F_PRJ.txtCust.create(textbox,"",True,780,300,0,100,400,False,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtCust.parent("frmAddlFlds")
+Gui.F_PRJ.txtCust.defaultvalue("")
+Gui.F_PRJ.txtCust.tabstop(True)
+Gui.F_PRJ.txtCust.tabindex(7)
+Gui.F_PRJ.txtCustName.create(textbox,"",True,3150,300,0,865,400,False,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtCustName.parent("frmAddlFlds")
+Gui.F_PRJ.txtCustName.defaultvalue("")
+Gui.F_PRJ.txtCustName.tabstop(True)
+Gui.F_PRJ.txtCustName.tabindex(8)
+Gui.F_PRJ.dtpStart.create(datepicker)
+Gui.F_PRJ.dtpStart.size(1260,285)
+Gui.F_PRJ.dtpStart.position(4360,400)
+Gui.F_PRJ.dtpStart.enabled(False)
+Gui.F_PRJ.dtpStart.parent("frmAddlFlds")
+Gui.F_PRJ.dtpStart.defaultvalue("")
+Gui.F_PRJ.dtpStart.tabstop(True)
+Gui.F_PRJ.dtpStart.tabindex(10)
+Gui.F_PRJ.dtpDue.create(datepicker)
+Gui.F_PRJ.dtpDue.size(1260,285)
+Gui.F_PRJ.dtpDue.position(5660,400)
+Gui.F_PRJ.dtpDue.enabled(False)
+Gui.F_PRJ.dtpDue.parent("frmAddlFlds")
+Gui.F_PRJ.dtpDue.defaultvalue("")
+Gui.F_PRJ.dtpDue.tabstop(True)
+Gui.F_PRJ.dtpDue.tabindex(11)
+Gui.F_PRJ.lblDateStart.create(label,"Start Date:",True,1125,255,1,4400,200,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblDateStart.parent("frmAddlFlds")
+Gui.F_PRJ.lblDateStart.defaultvalue("")
+Gui.F_PRJ.lblDateDue.create(label,"Due Date:",True,1125,255,1,5675,200,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblDateDue.parent("frmAddlFlds")
+Gui.F_PRJ.lblDateDue.defaultvalue("")
+Gui.F_PRJ.txtSP.create(textbox,"",True,2865,300,0,100,950,False,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtSP.parent("frmAddlFlds")
+Gui.F_PRJ.txtSP.defaultvalue("")
+Gui.F_PRJ.txtSP.tabstop(True)
+Gui.F_PRJ.txtSP.tabindex(12)
+Gui.F_PRJ.lblSP.create(label,"Sales Person:",True,1185,255,1,155,740,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblSP.parent("frmAddlFlds")
+Gui.F_PRJ.lblSP.defaultvalue("")
+Gui.F_PRJ.txtPM.create(textbox,"",True,2940,300,0,3515,950,False,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtPM.parent("frmAddlFlds")
+Gui.F_PRJ.txtPM.defaultvalue("")
+Gui.F_PRJ.txtPM.tabstop(True)
+Gui.F_PRJ.txtPM.tabindex(14)
+Gui.F_PRJ.lblPM.create(label,"Project Manager:",True,1380,255,1,3575,740,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblPM.parent("frmAddlFlds")
+Gui.F_PRJ.lblPM.defaultvalue("")
+Gui.F_PRJ.txtID.create(textbox,"",True,1005,300,0,100,400,False,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtID.defaultvalue("")
+Gui.F_PRJ.txtID.tabstop(True)
+Gui.F_PRJ.txtID.tabindex(1)
+Gui.F_PRJ.lblID.create(label,"PRJ ID:",True,915,255,1,130,130,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblID.defaultvalue("")
+Gui.F_PRJ.lblDescr.create(label,"Description:",True,1935,255,1,1555,115,True,0,Arial,8,-2147483633,0)
+Gui.F_PRJ.lblDescr.defaultvalue("")
+Gui.F_PRJ.txtDesc.create(textbox,"",True,3675,300,0,1550,400,False,0,Arial,8,-2147483643,1)
+Gui.F_PRJ.txtDesc.maxLength(150)
+Gui.F_PRJ.txtDesc.defaultvalue("")
+Gui.F_PRJ.txtDesc.tabstop(True)
+Gui.F_PRJ.txtDesc.tabindex(3)
+Gui.F_GL..create
+Gui.F_GL..caption("Project Tracking - GL")
+Gui.F_GL..size(13515,7125)
+Gui.F_GL..minx(0)
+Gui.F_GL..miny(0)
+Gui.F_GL..position(0,0)
+Gui.F_GL..event(UnLoad,F_GL_unload)
+Gui.F_GL..forecolor(0)
+Gui.F_GL..BackColor(-2147483633)
+Gui.F_GL..maxbutton(False)
+Gui.F_GL..minbutton(False)
+Gui.F_GL..mousepointer(0)
+Gui.F_GL.frmPrj.create(frame)
+Gui.F_GL.frmPrj.caption("Project")
+Gui.F_GL.frmPrj.size(6585,675)
+Gui.F_GL.frmPrj.position(105,0)
+Gui.F_GL.txtPRJID.create(textbox,"",True,1215,300,0,100,245,False,0,Arial,8,-2147483643,1)
+Gui.F_GL.txtPRJID.parent("frmPrj")
+Gui.F_GL.txtPRJID.defaultvalue("")
+Gui.F_GL.txtPRJIDN.create(textbox,"",True,5085,300,0,1345,245,False,0,Arial,8,-2147483643,1)
+Gui.F_GL.txtPRJIDN.parent("frmPrj")
+Gui.F_GL.txtPRJIDN.maxLength(150)
+Gui.F_GL.txtPRJIDN.defaultvalue("")
+Gui.F_GL.lblLoadMsg.create(label,"lblLoadMsg",True,4080,1590,1,1305,2295,True,0,Arial,14,-2147483633,0)
+Gui.F_GL.lblLoadMsg.defaultvalue("")
+Gui.F_GL.cmdGLExcel.create(button)
+Gui.F_GL.cmdGLExcel.caption("Export Grid")
+Gui.F_GL.cmdGLExcel.size(1305,375)
+Gui.F_GL.cmdGLExcel.position(6855,150)
+Gui.F_GL.cmdGLExcel.event(Click,subExport_GsGCGL)
+Gui.F_GL.cmdGLExcel.defaultvalue("")
+Gui.F_GL.GsGCGL.Create(GsGridControl)
+Gui.F_GL.GsGCGL.Size(13155,5745)
+Gui.F_GL.GsGCGL.Position(105,735)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.iID_PRJ.Declare(Long,0)
+Variable.UDT.uQuote.Define("NAME_CUSTOMER",String,NAME_CUSTOMER)
+Variable.UDT.uQuote.Define("QUOTE_NO",String,QUOTE_NO)
+Variable.UDT.uQuote.Define("PART",String,PART)
+Variable.UDT.uQuote.Define("LINE",String,LINE)
+Variable.UDT.uQuote.Define("QTY",Float,QTY)
+Variable.UDT.uQuote.Define("PRICE",Float,PRICE)
+Variable.UDT.uQuote.Define("EXTENSION",Float,EXTENSION)
+Variable.UDT.uQuote.Define("COST",Float,COST)
+Variable.UDT.uQuote.Define("MARGIN",Float,MARGIN)
+Variable.UDT.uQuote.Define("DATE_ITEM_PROM",Date,DATE_ITEM_PROM)
+Variable.uGlobal.uQuote.Declare("uQuote")
+Variable.UDT.uOrder.Define("ORDER_NO",String,ORDER_NO)
+Variable.UDT.uOrder.Define("NAME_CUSTOMER",String,NAME_CUSTOMER)
+Variable.UDT.uOrder.Define("PART",String,PART)
+Variable.UDT.uOrder.Define("LINE",String,LINE)
+Variable.UDT.uOrder.Define("QTY",Float,QTY)
+Variable.UDT.uOrder.Define("PRICE",Float,PRICE)
+Variable.UDT.uOrder.Define("EXTENSION",Float,EXTENSION)
+Variable.UDT.uOrder.Define("COST",Float,COST)
+Variable.UDT.uOrder.Define("MARGIN",Float,MARGIN)
+Variable.UDT.uOrder.Define("DATE_ITEM_PROM",Date,DATE_ITEM_PROM)
+Variable.UDT.uOrder.Define("FLAG_USE_MQD",String,FLAG_USE_MQD)
+Variable.uGlobal.uOrder.Declare("uOrder")
+Variable.UDT.uPO.Define("PURCHASE_ORDER",String,PURCHASE_ORDER)
+Variable.UDT.uPO.Define("NAME_VENDOR",String,NAME_VENDOR)
+Variable.UDT.uPO.Define("PART",String,PART)
+Variable.UDT.uPO.Define("LINE",String,LINE)
+Variable.UDT.uPO.Define("QTY_ORDER",Float,QTY_ORDER)
+Variable.UDT.uPO.Define("QTY_RECD",Float,QTY_RECD)
+Variable.UDT.uPO.Define("COST",Float,COST)
+Variable.UDT.uPO.Define("EXTENSION",Float,EXTENSION)
+Variable.UDT.uPO.Define("EXT_RECD",Float,EXT_RECD)
+Variable.UDT.uPO.Define("DATE_DUE",Date,DATE_DUE)
+Variable.uGlobal.uPO.Declare("uPO")
+Variable.UDT.uAPI.Define("NAME_VENDOR",String,NAME_VENDOR)
+Variable.UDT.uAPI.Define("INVOICE",String,INVOICE)
+Variable.UDT.uAPI.Define("AMT_INVOICE",Float,AMT_INVOICE)
+Variable.uGlobal.uAPI.Declare("uAPI")
+Variable.UDT.uShip.Define("ORDER_NO",String,ORDER_NO)
+Variable.UDT.uShip.Define("NAME_CUSTOMER",String,NAME_CUSTOMER)
+Variable.UDT.uShip.Define("PART",String,PART)
+Variable.UDT.uShip.Define("LINE",String,LINE)
+Variable.UDT.uShip.Define("QTY",Float,QTY)
+Variable.UDT.uShip.Define("PRICE",Float,PRICE)
+Variable.UDT.uShip.Define("EXTENSION",Float,EXTENSION)
+Variable.UDT.uShip.Define("COST",Float,COST)
+Variable.UDT.uShip.Define("MARGIN",Float,MARGIN)
+Variable.UDT.uShip.Define("DATE_SHIP",Date,DATE_SHIP)
+Variable.uGlobal.uShip.Declare("uShip")
+Variable.UDT.uOrdHist.Define("ORDER_NO",String,ORDER_NO)
+Variable.UDT.uOrdHist.Define("NAME_CUSTOMER",String,NAME_CUSTOMER)
+Variable.UDT.uOrdHist.Define("PART",String,PART)
+Variable.UDT.uOrdHist.Define("LINE",String,LINE)
+Variable.UDT.uOrdHist.Define("QTY",Float,QTY)
+Variable.UDT.uOrdHist.Define("PRICE",Float,PRICE)
+Variable.UDT.uOrdHist.Define("EXTENSION",Float,EXTENSION)
+Variable.UDT.uOrdHist.Define("COST",Float,COST)
+Variable.UDT.uOrdHist.Define("MARGIN",Float,MARGIN)
+Variable.UDT.uOrdHist.Define("DATE_INVOICE",Date,DATE_INVOICE)
+Variable.UDT.uOrdHist.Define("INVOICE",String,INVOICE)
+Variable.uGlobal.uOrdHist.Declare("uOrdHist")
+Variable.Global.fQtyRemaining.Declare(Float,0)
+Variable.Global.fQtyCompleted.Declare(Float,0)
+Variable.Global.fDollarRem.Declare(Float,0)
+Variable.Global.fDollarCom.Declare(Float,0)
+Variable.UDT.uShipSch.Define("ORDER_NO",String,ORDER_NO)
+Variable.UDT.uShipSch.Define("ORDER_LINE",String,ORDER_LINE)
+Variable.UDT.uShipSch.Define("QTY_OPEN",Float,QTY_OPEN)
+Variable.UDT.uShipSch.Define("DATE_DUE",Date,DATE_DUE)
+Variable.uGlobal.uShipSch.Declare("uShipSch")
+Variable.UDT.UOrder2.Define("ORDER_NO",String)
+Variable.UDT.UOrder2.Define("NAME_CUSTOMER",String)
+Variable.UDT.UOrder2.Define("PART",String)
+Variable.UDT.UOrder2.Define("LINE",String)
+Variable.UDT.UOrder2.Define("QTY",Float)
+Variable.UDT.UOrder2.Define("PRICE",Float)
+Variable.UDT.UOrder2.Define("EXTENSION",Float)
+Variable.UDT.UOrder2.Define("COST",Float)
+Variable.UDT.UOrder2.Define("MARGIN",Float)
+Variable.UDT.UOrder2.Define("DATE_ITEM_PROM",Date)
+Variable.uGlobal.uOrder2.Declare("UOrder2")
+Variable.UDT.uWO.Define("JOB",String,JOB)
+Variable.UDT.uWO.Define("SUFFIX",String,SUFFIX)
+Variable.UDT.uWO.Define("PART",String,PART)
+Variable.UDT.uWO.Define("DESCRIPTION",String,DESCRIPTION)
+Variable.UDT.uWO.Define("DATE_DUE",Date,DATE_DUE)
+Variable.UDT.uWO.Define("DATE_CLOSED",Date,DATE_CLOSED)
+Variable.UDT.uWO.Define("QTY_REM",Float,QTY_REM)
+Variable.UDT.uWO.Define("AMT_MATERIAL",Float,AMT_MATERIAL)
+Variable.UDT.uWO.Define("AMT_LABOR",Float,AMT_LABOR)
+Variable.UDT.uWO.Define("AMT_OVERHEAD",Float,AMT_OVERHEAD)
+Variable.UDT.uWO.Define("Status",String)
+Variable.uGlobal.uWO.Declare("uWO")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+' Mod 12/22/14
+V.Local.bExists.Declare(Boolean)
+V.Local.bRet.Declare(Boolean)
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.ODBC.Connection!conx.TableExists("GAB_PRJ_DATAS",V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.UI.Msgbox("Table GAB_PRJ_DATAS doesn't exist","GAB Error Message")
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!conx.TableExists("GAB_PRJ_MAIN",V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.UI.Msgbox("Table GAB_PRJ_MAIN doesn't exist","GAB Error Message")
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Subuftitleload)
+'F.Intrinsic.Control.CallSub(Subbuildsytles_fgorder)
+'F.Intrinsic.Control.CallSub(Subbuildstyles_fgquote)
+'F.Intrinsic.Control.CallSub(Subbuildstyles_fgpop)
+'F.Intrinsic.Control.CallSub(Subbuildstyles_fgwo)
+'F.Intrinsic.Control.CallSub(Subbuildstyles_fgship)
+'F.Intrinsic.Control.CallSub(Subbuildstyles_fgordhist)
+'F.Intrinsic.Control.CallSub(Subbuildstyles_fgapi)
+
+F.Intrinsic.Variable.PassedExists("PRJ_ID",V.Local.bRet)
+F.Intrinsic.Control.If(V.Local.bRet,=,True)
+	V.Global.iID_PRJ.Set(V.Passed.PRJ_ID)
+	Gui.F_QUOTE.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_QUOTE.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_ORDER.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_ORDER.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_PO.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_PO.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_Ship.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_Ship.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_HIST.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_HIST.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_API.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_API.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_GL.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_GL.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_WO.txtPRJID.Text(V.Passed.PRJ_ID)
+	Gui.F_WO.txtPRJIDN.Text(V.Passed.PRJ_DESC)
+	Gui.F_Dash.txtPRJ.Text(V.Passed.PRJ_ID)
+	Gui.F_Dash.txtProjDesc.Text(V.Passed.PRJ_DESC)
+	Gui.F_PRJ.txtID.Text(V.Passed.PRJ_ID)
+	Gui.F_PRJ.txtDesc.Text(V.Passed.PRJ_DESC)
+	F.Intrinsic.Control.If(V.Passed.PRJ_STAT,=,"Active")
+		Gui.F_Dash.txtStat.Text("Active")
+		Gui.F_PRJ.optActive.Value("True")
+	F.Intrinsic.Control.ElseIf(V.Passed.PRJ_STAT,=,"Hold")
+		Gui.F_Dash.txtStat.Text("Hold")
+		Gui.F_PRJ.optHold.Value("True")
+	F.Intrinsic.Control.ElseIf(V.Passed.PRJ_STAT,=,"Closed")
+		Gui.F_Dash.txtStat.Text("Closed")
+		Gui.F_PRJ.optClosed.Value("True")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CallSub(Subloaddata1)
+	F.Intrinsic.Control.CallSub(Subloadmain)
+	Gui.F_Dash..Show
+F.Intrinsic.Control.Else
+	Gui.F_Dash..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.subEnd.Start
+F.ODBC.Connection!Conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.subEnd.End
+
+Program.Sub.cmdprjbrw_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdprjbrw_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Split("PRJ ID*!*Description*!*Status","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1000*!*5250*!*800","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.Browser("Select a Project",conx,"Select ID_PRJ, DESCR_PRJ, STATUS FROM GAB_PRJ_DESC ORDER BY ID_PRJ DESC",V.Local.sTitles,V.Local.iWidths,5800,5800,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Project ID was selected")
+F.Intrinsic.Control.Else
+	Gui.F_Dash..Visible(False)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Global.iID_PRJ.Set(V.Local.sRet(0))
+	Gui.F_QUOTE.txtPRJID.Text(V.Local.sRet(0))
+	Gui.F_QUOTE.txtPRJIDN.Text(V.Local.sRet(1))
+	Gui.F_ORDER.txtPRJID.Text(V.Local.sRet(0))
+	Gui.F_ORDER.txtPRJIDN.Text(V.Local.sRet(1))
+	Gui.F_PO.txtPRJID.Text(V.Local.sRet(0))
+	Gui.F_PO.txtPRJIDN.Text(V.Local.sRet(1))
+	Gui.F_Ship.txtPRJID.Text(V.Local.sRet(0))
+	Gui.F_Ship.txtPRJIDN.Text(V.Local.sRet(1))
+	Gui.F_HIST.txtPRJID.Text(V.Local.sRet(0))
+	Gui.F_HIST.txtPRJIDN.Text(V.Local.sRet(1))
+	Gui.F_API.txtPRJID.Text(V.Local.sRet(0))
+	Gui.F_API.txtPRJIDN.Text(V.Local.sRet(1))
+	Gui.F_WO.txtPRJID.Text(V.Local.sRet(0))
+	Gui.F_WO.txtPRJIDN.Text(V.Local.sRet(1))
+	Gui.F_Dash.txtPRJ.Text(V.Local.sRet(0))
+	Gui.F_Dash.txtProjDesc.Text(V.Local.sRet(1))
+	Gui.F_PRJ.txtID.Text(V.Local.sRet(0))
+	Gui.F_PRJ.txtDesc.Text(V.Local.sRet(1))
+	F.Intrinsic.Control.If(V.Local.sRet(2),=,"A")
+		Gui.F_Dash.txtStat.Text("Active")
+		Gui.F_PRJ.optActive.Value("True")
+	F.Intrinsic.Control.ElseIf(V.Local.sRet(2),=,"H")
+		Gui.F_Dash.txtStat.Text("Hold")
+		Gui.F_PRJ.optHold.Value("True")
+	F.Intrinsic.Control.ElseIf(V.Local.sRet(2),=,"C")
+		Gui.F_Dash.txtStat.Text("Closed")
+		Gui.F_PRJ.optClosed.Value("True")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CallSub(Subloaddata1)
+	F.Intrinsic.Control.CallSub(Subloadmain)
+	Gui.F_Dash..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdprjbrw_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdprjbrw_click.End
+
+Program.Sub.subLoadData1.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadData1_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Global.fQtyCompleted.Set(0)
+V.Global.fQtyRemaining.Set(0)
+
+F.Intrinsic.Control.If(V.Screen.F_Dash!txtPRJ.Text,<>,"")
+	F.Intrinsic.Control.CallSub(Subloadquote)
+	F.Intrinsic.Control.CallSub(Subloadorder)
+	F.Intrinsic.Control.CallSub(Subloadpo)
+	F.Intrinsic.Control.CallSub(Subloadapi)
+'	F.Intrinsic.Control.CallSub(Subloadship)
+'	F.Intrinsic.Control.CallSub(Subloadordhist)
+	F.Intrinsic.Control.CallSub(Subloadwo)
+	F.Intrinsic.Control.CallSub(subloadgl)
+	F.Intrinsic.Control.CallSub(Subloadpic1)
+	F.Intrinsic.Control.CallSub(Subloadpic2)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadData1_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadData1.End
+
+Program.Sub.subLoadAPI.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadAPI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.fAPITot.Declare(Float)
+V.Local.sAPITot.Declare(String)
+V.Local.iC.Declare(Long,0)
+V.Local.sAPI.Declare(String)
+
+F.Intrinsic.Control.If(V.DataTable.dtAP.Exists,=,True)
+	F.Data.DataTable.Close("dtAP")
+F.Intrinsic.Control.EndIf
+
+Gui.F_API.GsGCAP.Anchor(15)
+V.Local.sSql.Set("Select * From GAB_PRJ_DATAS")
+F.Intrinsic.String.Concat(V.Local.sSql," WHERE ID_PRJ='",V.Global.iID_PRJ,"' and type = 'I'",V.Local.sSql)
+F.Data.DataTable.CreateFromSQL("dtPrjAP","Conx",V.Local.sSql)
+F.Intrinsic.Control.If(V.DataTable.dtPrjAP.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtPrjAP.RowCount--,1)
+		F.Intrinsic.String.Build("select NAME_VENDOR as Vendor,INVOICE as Invoice,AMT_INVOICE as Amount from AP_OPEN_ITEMS, V_VENDOR_MASTER WHERE AP_OPEN_ITEMS.batch_code = '10' and AP_OPEN_ITEMS.VENDOR=V_VENDOR_MASTER.VENDOR  and INVOICE='{0}'",V.DataTable.dtPrjAP(V.Local.iC).VALUE!FieldValTrim,V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.dtAP.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtAPTemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtAPTemp","dtAP",True,1)
+			F.Data.DataTable.Close("dtAPTemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtAP","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("select NAME_VENDOR as Vendor,INVOICE as Invoice,AMT_INVOICE as Amount from AP_HIST, V_VENDOR_MASTER WHERE AP_HIST.batch_code = '10' and AP_HIST.VENDOR=V_VENDOR_MASTER.VENDOR  and INVOICE='{0}'",V.DataTable.dtPrjAP(V.Local.iC).VALUE!FieldValTrim,V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.dtAP.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtAPTemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtAPTemp","dtAP",True,1)
+			F.Data.DataTable.Close("dtAPTemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtAP","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iC)
+	
+	Gui.F_API.GsGCAP.AddGridviewFromDatatable("gvAP","dtAP")
+	Gui.F_API.GsGCAP.MainView("gvAP")
+	
+	Gui.F_API.GsGCAP.SetGridviewProperty("gvAP","ShowGroupPanel",True)
+	Gui.F_API.GsGCAP.SetGridviewProperty("gvAP","AllowSort",True)
+	Gui.F_API.GsGCAP.SetGridviewProperty("gvAP","AllowFilter",True)
+	
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Vendor","HeaderHAlignment","Center")
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Invoice","HeaderHAlignment","Center")
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Amount","HeaderHAlignment","Center")
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Invoice","CellHAlignment","Center")
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Amount","DisplayCustomNumeric","##,###,##0")
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Vendor","MinWidth","160")
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Invoice","MinWidth","100")
+	Gui.F_API.GsGCAP.SetColumnProperty("gvAP","Amount","MinWidth","100")
+	
+	Gui.F_API.GsGCAP.AddSummaryItem("gvAP","Amount","AmtSUM","SUM","","","##,###,##0.00")	
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtPrjAP")
+
+F.Intrinsic.Control.If(V.DataTable.dtAP.Exists,=,True)
+	F.Data.DataTable.Compute("dtAP","SUM(Amount)","",V.Local.fAPITot)
+F.Intrinsic.Control.Else
+	V.Local.fAPITot.Set(0)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Format(V.Local.fAPITot,"###,###,###.00",V.Local.sAPITot)
+Gui.F_API.txtTotAPI.Text(V.Local.sAPITot)
+
+'F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uAPI!INVOICE,0)
+
+'Gui.F_API.fgAPI.Visible(False)
+'Gui.F_API.fgAPI.LoadFromUDT("V.uGlobal.uAPI","NAME_VENDOR*!*INVOICE*!*AMT_INVOICE",2)
+'Gui.F_API.fgAPI.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadAPI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadAPI.End
+
+Program.Sub.cmdperc_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdperc_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_Perc..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdperc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdperc_click.End
+
+Program.Sub.f_perc_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_perc_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Perc..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_perc_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_perc_unload.End
+
+Program.Sub.subLoadPic1.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadPic1_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.bExists.Declare(Boolean)
+V.Local.fQtyTot.Declare(Float)
+V.Local.fQtyRem.Declare(Float)
+V.Local.iQtyRem.Declare(Long)
+V.Local.iQtyCom.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sSeries1.Declare(String)
+V.Local.sX.Declare(String)
+V.Local.sY1.Declare(String)
+V.Local.iX.Declare(Long)
+V.Local.iY.Declare(Long)
+V.Local.sPath.Declare(String)
+
+F.Intrinsic.Math.Add(V.Global.fQtyCompleted,V.Global.fQtyRemaining,V.Local.fQtyTot)
+
+F.Intrinsic.Control.If(V.Local.fQtyTot,>,0)
+	F.Intrinsic.Math.Div(V.Global.fQtyRemaining,V.Local.fQtyTot,V.Local.fQtyRem)
+	F.Intrinsic.Math.Mult(V.Local.fQtyRem,100,V.Local.fQtyRem)
+	F.Intrinsic.Math.Round(V.Local.fQtyRem,0,V.Local.iQtyRem)
+	F.Intrinsic.Math.Sub(100,V.Local.iQtyRem,V.Local.iQtyCom)
+	
+	'Create Chart -- Create a chart called "MyChart"
+	F.Global.Presentation.CreateChart("MyChart",V.Local.sRet)
+
+	'Create a Legend -- Create a legend called "MyLegend"
+	F.Global.Presentation.CreateChartMember("MyChart","Legend","MyLegend",V.Local.sRet)
+
+'	'Create a Title -- Create a Title called "MyTitle" and set the text of the title to say "My Chart Example"
+	F.Global.Presentation.CreateChartMember("MyChart","Title","MyTitle","Quantity",V.Local.sRet)
+
+	'Create Series -- Create a series called "Sales North" and get data from database
+	V.Local.sX.Set("Remaining*!*Completed")
+	F.Intrinsic.String.Concat(V.Local.iQtyRem,"*!*",V.Local.iQtyCom,V.Local.sY1)
+
+	F.Intrinsic.String.Concat(V.Local.sX,"!*!",V.Local.sY1,V.Local.sSeries1)
+	F.Global.Presentation.CreateChartMember("MyChart","Series","QTY","Pie",V.Local.sSeries1,V.Local.sRet)
+
+	'Set Chart Property -- Change the chart color palette to the Pastel palette
+
+	F.Global.Presentation.SetChartProperty("MyChart","Palette","SeaGreen",V.Local.sRet)
+
+	'Set Chart Property -- Change the Label and Disable Chart Label
+	F.Global.Presentation.SetChartProperty("MyChart","Series","QTY","Label","%#VALY #VALX",V.Local.sRet)
+	F.Global.Presentation.SetChartProperty("MyChart","ChartArea","Area3DStyle:Enable3D","True",V.Local.sRet)
+	F.Global.Presentation.SetChartProperty("MyChart","Series","QTY","Item:PieLabelStyle","Disabled",V.Local.sRet)
+
+'	'Set a Title Property -- Change the font of the title to Trebuchet MS, size 20, and Bold
+	F.Global.Presentation.SetChartProperty("MyChart","Title","MyTitle","Font","Trebuchet MS|14|Bold",V.Local.sRet)
+
+	'Render --  Save to \Global\Temp\MyChart.bmp, and overwrite if file already exists
+	F.Intrinsic.String.Concat(V.Caller.TempDir,"\Pic1.bmp",V.Local.sPath)
+	F.Intrinsic.Math.Div(V.Screen.F_Perc!picChart1.Width,V.Ambient.TwipsPerPixelX,V.Local.iX)
+	F.Intrinsic.Math.Div(V.Screen.F_Perc!picChart1.Height,V.Ambient.TwipsPerPixelX,V.Local.iY)
+	F.Global.Presentation.RenderChart("MyChart",V.Local.sPath,"True",V.Local.iX,V.Local.iY,V.Local.sRet)
+
+	'Load picture to PictureBox
+	F.Intrinsic.File.Exists(V.Local.sPath,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists,=,"True")
+		Gui.F_Perc.picChart1.Picture(V.Local.sPath)
+
+	'	Gui.F_Chart.picChart.Picture(V.Local.sPath)
+	F.Intrinsic.Control.EndIf
+
+	'Clear Chart -- Necessary for Re-Rendering
+	F.Global.Presentation.ClearChart("MyChart",V.Local.sRet)
+
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadPic1_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadPic1.End
+
+Program.Sub.subLoadPic2.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadPic2_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.bExists.Declare(Boolean)
+V.Local.fDollarTot.Declare(Float)
+V.Local.fDollarRem.Declare(Float)
+V.Local.iDollarRem.Declare(Long)
+V.Local.iDollarCom.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sSeries1.Declare(String)
+V.Local.sX.Declare(String)
+V.Local.sY1.Declare(String)
+V.Local.iX.Declare(Long)
+V.Local.iY.Declare(Long)
+V.Local.sPath.Declare(String)
+
+F.Intrinsic.Math.Add(V.Global.fDollarCom,V.Global.fDollarRem,V.Local.fDollarTot)
+
+F.Intrinsic.Control.If(V.Local.fDollarTot,>,0)
+	F.Intrinsic.Math.Div(V.Global.fDollarRem,V.Local.fDollarTot,V.Local.fDollarRem)
+	F.Intrinsic.Math.Mult(V.Local.fDollarRem,100,V.Local.fDollarRem)
+	F.Intrinsic.Math.Round(V.Local.fDollarRem,0,V.Local.iDollarRem)
+	F.Intrinsic.Math.Sub(100,V.Local.iDollarRem,V.Local.iDollarCom)
+	
+	'Create Chart -- Create a chart called "MyChart"
+	F.Global.Presentation.CreateChart("MyChart",V.Local.sRet)
+
+	'Create a Legend -- Create a legend called "MyLegend"
+	F.Global.Presentation.CreateChartMember("MyChart","Legend","MyLegend",V.Local.sRet)
+
+'	'Create a Title -- Create a Title called "MyTitle" and set the text of the title to say "My Chart Example"
+	F.Global.Presentation.CreateChartMember("MyChart","Title","MyTitle","Dollars",V.Local.sRet)
+
+	'Create Series -- Create a series called "Dollar" and get data from database
+	V.Local.sX.Set("Remaining*!*Completed")
+	F.Intrinsic.String.Concat(V.Local.iDollarRem,"*!*",V.Local.iDollarCom,V.Local.sY1)
+
+	F.Intrinsic.String.Concat(V.Local.sX,"!*!",V.Local.sY1,V.Local.sSeries1)
+	F.Global.Presentation.CreateChartMember("MyChart","Series","Dollars","Pie",V.Local.sSeries1,V.Local.sRet)
+
+	'Set Chart Property -- Change the chart color palette to the Pastel palette
+
+	F.Global.Presentation.SetChartProperty("MyChart","Palette","SeaGreen",V.Local.sRet)
+
+	'Set Chart Property -- Change the Label and Disable Chart Label
+	F.Global.Presentation.SetChartProperty("MyChart","Series","Dollars","Label"," %#VALY #VALX",V.Local.sRet)
+	F.Global.Presentation.SetChartProperty("MyChart","ChartArea","Area3DStyle:Enable3D","True",V.Local.sRet)
+	F.Global.Presentation.SetChartProperty("MyChart","Series","Dollars","Item:PieLabelStyle","Disabled",V.Local.sRet)
+
+'	'Set a Title Property -- Change the font of the title to Trebuchet MS, size 20, and Bold
+	F.Global.Presentation.SetChartProperty("MyChart","Title","MyTitle","Font","Trebuchet MS|14|Bold",V.Local.sRet)
+
+	'Render --  Save to \Global\Temp\MyChart.bmp, and overwrite if file already exists
+	F.Intrinsic.String.Concat(V.Caller.TempDir,"\Pic2.bmp",V.Local.sPath)
+	F.Intrinsic.Math.Div(V.Screen.F_Perc!picChart1.Width,V.Ambient.TwipsPerPixelX,V.Local.iX)
+	F.Intrinsic.Math.Div(V.Screen.F_Perc!picChart1.Height,V.Ambient.TwipsPerPixelX,V.Local.iY)
+	F.Global.Presentation.RenderChart("MyChart",V.Local.sPath,"True",V.Local.iX,V.Local.iY,V.Local.sRet)
+
+	'Load picture to PictureBox
+	F.Intrinsic.File.Exists(V.Local.sPath,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists,=,"True")
+		Gui.F_Perc.picChart2.Picture(V.Local.sPath)
+
+	F.Intrinsic.Control.EndIf
+
+	'Clear Chart -- Necessary for Re-Rendering
+	F.Global.Presentation.ClearChart("MyChart",V.Local.sRet)
+
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadPic2_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadPic2.End
+
+Program.Sub.fgpo_mouseup.Start
+F.Intrinsic.Control.SetErrorHandler("fgpo_mouseup_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTemp.Declare(String)
+'LINK CONTROL
+F.Intrinsic.Control.If(V.Args.MouseRow,>,0)
+	F.Intrinsic.Control.If(V.Args.MouseCol,=,0)
+		Gui.F_PO.fgPO.GetTextMatrix(V.Args.mousecol,V.Args.mouserow,V.Local.sTemp)
+		F.Intrinsic.String.Concat("V!*!",V.Local.sTemp,"!*!",V.Local.sTemp)
+		F.Global.General.CallWrapperASync(175200,V.Local.sTemp)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fgpo_mouseup_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.fgpo_mouseup.End
+
+Program.Sub.fgquote_mouseup.Start
+F.Intrinsic.Control.SetErrorHandler("fgquote_mouseup_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTemp.Declare(String)
+'LINK CONTROL
+F.Intrinsic.Control.If(V.Args.MouseRow,>,0)
+	F.Intrinsic.Control.If(V.Args.MouseCol,=,0)
+		Gui.F_QUOTE.fgQuote.GetTextMatrix(V.Args.mousecol,V.Args.mouserow,V.Local.sTemp)
+		F.Intrinsic.String.Concat(V.Local.sTemp,"!*!","V","!*!","*!*ZDR*!*",V.Local.sTemp)
+		F.Global.General.CallWrapperASync(251000,V.Local.sTemp)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fgquote_mouseup_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.fgquote_mouseup.End
+
+Program.Sub.fgorder_mouseup.Start
+F.Intrinsic.Control.SetErrorHandler("fgorder_mouseup_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTemp.Declare(String)
+'LINK CONTROL
+F.Intrinsic.Control.If(V.Args.MouseRow,>,0)
+	F.Intrinsic.Control.If(V.Args.MouseCol,=,0)
+		Gui.F_ORDER.fgOrder.GetTextMatrix(V.Args.mousecol,V.Args.mouserow,V.Local.sTemp)
+		F.Intrinsic.String.Concat(V.Local.sTemp,"!*!","V","!*!","*!*ZDR*!*",V.Local.sTemp)
+		F.Global.General.CallWrapperASync(200000,V.Local.sTemp)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fgorder_mouseup_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.fgorder_mouseup.End
+
+Program.Sub.f_order_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_order_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_ORDER..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_order_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_order_unload.End
+
+Program.Sub.subBuildSytles_fgOrder.Start
+F.Intrinsic.Control.SetErrorHandler("subBuildSytles_fgOrder_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Declare/Define Default Font Size
+V.Local.iFontSize.Declare(Long,8)
+
+'Variable Used for Calculating Column Width (affected by Font Size)
+V.Local.fTempColWidth.Declare(Float,0)
+V.Local.fColWidthFactor.Declare(Float,1)
+V.Local.iCount.Declare(Long,0)
+
+'Define Number of Columns and Fixed Columns in Flex Grid
+'Fixed Column for Row Number
+Gui.F_ORDER.fgOrder.Cols(10)
+
+'Temp Set Row Count to 2 (So that Column Header can be Defined)
+'If No Data is Found Latter... Rows will Remain at 1 for the Fixed Header
+Gui.F_ORDER.fgOrder.Rows(2)
+Gui.F_ORDER.fgOrder.FixedRows(1)
+
+'--------------------------CREATE BUILD STYLES FOR FLEX GRID (USED FOR EITHER PART OF THE IF STATEMENT)----------------------------
+
+
+Gui.F_ORDER.fgOrder.TextMatrix(0,0,"Order #")
+V.Local.fTempColWidth.Set(800)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(0,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,0,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,0,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,0,"Format","alignment",1)
+Gui.F_ORDER.fgOrder.BuildStyle(2,0,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,0,"fontstyle","underline",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,0,"Color","Fore",16711680)
+Gui.F_ORDER.fgOrder.BuildStyle(2,0,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,0,"Format","alignment",1)
+
+Gui.F_ORDER.fgOrder.TextMatrix(1,0,"Customer Name")
+V.Local.fTempColWidth.Set(2000)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(1,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,1,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,1,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,1,"Format","alignment",1)
+Gui.F_ORDER.fgOrder.BuildStyle(2,1,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,1,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,1,"Format","alignment",1)
+
+
+Gui.F_ORDER.fgOrder.TextMatrix(2,0,"Part Number")
+V.Local.fTempColWidth.Set(1700)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(2,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,2,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,2,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,2,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,2,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,2,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,2,"Format","alignment",1)
+
+Gui.F_ORDER.fgOrder.TextMatrix(3,0,"Ln")
+V.Local.fTempColWidth.Set(400)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(3,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,3,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,3,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,3,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,3,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,3,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,3,"Format","alignment",4)
+
+Gui.F_ORDER.fgOrder.TextMatrix(4,0,"Prom Date")
+V.Local.fTempColWidth.Set(1000)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(4,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,4,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,4,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,4,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,4,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,4,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,4,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,4,"Format","Mask","mm/dd/yyyy")
+
+Gui.F_ORDER.fgOrder.TextMatrix(5,0,"Qty BO")
+V.Local.fTempColWidth.Set(800)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(5,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,5,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,5,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,5,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,5,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,5,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,5,"Format","alignment",7)
+
+Gui.F_ORDER.fgOrder.TextMatrix(6,0,"Cost")
+V.Local.fTempColWidth.Set(1000)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(6,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,6,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,6,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,6,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,6,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,6,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,6,"Format","alignment",7)
+Gui.F_ORDER.fgOrder.BuildStyle(2,6,"Format","Mask","$#0.00")
+
+Gui.F_ORDER.fgOrder.TextMatrix(7,0,"Price")
+V.Local.fTempColWidth.Set(1000)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(7,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,7,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,7,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,7,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,7,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,7,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,7,"Format","alignment",7)
+Gui.F_ORDER.fgOrder.BuildStyle(2,7,"Format","Mask","$#0.00")
+
+Gui.F_ORDER.fgOrder.TextMatrix(8,0,"Margin")
+V.Local.fTempColWidth.Set(800)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(8,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,8,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,8,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,8,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,8,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,8,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,8,"Format","alignment",7)
+Gui.F_ORDER.fgOrder.BuildStyle(2,8,"Format","Mask","%#0.00")
+
+Gui.F_ORDER.fgOrder.TextMatrix(9,0,"Extended")
+V.Local.fTempColWidth.Set(1200)
+F.Intrinsic.Math.Mult(V.Local.fTempColWidth,V.Local.fColWidthFactor,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.ColWidth(9,V.Local.fTempColWidth)
+Gui.F_ORDER.fgOrder.BuildStyle(1,9,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,9,"fontstyle","bold",True)
+Gui.F_ORDER.fgOrder.BuildStyle(1,9,"Format","alignment",4)
+Gui.F_ORDER.fgOrder.BuildStyle(2,9,"type","locked",True)
+Gui.F_ORDER.fgOrder.BuildStyle(2,9,"fontstyle","size",V.Local.iFontSize)
+Gui.F_ORDER.fgOrder.BuildStyle(2,9,"Format","alignment",7)
+Gui.F_ORDER.fgOrder.BuildStyle(2,9,"Format","Mask","$#0.00")
+
+'Cell selection moves Down after hitting enter...
+Gui.F_ORDER.fgOrder.ApplyStyle(0,1)
+Gui.F_ORDER.fgOrder.SetProperty("Enter",0)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subBuildSytles_fgOrder_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subBuildSytles_fgOrder.End
+
+Program.Sub.subLoadOrder.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadOrder_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sSql2.Declare(String)
+V.Local.sSqlOrd.Declare(String)
+V.Local.fOrderTot.Declare(Float)
+V.Local.sOrderTot.Declare(String)
+V.Local.fOrderCost.Declare(Float)
+V.Local.fOrderTotCost.Declare(Float)
+V.Local.sOrderTotCost.Declare(String)
+V.Local.fQtyInvoiced.Declare
+V.Local.iC.Declare(Long,0)
+V.Local.iC2.Declare(Long,0)
+V.Local.iCount.Declare(Long,-1)
+V.Local.sLocD.Declare(String)
+V.Local.dDateD.Declare(Date)
+V.Local.sLine.Declare(String)
+V.Local.fExt.Declare(Float)
+V.Local.sOrder.Declare(String)
+
+'V.uGlobal.uOrder2.Redim(0,0)
+
+F.Intrinsic.Control.If(V.DataTable.dtSO.Exists,=,True)
+	F.Data.DataTable.Close("dtSO")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtShip.Exists,=,True)
+	F.Data.DataTable.Close("dtShip")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtInvoice.Exists,=,True)
+	F.Data.DataTable.Close("dtInvoice")
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Date.ConvertDString("01/01/2039","MM/DD/YYYY",V.Local.dDateD)
+
+'F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uOrder)
+'F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uOrder)
+'
+'F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uShipSch)
+'F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uShipSch)
+
+Gui.F_ORDER.GsGCSO.Anchor(15)
+Gui.F_Ship.GsGCShip.Anchor(15)
+Gui.F_HIST.GsGCHist.Anchor(15)
+
+V.Local.sSqlOrd.Set("Select * From GAB_PRJ_DATAS")
+F.Intrinsic.String.Concat(V.Local.sSqlOrd," WHERE ID_PRJ='",V.Global.iID_PRJ,"' AND TYPE='O'",V.Local.sSqlOrd)
+F.Data.DataTable.CreateFromSQL("dtPrjO","Conx",V.Local.sSqlOrd)
+F.Intrinsic.Control.If(V.DataTable.dtPrjO.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtPrjO.RowCount--,1)
+		F.Intrinsic.String.Build("select ORDER_NO as SO,NAME_CUSTOMER as Customer,LEFT(RECORD_NO,3) as Line, PART as Part,description as Description, QTY_BO AS Qty, PRICE as Price, COST as Cost, CASE PRICE WHEN 0 THEN 0 ELSE 100*(1-(COST/PRICE)) END as Margin,case DATE_ITEM_PROM when '1900-01-01' then '2099-01-01' else DATE_ITEM_PROM end as DueDate, (QTY_BO*PRICE) AS Extension from V_ORDER_LINES,V_CUSTOMER_MASTER where V_ORDER_LINES.CUSTOMER=V_CUSTOMER_MASTER.CUSTOMER and ORDER_NO='{0}'",V.DataTable.dtPrjO(V.Local.iC).VALUE!FieldValTrim,V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.dtSO.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtSTemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtSTemp","dtSO",True,1)
+			F.Data.DataTable.Close("dtSTemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtSO","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+		
+		
+		
+		'Load from Shipment table
+		F.Intrinsic.String.Build("select ORDER_NO as SO, NAME_CUSTOMER as Customer,LEFT(ORDER_REC,3) AS Line, PART as Part,order_desc as Description,  QTY_SHIPPED AS Qty, PRICE as Price,COST as Cost,MARGIN as Margin, DATE_SHIP as ShipDate, EXTENSION as Extension from V_SHIPMENT_LINES, V_CUSTOMER_MASTER where V_SHIPMENT_LINES.CUSTOMER=V_CUSTOMER_MASTER.CUSTOMER and ORDER_NO='{0}'",V.DataTable.dtPrjO(V.Local.iC).VALUE!FieldValTrim,V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.dtShip.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtSTemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtSTemp","dtShip",True,1)
+			F.Data.DataTable.Close("dtSTemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtShip","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+		
+		F.Data.DataTable.Compute("dtShip","SUM(Qty)","",V.Global.fQtyCompleted)
+		F.Data.DataTable.Compute("dtShip","SUM(Extension)","",V.Local.fOrderTot)
+		
+		F.Intrinsic.Math.Add(V.Global.fDollarCom,V.Local.fOrderTot,V.Global.fDollarCom)
+		
+		
+		'Load from Order History
+		F.Intrinsic.String.Build("select ORDER_NO as SO,NAME_CUSTOMER as Customer,LEFT(ORDER_LINE,3) AS Line,PART as Part,description as Description,  QTY_SHIPPED AS Qty, PRICE as Price, COST as Cost, MARGIN as Margin, DATE_INVOICE as InvoiceDate, INVOICE as Invoice,EXTENSION as Extension from V_ORDER_HIST_LINE,V_CUSTOMER_MASTER where V_ORDER_HIST_LINE.CUSTOMER=V_CUSTOMER_MASTER.CUSTOMER  and ORDER_NO='{0}'",V.DataTable.dtPrjO(V.Local.iC).VALUE!FieldValTrim,V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.dtInvoice.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtITemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtITemp","dtInvoice",True,1)
+			F.Data.DataTable.Close("dtITemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtInvoice","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+
+		F.Data.DataTable.Compute("dtInvoice","SUM(Extension)","",V.Local.fOrderTot)
+		F.Data.DataTable.Compute("dtInvoice","SUM(Qty)","",V.Local.fQtyInvoiced)
+		F.Intrinsic.Math.Add(V.Global.fDollarCom,V.Local.fOrderTot,V.Global.fDollarCom)
+		F.Intrinsic.Math.Add(V.Global.fQtyCompleted,V.Local.fQtyInvoiced,V.Global.fQtyCompleted)
+	F.Intrinsic.Control.Next(V.Local.iC)
+
+	F.Data.DataTable.AddExpressionColumn("dtSO","TotalCost","Float","Qty*Cost")
+	
+	F.Data.DataTable.Compute("dtSO","SUM(Extension)","",V.Local.fOrderTot)
+	F.Data.DataTable.Compute("dtSO","SUM(Qty)","",V.Global.fQtyRemaining)
+	V.Global.fDollarRem.Set(V.Local.fOrderTot)
+	
+	Gui.F_ORDER.GsGCSO.AddGridviewFromDatatable("gvSO","dtSO")
+	Gui.F_ORDER.GsGCSO.MainView("gvSO")
+	
+	Gui.F_ORDER.GsGCSO.SetGridviewProperty("gvSO","ShowGroupPanel",True)
+	Gui.F_ORDER.GsGCSO.SetGridviewProperty("gvSO","AllowSort",True)
+	Gui.F_ORDER.GsGCSO.SetGridviewProperty("gvSO","AllowFilter",True)
+	
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","SO","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Customer","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Part","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Description","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Line","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Qty","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Cost","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Price","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Margin","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Extension","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","TotalCost","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","DueDate","HeaderHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","SO","CellHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Line","CellHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","DueDate","CellHAlignment","Center")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","DueDate","Caption","Due Date")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","TotalCost","Caption","Total Cost")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Qty","DisplayCustomNumeric","##,###,##0")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Cost","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Price","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Margin","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Extension","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","TotalCost","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","DueDate","DisplayCustomDatetime","d")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","SO","MinWidth","80")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Customer","MinWidth","160")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Part","MinWidth","100")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Description","MinWidth","200")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Line","MinWidth","70")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Qty","MinWidth","90")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Price","MinWidth","100")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Cost","MinWidth","100")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Margin","MinWidth","90")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","Extension","MinWidth","100")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","TotalCost","MinWidth","100")
+	Gui.F_ORDER.GsGCSO.SetColumnProperty("gvSO","DueDate","MinWidth","90")
+	
+	Gui.F_ORDER.GsGCSO.AddSummaryItem("gvSO","Extension","ExtensionSUM","SUM","","","##,###,##0.00")
+	Gui.F_ORDER.GsGCSO.AddSummaryItem("gvSO","TotalCost","TotalCostSUM","SUM","","","##,###,##0.00")
+
+	Gui.F_Ship.GsGCShip.AddGridviewFromDatatable("gvShip","dtShip")
+	Gui.F_Ship.GsGCShip.MainView("gvShip")
+	
+	Gui.F_Ship.GsGCShip.SetGridviewProperty("gvShip","ShowGroupPanel",True)
+	Gui.F_Ship.GsGCShip.SetGridviewProperty("gvShip","AllowSort",True)
+	Gui.F_Ship.GsGCShip.SetGridviewProperty("gvShip","AllowFilter",True)
+	
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","SO","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Customer","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Part","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Description","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Line","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Qty","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Cost","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Price","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Margin","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Extension","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","ShipDate","HeaderHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","SO","CellHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Line","CellHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","ShipDate","CellHAlignment","Center")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","ShipDate","Caption","Ship Date")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Qty","DisplayCustomNumeric","##,###,##0")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Cost","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Price","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Margin","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Extension","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","ShipDate","DisplayCustomDatetime","d")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","SO","MinWidth","80")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Customer","MinWidth","160")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Part","MinWidth","100")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Description","MinWidth","200")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Line","MinWidth","70")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Qty","MinWidth","90")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Price","MinWidth","100")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Cost","MinWidth","100")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Margin","MinWidth","90")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","Extension","MinWidth","100")
+	Gui.F_Ship.GsGCShip.SetColumnProperty("gvShip","ShipDate","MinWidth","90")
+	
+	Gui.F_Ship.GsGCShip.AddSummaryItem("gvShip","Extension","ExtensionSUM","SUM","","","##,###,##0.00")
+
+	Gui.F_HIST.GsGCHist.AddGridviewFromDatatable("gvInvoice","dtInvoice")
+	Gui.F_HIST.GsGCHist.MainView("gvInvoice")
+	
+	Gui.F_HIST.GsGCHist.SetGridviewProperty("gvInvoice","ShowGroupPanel",True)
+	Gui.F_HIST.GsGCHist.SetGridviewProperty("gvInvoice","AllowSort",True)
+	Gui.F_HIST.GsGCHist.SetGridviewProperty("gvInvoice","AllowFilter",True)
+	
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","SO","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Customer","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Part","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Description","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Line","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Qty","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Cost","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Price","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Margin","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Extension","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","InvoiceDate","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Invoice","HeaderHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","SO","CellHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Line","CellHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","InvoiceDate","CellHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Invoice","CellHAlignment","Center")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","InvoiceDate","Caption","Invoice Date")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Qty","DisplayCustomNumeric","##,###,##0")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Cost","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Price","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Margin","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Extension","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","InvoiceDate","DisplayCustomDatetime","d")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","SO","MinWidth","80")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Customer","MinWidth","160")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Part","MinWidth","100")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Description","MinWidth","200")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Line","MinWidth","70")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Qty","MinWidth","90")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Price","MinWidth","100")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Cost","MinWidth","100")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Margin","MinWidth","90")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Extension","MinWidth","100")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","InvoiceDate","MinWidth","90")
+	Gui.F_HIST.GsGCHist.SetColumnProperty("gvInvoice","Invoice","MinWidth","90")
+	
+	Gui.F_HIST.GsGCHist.AddSummaryItem("gvInvoice","Extension","ExtensionSUM","SUM","","","##,###,##0.00")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtPrjO")
+
+'F.Intrinsic.Control.If(V.DataTable.dtSO.Exists,=,True)
+'	
+'	F.Data.DataTable.Compute("dtSO","SUM(TotalCost)","",V.Local.fOrderCost)
+'	
+'F.Intrinsic.Control.endif
+'
+'
+'F.Intrinsic.String.Format(V.Local.fOrderTot,"###,###,###.00",V.Local.sOrderTot)
+'F.Intrinsic.String.Format(V.Local.fOrderTotCost,"###,###,###.00",V.Local.sOrderTotCost)
+'Gui.F_ORDER.txtOrdTotCost.Text(V.Local.sOrderTotCost)
+'Gui.F_ORDER.txtOrdTotExt.Text(V.Local.sOrderTot)
+
+'F.Intrinsic.String.Format(V.Local.fOrderTot,"###,###,###.00",V.Local.sOrderTot)
+'Gui.F_Ship.txtTotShip.Text(V.Local.sOrderTot)
+
+'F.Intrinsic.String.Format(V.Local.fOrderTot,"###,###,###.00",V.Local.sOrderTot)
+'Gui.F_HIST.txtTotHist.Text(V.Local.sOrderTot)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadOrder_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadOrder.End
+
+Program.Sub.cmdorderdash_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdorderdash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_ORDER..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdorderdash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdorderdash_click.End
+
+Program.Sub.f_quote_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_quote_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_QUOTE..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_quote_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_quote_unload.End
+
+Program.Sub.cmdquotedash_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdquotedash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_QUOTE..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdquotedash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdquotedash_click.End
+
+Program.Sub.subLoadQuote.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadQuote_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSqlQte.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.fQuoteTot.Declare(Float)
+V.Local.sQuoteTot.Declare(String)
+V.Local.fQuoteCost.Declare(Float)
+V.Local.fQuoteTotCost.Declare(Float)
+V.Local.sQuoteTotCost.Declare(String)
+V.Local.sQuote.Declare(String)
+V.Local.iC.Declare(Long,0)
+V.Local.fTemp.Declare(Float)
+
+F.Intrinsic.Control.If(V.DataTable.dtQuote.Exists,=,True)
+	F.Data.DataTable.Close("dtQuote")
+F.Intrinsic.Control.EndIf
+
+'F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uQuote)
+'F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uQuote)
+Gui.F_QUOTE.GsGCQte.Anchor(15)	
+V.Local.sSqlQte.Set("Select * From GAB_PRJ_DATAS")
+F.Intrinsic.String.Concat(V.Local.sSqlQte," WHERE ID_PRJ='",V.Global.iID_PRJ,"' AND TYPE='Q'",V.Local.sSqlQte)
+F.Data.DataTable.CreateFromSQL("dtPrjQ","Conx",V.Local.sSqlQte)
+F.Intrinsic.Control.If(V.DataTable.dtPrjQ.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtPrjQ.RowCount--,1)
+		F.Intrinsic.String.Build("select QUOTE_NO as Quote,NAME_CUSTOMER as Customer,LEFT(RECORD_NO,3) AS Line,PART as Part,description as Description,QTY_QUOTED AS Qty, PRICE as Price, COST as Cost, CASE PRICE WHEN 0 THEN 0 ELSE (1-(COST/PRICE)) END as Margin, DATE_ITEM_PROM as DueDate, EXTENSION as Extension from V_QUOTE_LINES, V_QUOTE_BILL_TO where V_QUOTE_LINES.QUOTE_NO=V_QUOTE_BILL_TO.QUOTE_NO AND QUOTE_NO='{0}'",V.DataTable.dtPrjQ(V.Local.iC).VALUE!FieldValTrim,V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.dtQuote.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtQTemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtQTemp","dtQuote",True,1)
+			F.Data.DataTable.Close("dtQTemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtQuote","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iC)
+	
+	F.Data.DataTable.AddExpressionColumn("dtQuote","TotalCost","Float","Qty*Cost")
+	
+	Gui.F_QUOTE.GsGCQte.AddGridviewFromDatatable("gvQuote","dtQuote")
+	Gui.F_QUOTE.GsGCQte.MainView("gvQuote")
+	
+	Gui.F_QUOTE.GsGCQte.SetGridviewProperty("gvQuote","ShowGroupPanel",True)
+	Gui.F_QUOTE.GsGCQte.SetGridviewProperty("gvQuote","AllowSort",True)
+	Gui.F_QUOTE.GsGCQte.SetGridviewProperty("gvQuote","AllowFilter",True)
+	
+	Gui.F_QUOTE.GsGCQte.AddSummaryItem("gvQuote","Extension","ExtSUM","SUM","","","##,###,##0.00")
+	Gui.F_QUOTE.GsGCQte.AddSummaryItem("gvQuote","TotalCost","TotalCostSUM","SUM","","","##,###,##0.00")
+	
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Quote","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Customer","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Part","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Description","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Line","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Qty","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Price","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Cost","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Margin","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Extension","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","TotalCost","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","DueDate","HeaderHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Quote","CellHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Line","CellHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","DueDate","CellHAlignment","Center")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","DueDate","Caption","Due Date")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","TotalCost","Caption","Total Cost")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Qty","DisplayCustomNumeric","##,###,##0")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Price","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Cost","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Margin","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Extension","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","TotalCost","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","DueDate","DisplayCustomDatetime","d")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Quote","MinWidth","80")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Customer","MinWidth","160")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Part","MinWidth","100")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Description","MinWidth","200")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Line","MinWidth","70")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Qty","MinWidth","90")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Price","MinWidth","100")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Cost","MinWidth","100")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Margin","MinWidth","90")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","Extension","MinWidth","100")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","DueDate","MinWidth","90")
+	Gui.F_QUOTE.GsGCQte.SetColumnProperty("gvQuote","TotalCost","MinWidth","100")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtPrjQ")
+
+'F.Intrinsic.Control.If(V.DataTable.dtQuote.Exists,=,True)
+'	F.Data.DataTable.Compute("dtQuote","SUM(Extension)","",V.Local.fQuoteTot)
+'	F.Data.DataTable.Compute("dtQuote","SUM(TotalCost)","",V.Local.fQuoteTotCost)
+'F.Intrinsic.Control.EndIf
+'
+'F.Intrinsic.String.Format(V.Local.fQuoteTot,"###,###,###.00",V.Local.sQuoteTot)
+'F.Intrinsic.String.Format(V.Local.fQuoteTotCost,"###,###,###.00",V.Local.sQuoteTotCost)
+'
+'Gui.F_QUOTE.txtQteTotExt.Text(V.Local.sQuoteTot)
+'Gui.F_QUOTE.txtQteTotCost.Text(V.Local.sQuoteTotCost)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadQuote_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadQuote.End
+
+Program.Sub.f_po_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_po_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_PO..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_po_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_po_unload.End
+
+Program.Sub.subLoadPo.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadPo_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.fPOTot.Declare(Float)
+V.Local.sPOTot.Declare(String)
+V.Local.fPORecdTot.Declare(Float)
+V.Local.sPORecdTot.Declare(String)
+V.Local.fPOOpenTot.Declare(Float)
+V.Local.sPOOpenTot.Declare(String)
+V.Local.sPO.Declare(String)
+V.Local.sPOLine.Declare(String)
+V.Local.iC.Declare(Long,0)
+V.Local.iC2.Declare
+V.Local.sSqlPO.Declare(String)
+V.Local.sSqlPOLst.Declare(String)
+V.Local.sTemp.Declare
+
+F.Intrinsic.Control.If(V.DataTable.dtPO.Exists,=,True)
+	F.Data.DataTable.Close("dtPO")
+F.Intrinsic.Control.endif
+
+''F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uPO)
+''F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uPO)
+Gui.F_PO.GsGCPO.Anchor(15)
+'V.Local.sSqlPO.Set("Select * From GAB_PRJ_DATAS")
+'F.Intrinsic.String.Concat(V.Local.sSqlPO," WHERE ID_PRJ='",V.Global.iID_PRJ,"' AND TYPE='P'",V.Local.sSqlPO)
+'F.Data.DataTable.CreateFromSQL("dtPrjP","Conx",V.Local.sSqlPO)
+'F.Intrinsic.Control.If(V.DataTable.dtPrjP.RowCount,>,0)
+''F.Intrinsic.Debug.ShowCallerInfo
+'	F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtPrjP.RowCount--,1)
+'		F.Intrinsic.String.Concat("Select Part, Cost, Qty_Order From V_PO_HISTORY Where Purchase_Order='",V.DataTable.dtPrjP(V.Local.iC).VALUE!FieldValTrim,"' And PO_LINE='",V.DataTable.dtPrjP(V.Local.iC).VALUE2!FieldValTrim,"0' And Date_Received='1900-01-01'",V.Local.sSqlPO)
+'		F.Data.DataTable.CreateFromSQL("dtPOList","Conx",V.Local.sSqlPO)
+'		F.Intrinsic.Control.If(V.DataTable.dtPOList.RowCount,>,0)
+'			F.Intrinsic.Control.For(V.Local.iC2,0,V.DataTable.dtPOList.RowCount--,1)
+'				'V.Local.sSql.Set("select PURCHASE_ORDER as PO,NAME_VENDOR as Vendor,LEFT(PO_LINE,3) AS Line, PART as Part, description as Description, QTY_ORDER as Qty, sum(qty_received+QTY_RECD_NOT_INSP) AS QtyRec,COST as Cost,DATE_DUE as DueDate, QTY_ORDER*COST AS Extension, sum(qty_received+QTY_RECD_NOT_INSP)*COST AS ExtRec from v_po_history, V_Vendor_MASTER where V_PO_HISTORY.VENDOR=V_VENDOR_MASTER.VENDOR")
+'				V.Local.sSql.Set("select PURCHASE_ORDER as PO,NAME_VENDOR as Vendor,LEFT(PO_LINE,3) AS Line, PART as Part, description as Description, QTY_ORDER as Qty, sum(qty_received) AS QtyRec,COST as Cost,DATE_DUE as DueDate, QTY_ORDER*COST AS Extension, sum(qty_received)*COST AS ExtRec from v_po_history, V_Vendor_MASTER, V_PO_LINES where V_PO_HISTORY.VENDOR=V_VENDOR_MASTER.VENDOR")
+'				F.Intrinsic.String.Concat(V.Local.sSql," AND purchase_order='",V.DataTable.dtPrjP(V.Local.iC).VALUE!FieldValTrim,"' AND PO_LINE='",V.DataTable.dtPrjP(V.Local.iC).VALUE2!FieldValTrim,"0'"," AND PART='",V.DataTable.dtPOList(V.Local.iC2).Part!FieldValTrim,"' AND COST='",V.DataTable.dtPOList(V.Local.iC2).Cost!FieldVal,"' AND QTY_ORDER='",V.DataTable.dtPOList(V.Local.iC2).Qty_Order!FieldVal,"' group by PURCHASE_ORDER,NAME_VENDOR,PART,LINE,QTY_ORDER,COST,EXTENSION,DATE_DUE,description",V.Local.sSql)
+'				F.Intrinsic.Control.If(V.DataTable.dtPO.Exists,=,True)
+'					F.Data.DataTable.CreateFromSQL("dtPTemp","conx",V.Local.sSQL,True)
+'					F.Data.DataTable.Merge("dtPTemp","dtPO",True,1)
+'					F.Data.DataTable.Close("dtPTemp")
+'				F.Intrinsic.Control.else
+'					F.Data.DataTable.CreateFromSQL("dtPO","Conx",V.Local.sSql,True)
+'				F.Intrinsic.Control.EndIf
+'			F.Intrinsic.Control.Next(V.Local.iC2)
+'		F.Intrinsic.Control.EndIf
+'		F.Data.DataTable.Close("dtPOList")		
+'	F.Intrinsic.Control.Next(V.Local.iC)
+'	
+'	F.Data.DataTable.AddExpressionColumn("dtPO","ExtRem","Float","Extension-ExtRec")
+'	F.Data.DataTable.Compute("dtPO","SUM(Extension)","",V.Local.fPOTot)
+'	F.Data.DataTable.Compute("dtPO","SUM(ExtRec)","",V.Local.fPORecdTot)
+	
+F.Intrinsic.String.Build("Select ID_PRJ as ID, rtrim(VALUE) as PO, rtrim(VALUE2) as Line, rtrim(VALUE)+rtrim(VALUE2) as PK From GAB_PRJ_DATAS where TYPE='P' and ID_PRJ='{0}'",V.Global.iID_PRJ,V.Local.sSqlPO)	
+F.Data.DataTable.CreateFromSQL("dtPO","conx",V.Local.sSqlPO,True)
+F.Intrinsic.Control.If(V.DataTable.dtPO.RowCount,>,0)
+	
+	F.Data.DataTable.AddColumn("dtPO","Vendor","String","")
+	F.Data.DataTable.AddColumn("dtPO","Part","String","")
+	F.Data.DataTable.AddColumn("dtPO","Description","String","")
+	F.Data.DataTable.AddColumn("dtPO","Qty","Float",0)
+	F.Data.DataTable.AddColumn("dtPO","QtyRec","Float",0)
+	F.Data.DataTable.AddColumn("dtPO","UM","String","")
+	F.Data.DataTable.AddColumn("dtPO","Cost","Float",0)
+	F.Data.DataTable.AddColumn("dtPO","DueDate","Date","1900-01-01")
+	
+	'Load purchase data
+	'Gui.F_Dash.lblLoading.Caption("Loading PO and GRN records")
+	'GUi.F_Dash.progressBar1.Value(40)
+	F.Intrinsic.Control.If(V.DataTable.dtPOHist.Exists)
+		F.Data.DataTable.Close("dtPOHist")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataTable.CreateFromSQL("dtPOHist","conx","select PURCHASE_ORDER as PO, LEFT(PO_LINE,3) AS Line, VM.NAME_VENDOR AS Vendor, part as Part, purchase_order+left(po_line,3) as PK, description as Description, QTY_ORDER as Qty, qty_received as QtyRec, QTY_RECD_NOT_INSP as QtyNotInsp,COST as Cost, um_inventory as UM, DATE_DUE as DueDate from v_po_history PH LEFT JOIN V_VENDOR_MASTER VM ON PH.VENDOR = VM.VENDOR where receiver_no = ''",True)
+	F.Data.DataTable.AddExpressionColumn("dtPOHist","Extension","Float","Qty*Cost")
+	
+	'Retrieve all values to complete the grid
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Vendor")
+	F.Data.Dictionary.SetDefaultReturn("dicPO","")
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","Vendor")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Part")
+	F.Data.Dictionary.SetDefaultReturn("dicPO","**********EMPTY**********")
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","Part")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Description")
+	F.Data.Dictionary.SetDefaultReturn("dicPO","")
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","Description")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Qty")
+	F.Data.Dictionary.SetDefaultReturn("dicPO",0)
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","Qty")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","UM")
+	F.Data.Dictionary.SetDefaultReturn("dicPO","")
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","UM")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","DueDate")
+	F.Data.Dictionary.SetDefaultReturn("dicPO","1900-01-01")
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","DueDate")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","Cost")
+	F.Data.Dictionary.SetDefaultReturn("dicPO",0)
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","Cost")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.DataTable.AddExpressionColumn("dtPO","Extension","Float","QTY*COST")
+	F.Data.DataTable.Close("dtPOHist")
+	
+	F.Data.DataTable.CreateFromSQL("dtPOHist","conx","select PURCHASE_ORDER as PO, LEFT(PO_LINE,3) AS Line, part as Part, purchase_order+left(po_line,3) as PK, description as Description, QTY_ORDER as Qty, qty_received as QtyRec, QTY_RECD_NOT_INSP as QtyNotInsp,COST as Cost, um_inventory as UM from v_po_history where receiver_no <> ''",True)
+		
+	F.Data.Dictionary.CreateFromDataTable("dicPO","dtPOHist","PK","QtyRec")
+	F.Data.Dictionary.SetDefaultReturn("dicPO",0)
+	F.Data.DataTable.FillFromDictionary("dtPO","dicPO","PK","QtyRec")
+	F.Data.Dictionary.Close("dicPO")
+	
+	F.Data.DataTable.AddExpressionColumn("dtPO","ExtRec","Float","QTYREC*COST")
+	F.Data.DataTable.AddExpressionColumn("dtPO","ExtRem","Float","Extension-ExtRec")
+	F.Data.DataTable.Compute("dtPO","SUM(Extension)","",V.Local.fPOTot)
+	F.Data.DataTable.Compute("dtPO","SUM(ExtRec)","",V.Local.fPORecdTot)
+	F.Data.DataTable.Close("dtPOHist")
+	
+	Gui.F_PO.GsGCPO.AddGridviewFromDatatable("gvPO","dtPO")
+	Gui.F_PO.GsGCPO.MainView("gvPO")
+	
+	Gui.F_PO.GsGCPO.SetGridviewProperty("gvPO","ShowGroupPanel",True)
+	Gui.F_PO.GsGCPO.SetGridviewProperty("gvPO","AllowSort",True)
+	Gui.F_PO.GsGCPO.SetGridviewProperty("gvPO","AllowFilter",True)
+	
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ID","Visible",False)
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","PK","Visible",False)
+	
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","PO","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Vendor","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Part","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Description","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Line","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","UM","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Qty","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","QtyRec","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Cost","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Extension","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","DueDate","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRec","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRem","HeaderHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","PO","CellHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Line","CellHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","DueDate","CellHAlignment","Center")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","DueDate","Caption","Due Date")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","QtyRec","Caption","Qty Received")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRec","Caption","Amt Received")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRem","Caption","Amt Open")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Qty","DisplayCustomNumeric","##,###,##0")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","QtyRec","DisplayCustomNumeric","##,###,##0")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Cost","DisplayCustomNumeric","##,###,##0.00000")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Extension","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRec","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRem","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","DueDate","DisplayCustomDatetime","d")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","PO","MinWidth","80")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Vendor","MinWidth","160")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Part","MinWidth","100")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Description","MinWidth","200")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Line","MinWidth","70")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","UM","MinWidth","50")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Qty","MinWidth","90")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","QtyRec","MinWidth","90")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Cost","MinWidth","90")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","Extension","MinWidth","100")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRec","MinWidth","100")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","ExtRem","MinWidth","100")
+	Gui.F_PO.GsGCPO.SetColumnProperty("gvPO","DueDate","MinWidth","90")
+	
+	Gui.F_PO.GsGCPO.AddSummaryItem("gvPO","Extension","ExtSUM","SUM","","","##,###,##0.00")
+	Gui.F_PO.GsGCPO.AddSummaryItem("gvPO","ExtRec","ExtRecSUM","SUM","","","##,###,##0.00")
+	Gui.F_PO.GsGCPO.AddSummaryItem("gvPO","ExtRem","ExtRemSUM","SUM","","","##,###,##0.00")
+F.Intrinsic.Control.EndIf
+'F.Data.DataTable.Close("dtPrjP")
+
+F.Intrinsic.String.Format(V.Local.fPOTot,"###,###,###.00",V.Local.sTemp)
+Gui.F_Dash.txtPOTxtTot.Text(V.Local.sTemp)
+F.Intrinsic.String.Format(V.Local.fPORecdTot,"###,###,###.00",V.Local.sTemp)
+Gui.F_Dash.txtPOTxtReceiv.Text(V.Local.sTemp)
+F.Intrinsic.Math.Sub(V.Local.fPOTot,V.Local.fPORecdTot,V.Local.fPOOpenTot)
+F.Intrinsic.String.Format(V.Local.fPOOpenTot,"###,###,###.00",V.Local.sTemp)
+Gui.F_Dash.txtPOTxtRem.Text(V.Local.sTemp)
+'F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uPO!PURCHASE_ORDER,0,V.uGlobal.uPO!LINE,0)
+'
+'Gui.F_PO.fgPO.Visible(False)
+'Gui.F_PO.fgPO.LoadFromUDT("V.uGlobal.uPO","PURCHASE_ORDER*!*NAME_VENDOR*!*PART*!*LINE*!*DATE_DUE*!*QTY_ORDER*!*QTY_RECD*!*COST*!*EXTENSION",2)
+'Gui.F_PO.fgPO.Visible(True)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadPo_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadPo.End
+
+Program.Sub.cmdpodash_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdpodash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_PO..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpodash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdpodash_click.End
+
+Program.Sub.f_hist_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_hist_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_HIST..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_hist_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_hist_unload.End
+
+Program.Sub.cmdhistdash_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdhistdash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_HIST..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdhistdash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdhistdash_click.End
+
+Program.Sub.cmdshipdash_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdshipdash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_Ship..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdshipdash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdshipdash_click.End
+
+Program.Sub.f_ship_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_ship_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Ship..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_ship_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_ship_unload.End
+
+Program.Sub.f_api_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_api_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_API..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_api_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_api_unload.End
+
+Program.Sub.cmdapidash_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdapidash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_API..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdapidash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdapidash_click.End
+
+Program.Sub.cmdwodash_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdwodash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_WO..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdwodash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdwodash_click.End
+
+Program.Sub.f_wo_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_wo_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_WO..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_wo_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.f_wo_unload.End
+
+Program.Sub.subLoadWO.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadWO_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sSqlJob.Declare(String)
+V.Local.iC.Declare(Long,0)
+V.Local.sJOb.Declare(String)
+V.Local.fMat.Declare(Float,0)
+V.Local.fLab.Declare(Float,0)
+V.Local.fOH.Declare(Float,0)
+V.Local.sMat.Declare(String)
+V.Local.sLab.Declare(String)
+V.Local.sOH.Declare(String)
+V.Local.dDate.Declare(Date)
+F.Intrinsic.Date.ConvertDString("01/01/1900","MM/DD/YYYY",V.Local.dDate)
+
+F.Intrinsic.Control.If(V.DataTable.dtJob.Exists,=,True)
+	F.Data.DataTable.Close("dtJob")
+F.Intrinsic.Control.endif
+
+'F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uWO)
+'F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uWO)
+
+Gui.F_WO.GsGCJob.Anchor(15)
+V.Local.sSqlJob.Set("Select * From GAB_PRJ_DATAS")
+F.Intrinsic.String.Concat(V.Local.sSqlJob," WHERE ID_PRJ='",V.Global.iID_PRJ,"' AND TYPE='J'",V.Local.sSqlJob)
+F.Data.DataTable.CreateFromSQL("dtPrjJ","Conx",V.Local.sSqlJob)
+F.Intrinsic.Control.If(V.DataTable.dtPrjJ.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtPrjJ.RowCount--,1)
+		F.Intrinsic.String.Build("select JOB as Job, SUFFIX as Suffix, PART as Part, DESCRIPTION as Description, DATE_DUE as DueDate, DATE_CLOSED as ClosedDate, (QTY_ORDER-QTY_COMPLETED) as Qty, AMT_MATERIAL as Material, AMT_LABOR as Labor, AMT_OVERHEAD as Overhead, case DATE_CLOSED when '1900-01-01' then 'Open' else 'Closed' end as Status from V_JOB_HEADER Where JOB='{0}' and suffix = '{1}'",V.DataTable.dtPrjJ(V.Local.iC).VALUE!FieldValTrim,V.DataTable.dtPrjJ(V.Local.iC).VALUE2!FieldValTrim,V.Local.sSql)
+		F.Intrinsic.Control.If(V.DataTable.dtJob.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtJTemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtJTemp","dtJob",True,1)
+			F.Data.DataTable.Close("dtJTemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtJob","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iC)
+	
+	F.Data.DataTable.AddExpressionColumn("dtJob","TotalCost","Float","Material+Labor+Overhead")
+	
+	Gui.F_WO.GsGCJob.AddGridviewFromDatatable("gvJob","dtJob")
+	Gui.F_WO.GsGCJob.MainView("gvJob")
+	
+	Gui.F_WO.GsGCJob.SetGridviewProperty("gvJob","ShowGroupPanel",True)
+	Gui.F_WO.GsGCJob.SetGridviewProperty("gvJob","AllowSort",True)
+	Gui.F_WO.GsGCJob.SetGridviewProperty("gvJob","AllowFilter",True)
+	
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Job","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Suffix","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Part","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Description","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","DueDate","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","ClosedDate","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Qty","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Material","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Labor","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Overhead","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Status","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","TotalCost","HeaderHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Job","CellHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Suffix","CellHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","DueDate","CellHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","ClosedDate","CellHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Status","CellHAlignment","Center")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","DueDate","Caption","Due Date")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","ClosedDate","Caption","Closed Date")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Qty","Caption","Open Qty")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","TotalCost","Caption","Total Cost")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Qty","DisplayCustomNumeric","##,###,##0")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Labor","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Material","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Overhead","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","TotalCost","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","DueDate","DisplayCustomDatetime","d")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","ClosedDate","DisplayCustomDatetime","d")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Job","MinWidth","80")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Suffix","MinWidth","60")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Part","MinWidth","140")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Description","MinWidth","160")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Qty","MinWidth","90")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Material","MinWidth","90")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Labor","MinWidth","100")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Overhead","MinWidth","100")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","DueDate","MinWidth","90")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","ClosedDate","MinWidth","90")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","Status","MinWidth","60")
+	Gui.F_WO.GsGCJob.SetColumnProperty("gvJob","TotalCost","MinWidth","100")
+	
+	Gui.F_WO.GsGCJob.AddSummaryItem("gvJob","Material","MatSUM","SUM","","","##,###,##0.00")
+	Gui.F_WO.GsGCJob.AddSummaryItem("gvJob","Labor","LabSUM","SUM","","","##,###,##0.00")
+	Gui.F_WO.GsGCJob.AddSummaryItem("gvJob","Overhead","OHSUM","SUM","","","##,###,##0.00")	
+	Gui.F_WO.GsGCJob.AddSummaryItem("gvJob","TotalCost","TotalCostSUM","SUM","","","##,###,##0.00")	
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtPrjJ")
+
+'F.Data.DataTable.Compute("dtJob","SUM(Material)","",V.Local.fMat)
+'F.Data.DataTable.Compute("dtJob","SUM(Labor)","",V.Local.fLab)
+'F.Data.DataTable.Compute("dtJob","SUM(Overhead)","",V.Local.fOH)
+'
+'F.Intrinsic.String.Format(V.Local.fMat,"###,###,###.00",V.Local.sMat)
+'Gui.F_WO.txtMat.Text(V.Local.sMat)
+'
+'F.Intrinsic.String.Format(V.Local.fLab,"###,###,###.00",V.Local.sLab)
+'Gui.F_WO.txtTotLab.Text(V.Local.sLab)
+'
+'F.Intrinsic.String.Format(V.Local.fOH,"$###,###,###.00",V.Local.sOH)
+'Gui.F_WO.txtTotOH.Text(V.Local.sOH)
+
+'F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uWO!JOB,0,V.uGlobal.uWO!SUFFIX,0)
+'
+'Gui.F_WO.fgWO.Visible(False)
+'Gui.F_WO.fgWO.LoadFromUDT("V.uGlobal.uWO","STATUS*!*JOB*!*SUFFIX*!*PART*!*DESCRIPTION*!*DATE_DUE*!*QTY_REM*!*AMT_MATERIAL*!*AMT_LABOR*!*AMT_OVERHEAD",2)
+'Gui.F_WO.fgWO.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadWO_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadWO.End
+
+Program.Sub.subLoadMain.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadMain_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.fTemp.Declare(Float)
+V.Local.sTemp.Declare(String)
+
+Gui.F_Dash..ClearGroup(1)
+
+V.Local.sSql.Set("Select * From GAB_PRJ_MAIN ")
+F.Intrinsic.String.Concat(V.Local.sSql," WHERE ID_PRJ='",V.Global.iID_PRJ,"'",V.Local.sSql)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstLoadM",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstLoadM.EOF,=,False)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!QUOTE_SALES,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtQteTxtSales.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!QUOTE_COST,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtQteTxtCost.Text(V.Local.sTemp)
+	F.Intrinsic.Math.Mult(V.ODBC.conx!rstLoadM.FieldVal!QUOTE_MARGIN,100,V.Local.fTemp)
+	F.Intrinsic.String.Format(V.Local.fTemp,"%###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtQteTxtMargin.Text(V.Local.sTemp)
+
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!ORDER_SALES,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtOrderTxtSales.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!ORDER_COST,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtOrderTxtCost.Text(V.Local.sTemp)
+	F.Intrinsic.Math.Mult(V.ODBC.conx!rstLoadM.FieldVal!ORDER_MARGIN,100,V.Local.fTemp)
+	F.Intrinsic.String.Format(V.Local.fTemp,"%###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtOrderTxtMargin.Text(V.Local.sTemp)
+
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!SHIP_SALES,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtShipTxtSales.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!SHIP_COST,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtShipTxtCost.Text(V.Local.sTemp)
+	F.Intrinsic.Math.Mult(V.ODBC.conx!rstLoadM.FieldVal!SHIP_MARGIN,100,V.Local.fTemp)
+	F.Intrinsic.String.Format(V.Local.fTemp,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtShipTxtMargin.Text(V.Local.sTemp)
+
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!INVOICE_SALES,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtHistTxtSales.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!INVOICE_COST,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtHistTxtCost.Text(V.Local.sTemp)
+	F.Intrinsic.Math.Mult(V.ODBC.conx!rstLoadM.FieldVal!INVOICE_MARGIN,100,V.Local.fTemp)
+	F.Intrinsic.String.Format(V.Local.fTemp,"%###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtHistTxtMargin.Text(V.Local.sTemp)
+
+'	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!PO_TOT,"###,###,###.00",V.Local.sTemp)
+'	Gui.F_Dash.txtPOTxtTot.Text(V.Local.sTemp)
+'	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!PO_REC,"###,###,###.00",V.Local.sTemp)
+'	Gui.F_Dash.txtPOTxtReceiv.Text(V.Local.sTemp)
+'	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!PO_REM,"###,###,###.00",V.Local.sTemp)
+'	Gui.F_Dash.txtPOTxtRem.Text(V.Local.sTemp)
+
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!AP_TOTAL,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtAPITot.Text(V.Local.sTemp)
+
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!JOB_LABOR,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtWOLab.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!JOB_OH,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtWOOH.Text(V.Local.sTemp)
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!JOB_MATERIAL,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtWOMat.Text(V.Local.sTemp)
+	
+	F.Intrinsic.String.Format(V.ODBC.conx!rstLoadM.FieldVal!GL_TOTAL,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtGLTot.Text(V.Local.sTemp)
+
+	F.Intrinsic.Math.Add(V.ODBC.conx!rstLoadM.FieldVal!JOB_LABOR,V.ODBC.conx!rstLoadM.FieldVal!JOB_OH,V.ODBC.conx!rstLoadM.FieldVal!JOB_MATERIAL,V.Local.fTemp)
+	F.Intrinsic.String.Format(V.Local.fTemp,"###,###,###.00",V.Local.sTemp)
+	Gui.F_Dash.txtWOTot.Text(V.Local.sTemp)
+
+	Gui.F_Dash.lblUpdTime.Caption(V.ODBC.conx!rstLoadM.FieldVal!UPD_TIME)
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstLoadM.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadMain_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.subLoadMain.End
+
+Program.Sub.cmdrefresh_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdrefresh_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sFile.Declare(String)
+F.Intrinsic.Control.If(V.Screen.F_Dash!txtPRJ.Text,>,0)
+	Gui.F_Dash.lblUpdTime.Caption("Loading")
+	F.Intrinsic.String.Concat(V.Caller.PluginsDir,"\GAB\GAS\GAB_PRJ_UPD1.gas",V.Local.sFile)
+	F.Global.General.SetPassedDataElement("ID_PRJ",V.Screen.F_Dash!txtPRJ.Text)
+	F.Global.General.CallSyncGAS(V.Local.sFile)
+	F.Intrinsic.Control.CallSub(Subloadmain)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdrefresh_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdrefresh_click.End
+
+Program.Sub.cmdqteexcel_click.Start
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgQuote","iExportType",1)
+
+Program.Sub.cmdqteexcel_click.End
+
+Program.Sub.subExport_fgQuote.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_QUOTE.GsGCQte.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_QUOTE.GsGCQte.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgQuote.End
+
+Program.Sub.cmdqteoo_click.Start
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgQuote","iExportType",0)
+
+Program.Sub.cmdqteoo_click.End
+
+Program.Sub.cmdordexcel_click.Start
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgOrder","iExportType",1)
+
+
+Program.Sub.cmdordexcel_click.End
+
+Program.Sub.cmdordoo_click.Start
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgOrder","iExportType",0)
+
+
+Program.Sub.cmdordoo_click.End
+
+Program.Sub.subExport_fgOrder.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_ORDER.GsGCSO.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_ORDER.GsGCSO.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgOrder.End
+
+Program.Sub.cmdshipexcel_click.Start
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgShip","iExportType",1)
+
+Program.Sub.cmdshipexcel_click.End
+
+Program.Sub.cmdshipoo_click.Start
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgShip","iExportType",0)
+
+
+Program.Sub.cmdshipoo_click.End
+
+Program.Sub.cmdhistexcel_click.Start
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgOrdHist","iExportType",1)
+
+Program.Sub.cmdhistexcel_click.End
+
+Program.Sub.cmdhistoo_click.Start
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgOrdHist","iExportType",0)
+
+
+
+Program.Sub.cmdhistoo_click.End
+
+Program.Sub.cmdpoexcel_click.Start
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgPOP","iExportType",1)
+
+Program.Sub.cmdpoexcel_click.End
+
+Program.Sub.cmdpooo_click.Start
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgPOP","iExportType",0)
+
+
+
+Program.Sub.cmdpooo_click.End
+
+Program.Sub.cmdapiexcel_click.Start
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgAPI","iExportType",1)
+
+Program.Sub.cmdapiexcel_click.End
+
+Program.Sub.cmdapioo_click.Start
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgAPI","iExportType",0)
+
+
+Program.Sub.cmdapioo_click.End
+
+Program.Sub.cmdwoexcel_click.Start
+'Export Flex Grid to Microsoft Excel
+
+'Set Export Type to 1 for Excel
+F.Intrinsic.Control.CallSub("subExport_fgWO","iExportType",1)
+
+Program.Sub.cmdwoexcel_click.End
+
+Program.Sub.cmdwooo_click.Start
+'Export Flex Grid to Open Office
+
+'Set Export Type to 0 for Open Office
+F.Intrinsic.Control.CallSub("subExport_fgWO","iExportType",0)
+
+
+
+Program.Sub.cmdwooo_click.End
+
+Program.Sub.subExport_fgShip.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_Ship.GsGCShip.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_Ship.GsGCShip.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgShip.End
+
+Program.Sub.subExport_fgOrdHist.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_HIST.GsGCHist.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_HIST.GsGCHist.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgOrdHist.End
+
+Program.Sub.subExport_fgPOP.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_PO.GsGCPO.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_PO.GsGCPO.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+'V.Local.sFPath.Declare(String)
+'V.Local.sFPath.Set("")
+'V.Local.sMessage.Declare(String)
+'V.Local.iResponse.Declare(Long)
+'V.Local.iHandle.Declare(Long)
+'V.Local.iHandle.Set(0)
+'V.Local.iExportType.Declare(Long,-1)
+
+'V.Local.bExist.Declare
+
+'F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+'F.Intrinsic.Control.If(V.Local.bExist)
+'	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+'	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+'		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+'		Gui.F_PO.gGsGCPO.Export(V.Local.sFPath,"xlsx")
+'		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.Else
+'	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+'	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+'		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+'		Gui.F_PO.gGsGCPO.Export(V.Local.sFPath,"csv")
+'		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgPOP.End
+
+Program.Sub.subExport_fgAPI.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_API.GsGCAP.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_API.GsGCAP.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgAPI.End
+
+Program.Sub.subExport_fgWO.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_WO.GsGCJob.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_WO.GsGCJob.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.subExport_fgWO.End
+
+Program.Sub.cmdprjinfo_click.Start
+Gui.F_Dash..Visible(False)
+Gui.F_PRJ..Visible(True)
+F.Intrinsic.Control.CallSub(Subload_f_prj)
+
+
+Program.Sub.cmdprjinfo_click.End
+
+Program.Sub.f_prj_unload.Start
+Gui.F_PRJ..Visible(False)
+Gui.F_Dash..Visible(True)
+
+Program.Sub.f_prj_unload.End
+
+Program.Sub.subUFTitleLoad.Start
+V.Local.sSql.Declare(String)
+V.Local.sEnableUF.Declare(String)
+V.Local.sBrwUF.Declare(String)
+V.Local.sValue.Declare(String)
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T1'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF1.Visible("True")
+		Gui.F_PRJ.lblUF1.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF1.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T2'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF2.Visible("True")
+		Gui.F_PRJ.lblUF2.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF2.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T3'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF3.Visible("True")
+		Gui.F_PRJ.lblUF3.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF3.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T4'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF4.Visible("True")
+		Gui.F_PRJ.lblUF4.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF4.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T5'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF5.Visible("True")
+		Gui.F_PRJ.lblUF5.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF5.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T6'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF6.Visible("True")
+		Gui.F_PRJ.lblUF6.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF6.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T7'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF7.Visible("True")
+		Gui.F_PRJ.lblUF7.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF7.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T8'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF8.Visible("True")
+		Gui.F_PRJ.lblUF8.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF8.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T9'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF9.Visible("True")
+		Gui.F_PRJ.lblUF9.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF9.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+V.Local.sSql.Set("Select * from GAB_PRJ_UF Where TYPE='T10'")
+F.ODBC.connection!conx.OpenRecordsetRO("rstTLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTLoad.EOF,=,False)
+	F.Intrinsic.String.Left(V.ODBC.conx!rstTLoad.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,2,1,V.Local.sBrwUF)
+	F.Intrinsic.String.Mid(V.ODBC.conx!rstTLoad.FieldVal!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_PRJ.lblUF10.Visible("True")
+		Gui.F_PRJ.lblUF10.Caption(V.Local.sValue)
+		Gui.F_PRJ.txtUF10.Visible("True")
+		F.Intrinsic.Control.If(V.Local.sBrwUF,=,"Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTLoad.Close
+
+Program.Sub.subUFTitleLoad.End
+
+Program.Sub.subLoad_F_PRJ.Start
+V.Local.sSql.Declare(String)
+F.Intrinsic.String.Concat("Select * from GAB_PRJ_DESC Where ID_PRJ='",V.Screen.F_PRJ!txtID.Text,"'",V.Local.sSql)
+
+F.ODBC.connection!conx.OpenRecordsetRO("rstLoad",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.EOF,=,False)
+	Gui.F_PRJ.txtCust.Text(V.ODBC.conx!rstLoad.FieldValTrim!CUSTOMER)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!CUSTOMER,<>,"")
+		F.Intrinsic.String.Concat("SELECT NAME_CUSTOMER from V_CUSTOMER_MASTER WHERE CUSTOMER='",V.ODBC.conx!rstLoad.FieldValTrim!CUSTOMER,"'",V.Local.sSql)
+		F.ODBC.connection!conx.OpenRecordsetRO("rstLoadCust",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstLoadCust.EOF,=,False)
+			Gui.F_PRJ.txtCustName.Text(V.ODBC.conx!rstLoadCust.FieldValTrim!NAME_CUSTOMER)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstLoadCust.Close
+	F.Intrinsic.Control.Else
+		Gui.F_PRJ.txtCustName.Text("")
+	F.Intrinsic.Control.EndIf
+	Gui.F_PRJ.dtpStart.Value(V.ODBC.conx!rstLoad.FieldVal!DATE_START)
+	Gui.F_PRJ.dtpDue.Value(V.ODBC.conx!rstLoad.FieldVal!DATE_DUE)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!PM,<>,"")
+		F.Intrinsic.String.Concat("SELECT NAME from GAB_PRJ_PM WHERE IDM='",V.ODBC.conx!rstLoad.FieldValTrim!PM,"'",V.Local.sSql)
+		F.ODBC.connection!conx.OpenRecordsetRO("rstLoadPM",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstLoadPM.EOF,=,False)
+			Gui.F_PRJ.txtPM.Text(V.ODBC.conx!rstLoadPM.FieldValTrim!NAME)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstLoadPM.Close
+	F.Intrinsic.Control.Else
+		Gui.F_PRJ.txtPM.Text("")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.ODBC.conx!rstLoad.FieldValTrim!SP,<>,"")
+		F.Intrinsic.String.Concat("SELECT SALESPERSON from V_SALESPEOPLE WHERE SALESPERSON_CODE='",V.ODBC.conx!rstLoad.FieldValTrim!SP,"'",V.Local.sSql)
+		F.ODBC.connection!conx.OpenRecordsetRO("rstLoadSP",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstLoadSP.EOF,=,False)
+			Gui.F_PRJ.txtSP.Text(V.ODBC.conx!rstLoadSP.FieldValTrim!SALESPERSON)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstLoadSP.Close
+	F.Intrinsic.Control.Else
+		Gui.F_PRJ.txtSP.Text("")
+	F.Intrinsic.Control.EndIf
+	Gui.F_PRJ.txtUF1.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF1)
+	Gui.F_PRJ.txtUF2.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF2)
+	Gui.F_PRJ.txtUF3.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF3)
+	Gui.F_PRJ.txtUF4.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF4)
+	Gui.F_PRJ.txtUF5.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF5)
+	Gui.F_PRJ.txtUF6.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF6)
+	Gui.F_PRJ.txtUF7.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF7)
+	Gui.F_PRJ.txtUF8.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF8)
+	Gui.F_PRJ.txtUF9.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF8)
+	Gui.F_PRJ.txtUF10.Text(V.ODBC.conx!rstLoad.FieldValTrim!UF10)
+
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstLoad.Close
+
+Program.Sub.subLoad_F_PRJ.End
+
+Program.Sub.cmdnotes_click.Start
+V.Local.sFile.Declare(String)
+F.Intrinsic.Control.If(V.Screen.F_Dash!txtPRJ.Text,<>,"")
+	F.Intrinsic.String.Concat(V.Caller.PluginsDir,"\GAB\GAS\GAB_PRJ_Notes.gas",V.Local.sFile)
+	F.Global.General.SetPassedDataElement("PRJ_ID",V.Screen.F_Dash!txtPRJ.Text)
+	F.Global.General.SetPassedDataElement("PRJ_DESC",V.Screen.F_Dash!txtProjDesc.Text)
+
+	F.Global.General.CallSyncGAS(V.Local.sFile)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.cmdnotes_click.End
+
+Program.Sub.subLoadGL.Start
+F.Intrinsic.Control.SetErrorHandler("subLoadGL_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sBatch.Declare
+V.Local.sBatchLine.Declare
+V.Local.sFieldName.Declare
+V.Local.sGLAccounts.Declare
+V.Local.sSql.Declare(String)
+V.Local.fAPITot.Declare(Float)
+V.Local.sAPITot.Declare(String)
+V.Local.iC.Declare(Long,0)
+V.Local.sAPI.Declare(String)
+
+F.Intrinsic.Control.If(V.Caller.GSSVersion,>=,"2017.1")
+	V.Local.sFieldName.Set("GL_NUMBER")
+F.Intrinsic.Control.Else
+	V.Local.sFieldName.Set("GL_ACCOUNT")
+F.Intrinsic.Control.EndIf
+
+'Build a list of GL accounts from GAB_4996_COGS_ACCT
+F.Data.DataTable.CreateFromSQL("dtCOGS","conx","select gl_account as Account from GAB_4996_COGS_ACCT")
+F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtCOGS.RowCount--,1)
+	F.Intrinsic.Control.If(V.Local.sGLAccounts.Trim,=,"")
+		F.Intrinsic.String.Build("({0} = '{1}'",V.Local.sFieldName,V.DataTable.dtCOGS(V.Local.iC).Account!FieldValTrim,V.Local.sGLAccounts)
+	F.Intrinsic.Control.else
+		F.Intrinsic.String.Build("{0} OR {1} = '{2}'",V.Local.sGLAccounts,V.Local.sFieldName,V.DataTable.dtCOGS(V.Local.iC).Account!FieldValTrim,V.Local.sGLAccounts)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iC)
+F.Data.DataTable.Close("dtCOGS")
+F.Intrinsic.String.Concat(V.Local.sGLAccounts,")",V.Local.sGLAccounts)
+
+F.Intrinsic.Control.If(V.DataTable.dtGL.Exists,=,True)
+	F.Data.DataTable.Close("dtGL")
+F.Intrinsic.Control.EndIf
+
+Gui.F_GL.GsGCGL.Anchor(15)
+V.Local.sSql.Set("Select * From GAB_PRJ_DATAS")
+F.Intrinsic.String.Concat(V.Local.sSql," WHERE ID_PRJ='",V.Global.iID_PRJ,"' AND TYPE = 'F'",V.Local.sSql)
+F.Data.DataTable.CreateFromSQL("dtPrjGL","Conx",V.Local.sSql)
+F.Intrinsic.Control.If(V.DataTable.dtPrjGL.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.iC,0,V.DataTable.dtPrjGL.RowCount--,1)
+		F.Intrinsic.String.Split(V.DataTable.dtPrjGL(V.Local.iC).VALUE!FieldValTrim,"*!*",V.Local.sBatch)
+		V.Local.sBatchLine.Set(V.Local.sBatch(1).Trim)
+		V.Local.sBatch.Set(V.Local.sBatch(0).Trim)
+		F.Intrinsic.Control.If(V.Caller.GSSVersion,>=,"2017.1")
+			F.Intrinsic.String.Build("select batch as Batch, line as Line, description as Description,reference as Reference, amount_cmpny as Amount from v_gl_detail WHERE batch ='{0}' and line = {3} and post_date_sql = '{1}' and {2} order by line",V.Local.sBatch.Trim,V.DataTable.dtPrjGL(V.Local.iC).VALUE2!FieldValTrim,V.Local.sGLAccounts,V.Local.sBatchLine,V.Local.sSql)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.LPad(V.Local.sBatchLine,"0",5,V.Local.sBatchLine)
+			F.Intrinsic.String.Build("select batch_num as Batch, batch_line as Line, descr as Description,reference as Reference, amount as Amount from v_gl_detail WHERE batch_num ='{0}' and batch_line = '{3}' and post_date = '{1}' and {2} order by batch_line",V.Local.sBatch.Trim,V.DataTable.dtPrjGL(V.Local.iC).VALUE2!FieldValTrim,V.Local.sGLAccounts,V.Local.sBatchLine.Trim,V.Local.sSql)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.DataTable.dtGL.Exists,=,True)
+			F.Data.DataTable.CreateFromSQL("dtGLTemp","conx",V.Local.sSQL,True)
+			F.Data.DataTable.Merge("dtGLTemp","dtGL",True,1)
+			F.Data.DataTable.Close("dtGLTemp")
+		F.Intrinsic.Control.else
+			F.Data.DataTable.CreateFromSQL("dtGL","Conx",V.Local.sSql,True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iC)
+	
+	Gui.F_GL.GsGCGL.AddGridviewFromDatatable("gvGL","dtGL")
+	Gui.F_GL.GsGCGL.MainView("gvGL")
+	
+	Gui.F_GL.GsGCGL.SetGridviewProperty("gvGL","ShowGroupPanel",True)
+	Gui.F_GL.GsGCGL.SetGridviewProperty("gvGL","AllowSort",True)
+	Gui.F_GL.GsGCGL.SetGridviewProperty("gvGL","AllowFilter",True)
+	
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Batch","HeaderHAlignment","Center")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Line","HeaderHAlignment","Center")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Description","HeaderHAlignment","Center")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Reference","HeaderHAlignment","Center")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Amount","HeaderHAlignment","Center")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Batch","CellHAlignment","Center")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Line","CellHAlignment","Center")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Amount","DisplayCustomNumeric","##,###,##0.00")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Batch","MinWidth","70")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Line","MinWidth","50")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Description","MinWidth","150")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Reference","MinWidth","120")
+	Gui.F_GL.GsGCGL.SetColumnProperty("gvGL","Amount","MinWidth","100")	
+	
+	Gui.F_GL.GsGCGL.AddSummaryItem("gvGL","Amount","AmtSUM","SUM","","","##,###,##0.00")
+F.Intrinsic.Control.EndIf
+F.Data.DataTable.Close("dtPrjGL")
+
+F.Intrinsic.Control.If(V.DataTable.dtGL.Exists)
+	F.Data.DataTable.Compute("dtGL","SUM(Amount)","",V.Local.fAPITot)
+F.Intrinsic.Control.Else
+	V.Local.fAPITot.Set(0)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Format(V.Local.fAPITot,"###,###,###.00",V.Local.sAPITot)
+Gui.F_Dash.txtGLTot.Text(V.Local.sAPITot)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("subLoadGL_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.subLoadGL.End
+
+Program.Sub.f_gl_unload.Start
+F.Intrinsic.Control.SetErrorHandler("f_gl_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_GL..Visible(False)
+Gui.F_Dash..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_gl_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.f_gl_unload.End
+
+Program.Sub.subExport_GsGCGL.Start
+'Sub used to Export the Flex Grid to either Excel or Open Office Depending on what Button the User Presses
+
+'Declare Local Variable for Storing Save Path
+V.Local.sFPath.Declare(String)
+V.Local.sFPath.Set("")
+V.Local.sMessage.Declare(String)
+V.Local.iResponse.Declare(Long)
+V.Local.iHandle.Declare(Long)
+V.Local.iHandle.Set(0)
+V.Local.iExportType.Declare(Long,-1)
+
+V.Local.bExist.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".xlsx",V.Local.sFPath)
+		Gui.F_GL.GsGCGL.Export(V.Local.sFPath,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFPath)
+	F.Intrinsic.Control.If(V.Local.sFPath,<>,"***CANCEL***")
+		F.Intrinsic.String.Concat(V.Local.sFPath,".csv",V.Local.sFPath)
+		Gui.F_GL.GsGCGL.Export(V.Local.sFPath,"csv")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFPath,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.subExport_GsGCGL.End
+
+Program.Sub.cmdGLDash_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdapidash_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_Dash..Visible(False)
+Gui.F_GL..Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdapidash_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_4996_PROJECT_DASHBOARD.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdGLDash_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_PRJ_DASH$}$RRC$}$7/3/2014$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Table Required: GAB_PRJ_DATAS
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20230726220004908$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0TDdbBCtgkEYwF8ew+Xz1vfi2OUASPcbYNZL3EEfUkkK4=
+Program.Sub.Comments.End
+
