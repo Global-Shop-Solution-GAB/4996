@@ -1,0 +1,581 @@
+﻿Program.Sub.ScreenSU.Start
+gui.F_Main..create
+gui.F_Main..caption("GAB Project User Fields and Project Managers Setup")
+gui.F_Main..size(7875,3945)
+gui.F_Main..minx(0)
+gui.F_Main..miny(0)
+gui.F_Main..position(0,0)
+gui.F_Main..event(unload,f_main_unload)
+gui.F_Main..alwaysontop(False)
+gui.F_Main..fontname("Arial")
+gui.F_Main..fontsize(8)
+gui.F_Main..forecolor(0)
+gui.F_Main..fontstyle(,,,,)
+gui.F_Main..BackColor(-2147483633)
+gui.F_Main..controlbox(True)
+gui.F_Main..maxbutton(False)
+gui.F_Main..minbutton(False)
+gui.F_Main..mousepointer(0)
+gui.F_Main..moveable(True)
+gui.F_Main..sizeable(True)
+gui.F_Main..ShowInTaskBar(True)
+gui.F_Main..titlebar(True)
+gui.F_Main.frmUF.create(frame)
+gui.F_Main.frmUF.caption("User Fields")
+gui.F_Main.frmUF.size(7365,2175)
+gui.F_Main.frmUF.position(65,1015)
+gui.F_Main.frmUF.visible(True)
+gui.F_Main.frmUF.fontname("Arial")
+gui.F_Main.frmUF.fontsize(8)
+gui.F_Main.frmPM.create(frame)
+gui.F_Main.frmPM.caption("Project Manager")
+gui.F_Main.frmPM.size(7380,870)
+gui.F_Main.frmPM.position(60,45)
+gui.F_Main.frmPM.visible(True)
+gui.F_Main.frmPM.fontname("Arial")
+gui.F_Main.frmPM.fontsize(8)
+gui.F_Main.lblUFT.create(label,"User Field Title:",True,1260,255,1,65,585,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lblUFT.parent("frmuf")
+gui.F_Main.lblUFT.defaultvalue("")
+gui.F_Main.lblUFT.controlgroup(0)
+gui.F_Main.txtUFT.create(textbox,"",True,3240,300,0,55,800,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtUFT.parent("frmuf")
+gui.F_Main.txtUFT.maxLength(30)
+gui.F_Main.txtUFT.defaultvalue("")
+gui.F_Main.txtUFT.controlgroup(0)
+gui.F_Main.chkUFBrw.create(checkbox)
+gui.F_Main.chkUFBrw.caption("Enable Browser")
+gui.F_Main.chkUFBrw.visible(True)
+gui.F_Main.chkUFBrw.size(1485,210)
+gui.F_Main.chkUFBrw.zorder(0)
+gui.F_Main.chkUFBrw.position(3495,285)
+gui.F_Main.chkUFBrw.enabled(True)
+gui.F_Main.chkUFBrw.alignment(0)
+gui.F_Main.chkUFBrw.parent("frmuf")
+gui.F_Main.chkUFBrw.fontname("Arial")
+gui.F_Main.chkUFBrw.fontsize(8)
+gui.F_Main.chkUFBrw.defaultvalue("")
+gui.F_Main.chkUFBrw.controlgroup(0)
+gui.F_Main.txtUFV.create(textbox,"",True,3210,300,0,55,1595,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtUFV.parent("frmuf")
+gui.F_Main.txtUFV.maxLength(30)
+gui.F_Main.txtUFV.defaultvalue("")
+gui.F_Main.txtUFV.controlgroup(0)
+gui.F_Main.lblUFV.create(label,"User Field Values:",True,1935,255,1,55,1395,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lblUFV.parent("frmuf")
+gui.F_Main.lblUFV.defaultvalue("")
+gui.F_Main.lblUFV.controlgroup(0)
+gui.F_Main.cmdBrw.create(button)
+gui.F_Main.cmdBrw.caption("^")
+gui.F_Main.cmdBrw.visible(True)
+gui.F_Main.cmdBrw.size(330,300)
+gui.F_Main.cmdBrw.zorder(0)
+gui.F_Main.cmdBrw.position(3255,1585)
+gui.F_Main.cmdBrw.enabled(True)
+gui.F_Main.cmdBrw.parent("frmuf")
+gui.F_Main.cmdBrw.fontname("Arial")
+gui.F_Main.cmdBrw.fontsize(8)
+gui.F_Main.cmdBrw.event(click,cmdbrw_click)
+gui.F_Main.cmdBrw.defaultvalue("")
+gui.F_Main.cmdBrw.controlgroup(0)
+gui.F_Main.cmdSave.create(button)
+gui.F_Main.cmdSave.caption("Add/Save")
+gui.F_Main.cmdSave.visible(True)
+gui.F_Main.cmdSave.size(855,375)
+gui.F_Main.cmdSave.zorder(0)
+gui.F_Main.cmdSave.position(3800,1550)
+gui.F_Main.cmdSave.enabled(True)
+gui.F_Main.cmdSave.parent("frmuf")
+gui.F_Main.cmdSave.fontname("Arial")
+gui.F_Main.cmdSave.fontsize(8)
+gui.F_Main.cmdSave.event(click,cmdsave_click)
+gui.F_Main.cmdSave.defaultvalue("")
+gui.F_Main.cmdSave.controlgroup(0)
+gui.F_Main.cmdDel.create(button)
+gui.F_Main.cmdDel.caption("Delete")
+gui.F_Main.cmdDel.visible(True)
+gui.F_Main.cmdDel.size(855,375)
+gui.F_Main.cmdDel.zorder(0)
+gui.F_Main.cmdDel.position(4695,1550)
+gui.F_Main.cmdDel.enabled(True)
+gui.F_Main.cmdDel.parent("frmuf")
+gui.F_Main.cmdDel.fontname("Arial")
+gui.F_Main.cmdDel.fontsize(8)
+gui.F_Main.cmdDel.event(click,cmddel_click)
+gui.F_Main.cmdDel.defaultvalue("")
+gui.F_Main.cmdDel.controlgroup(0)
+gui.F_Main.lblUFSel.create(label,"User Field:",True,840,255,1,65,275,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lblUFSel.parent("frmuf")
+gui.F_Main.lblUFSel.defaultvalue("")
+gui.F_Main.lblUFSel.controlgroup(0)
+gui.F_Main.chkFieldE.create(checkbox)
+gui.F_Main.chkFieldE.caption("Enable Field")
+gui.F_Main.chkFieldE.visible(True)
+gui.F_Main.chkFieldE.size(1200,210)
+gui.F_Main.chkFieldE.zorder(0)
+gui.F_Main.chkFieldE.position(2165,265)
+gui.F_Main.chkFieldE.enabled(True)
+gui.F_Main.chkFieldE.alignment(0)
+gui.F_Main.chkFieldE.parent("frmuf")
+gui.F_Main.chkFieldE.fontname("Arial")
+gui.F_Main.chkFieldE.fontsize(8)
+gui.F_Main.chkFieldE.defaultvalue("")
+gui.F_Main.chkFieldE.controlgroup(0)
+gui.F_Main.lblPMID.create(label,"ID:",True,900,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lblPMID.parent("frmpm")
+gui.F_Main.lblPMID.defaultvalue("")
+gui.F_Main.lblPMID.controlgroup(0)
+gui.F_Main.txtPMID.create(textbox,"",True,510,270,0,100,400,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtPMID.parent("frmpm")
+gui.F_Main.txtPMID.maxLength(3)
+gui.F_Main.txtPMID.defaultvalue("")
+gui.F_Main.txtPMID.controlgroup(0)
+gui.F_Main.lblPMName.create(label,"Name:",True,1410,255,1,725,200,True,0,Arial,8,-2147483633,0)
+gui.F_Main.lblPMName.parent("frmpm")
+gui.F_Main.lblPMName.defaultvalue("")
+gui.F_Main.lblPMName.controlgroup(0)
+gui.F_Main.txtPM.create(textbox,"",True,4305,300,0,630,400,True,0,Arial,8,-2147483643,1)
+gui.F_Main.txtPM.parent("frmpm")
+gui.F_Main.txtPM.defaultvalue("")
+gui.F_Main.txtPM.controlgroup(0)
+gui.F_Main.cmdPMSave.create(button)
+gui.F_Main.cmdPMSave.caption("Add/Save")
+gui.F_Main.cmdPMSave.visible(True)
+gui.F_Main.cmdPMSave.size(855,375)
+gui.F_Main.cmdPMSave.zorder(0)
+gui.F_Main.cmdPMSave.position(5340,360)
+gui.F_Main.cmdPMSave.enabled(True)
+gui.F_Main.cmdPMSave.parent("frmpm")
+gui.F_Main.cmdPMSave.fontname("Arial")
+gui.F_Main.cmdPMSave.fontsize(8)
+gui.F_Main.cmdPMSave.event(click,cmdpmsave_click)
+gui.F_Main.cmdPMSave.defaultvalue("")
+gui.F_Main.cmdPMSave.controlgroup(0)
+gui.F_Main.cmdPMDel.create(button)
+gui.F_Main.cmdPMDel.caption("Delete")
+gui.F_Main.cmdPMDel.visible(True)
+gui.F_Main.cmdPMDel.size(855,375)
+gui.F_Main.cmdPMDel.zorder(0)
+gui.F_Main.cmdPMDel.position(6300,355)
+gui.F_Main.cmdPMDel.enabled(True)
+gui.F_Main.cmdPMDel.parent("frmpm")
+gui.F_Main.cmdPMDel.fontname("Arial")
+gui.F_Main.cmdPMDel.fontsize(8)
+gui.F_Main.cmdPMDel.event(click,cmdpmdel_click)
+gui.F_Main.cmdPMDel.defaultvalue("")
+gui.F_Main.cmdPMDel.controlgroup(0)
+gui.F_Main.cmdPMBrw.create(button)
+gui.F_Main.cmdPMBrw.caption("^")
+gui.F_Main.cmdPMBrw.visible(True)
+gui.F_Main.cmdPMBrw.size(330,300)
+gui.F_Main.cmdPMBrw.zorder(0)
+gui.F_Main.cmdPMBrw.position(4925,410)
+gui.F_Main.cmdPMBrw.enabled(True)
+gui.F_Main.cmdPMBrw.parent("frmpm")
+gui.F_Main.cmdPMBrw.fontname("Arial")
+gui.F_Main.cmdPMBrw.fontsize(8)
+gui.F_Main.cmdPMBrw.event(click,cmdpmbrw_click)
+gui.F_Main.cmdPMBrw.defaultvalue("")
+gui.F_Main.cmdPMBrw.controlgroup(0)
+gui.F_Main.dlstUF.create(dropdownlist)
+gui.F_Main.dlstUF.visible(True)
+gui.F_Main.dlstUF.size(720,330)
+gui.F_Main.dlstUF.zorder(0)
+gui.F_Main.dlstUF.position(1200,200)
+gui.F_Main.dlstUF.enabled(True)
+gui.F_Main.dlstUF.parent("frmuf")
+gui.F_Main.dlstUF.fontname("Arial")
+gui.F_Main.dlstUF.fontsize(8)
+gui.F_Main.dlstUF.event(SelectedIndexChanged,dlstuf_click)
+gui.F_Main.dlstUF.defaultvalue("")
+gui.F_Main.dlstUF.controlgroup(0)
+gui.F_Main.cmdSaveT.create(button)
+gui.F_Main.cmdSaveT.caption("Save")
+gui.F_Main.cmdSaveT.visible(True)
+gui.F_Main.cmdSaveT.size(855,375)
+gui.F_Main.cmdSaveT.zorder(0)
+gui.F_Main.cmdSaveT.position(3830,735)
+gui.F_Main.cmdSaveT.enabled(True)
+gui.F_Main.cmdSaveT.parent("frmuf")
+gui.F_Main.cmdSaveT.fontname("Arial")
+gui.F_Main.cmdSaveT.fontsize(8)
+gui.F_Main.cmdSaveT.event(click,cmdsavet_click)
+gui.F_Main.cmdSaveT.defaultvalue("")
+gui.F_Main.cmdSaveT.controlgroup(0)
+gui.F_Main.txtPMID.tabstop(True)
+gui.F_Main.txtPMID.tabindex(1)
+gui.F_Main.txtPM.tabstop(True)
+gui.F_Main.txtPM.tabindex(2)
+gui.F_Main.cmdPMBrw.tabstop(True)
+gui.F_Main.cmdPMBrw.tabindex(3)
+gui.F_Main.cmdPMSave.tabstop(True)
+gui.F_Main.cmdPMSave.tabindex(4)
+gui.F_Main.cmdPMDel.tabstop(True)
+gui.F_Main.cmdPMDel.tabindex(5)
+gui.F_Main.dlstUF.tabstop(True)
+gui.F_Main.dlstUF.tabindex(6)
+gui.F_Main.chkFieldE.tabstop(True)
+gui.F_Main.chkFieldE.tabindex(7)
+gui.F_Main.chkUFBrw.tabstop(True)
+gui.F_Main.chkUFBrw.tabindex(8)
+gui.F_Main.txtUFT.tabstop(True)
+gui.F_Main.txtUFT.tabindex(9)
+gui.F_Main.cmdSaveT.tabstop(True)
+gui.F_Main.cmdSaveT.tabindex(10)
+gui.F_Main.txtUFV.tabstop(True)
+gui.F_Main.txtUFV.tabindex(11)
+gui.F_Main.cmdBrw.tabstop(True)
+gui.F_Main.cmdBrw.tabindex(12)
+gui.F_Main.cmdSave.tabstop(True)
+gui.F_Main.cmdSave.tabindex(13)
+gui.F_Main.cmdDel.tabstop(True)
+gui.F_Main.cmdDel.tabindex(14)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+
+V.Local.iC.Declare(Long)
+
+F.ODBC.Connection!Conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,120)
+
+F.Intrinsic.Control.For(V.Local.iC,1,10,1)
+	Gui.F_Main.dlstUF.AddItem(V.Local.iC)
+F.Intrinsic.Control.Next(V.Local.iC)
+
+Gui.F_Main..Show
+
+Program.Sub.Main.End
+
+program.sub.f_main_unload.start
+
+F.ODBC.Connection!Conx.Close
+F.Intrinsic.Control.End
+
+program.sub.f_main_unload.end
+
+program.sub.cmdpmbrw_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpmbrw_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.String.Split("ID*!*Project Manager Name","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("600*!*6400","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.Browser("Select a Project Manager",conx,"Select IDM,NAME FROM GAB_PRJ_PM ORDER BY IDM ASC",V.Local.sTitles,V.Local.iWidths,7000,5800,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Project Manager was selected","PM Screen Message")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_Main.txtPMID.Text(V.Local.sRet(0).Trim)
+	Gui.F_Main.txtPM.Text(V.Local.sRet(1).Trim)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpmbrw_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpmbrw_click.end
+
+program.sub.cmdpmdel_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpmdel_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sMsg.Declare(String)
+
+
+F.Intrinsic.String.Concat("Select ID, IDM, NAME FROM GAB_PRJ_PM WHERE IDM='",V.Screen.F_Main!txtPMID.Text,"'",V.Local.sSql)
+F.ODBC.Connection!conx.OpenRecordsetRW("rstDelPM",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conx!rstDelPM.EOF,=,"False")
+	F.ODBC.Conx!rstDelPM.Delete
+	F.ODBC.Conx!rstDelPM.Update
+	F.Intrinsic.UI.Msgbox("Project Manager Deleted","PM Screen Message")
+	Gui.F_Main.txtPMID.Text("")
+	Gui.F_Main.txtPM.Text("")
+F.Intrinsic.Control.Else
+	V.Local.sMsg.Set("Project Manager Doesn't Exists")
+F.Intrinsic.Control.EndIf
+F.ODBC.Conx!rstDelPM.Close
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpmdel_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpmdel_click.end
+
+program.sub.cmdpmsave_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpmsave_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sMsg.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Main!txtPMID.Text,=,"")
+	F.Intrinsic.UI.Msgbox("Type PM ID","PM Message")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat("Select IDM, NAME FROM GAB_PRJ_PM WHERE IDM='",V.Screen.F_Main!txtPMID.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstSavePM",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstSavePM.EOF,=,"True")
+		F.ODBC.Conx!rstSavePM.AddNew
+		F.ODBC.Conx!rstSavePM.Set!IDM(V.Screen.F_Main!txtPMID.Text)
+		V.Local.sMsg.Set("New Project Manager Saved")
+	F.Intrinsic.Control.Else
+		V.Local.sMsg.Set("Project Manager Name Updated")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conx!rstSavePM.Set!NAME(V.Screen.F_Main!txtPM.Text)
+	F.ODBC.Conx!rstSavePM.Update
+	F.ODBC.Conx!rstSavePM.Close
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg,"PM Message")
+	Gui.F_Main.txtPMID.Text("")
+	Gui.F_Main.txtPM.Text("")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpmsave_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpmsave_click.end
+
+program.sub.cmdbrw_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdbrw_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sSql.Declare(String)
+F.Intrinsic.String.Split("User Field Text","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("7000","*!*",V.Local.iWidths)
+
+F.Intrinsic.String.Concat("Select VALUE FROM GAB_PRJ_UF WHERE TYPE='",V.Screen.F_Main!dlstUF.Text,"' ORDER BY VALUE ASC",V.Local.sSql)
+F.Intrinsic.Control.If(V.Screen.F_Main!dlstUF.Text,>,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Main!dlstUF.Text,<,11)
+
+	F.Intrinsic.UI.Browser("Select an User Field",conx,V.Local.sSql,V.Local.sTitles,V.Local.iWidths,6050,5800,V.Local.sRet)
+
+	F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+		F.Intrinsic.UI.Msgbox("No User Field Record was selected","User Field Screen Message")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.F_Main.txtUFV.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No User Field Selected","User Field Screen Message")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdbrw_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdbrw_click.end
+
+program.sub.cmdsave_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdsave_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sValue.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Main!dlstUF.Text,>,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Main!dlstUF.Text,<,11)
+	F.Intrinsic.String.Concat("Select TYPE, VALUE FROM GAB_PRJ_UF WHERE TYPE='",V.Screen.F_Main!dlstUF.Text,"' AND VALUE='",V.Screen.F_Main!txtUFV.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstSaveUF",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstSaveUF.EOF,=,"True")
+		F.ODBC.Conx!rstSaveUF.AddNew
+		F.ODBC.Conx!rstSaveUF.Set!TYPE(V.Screen.F_Main!dlstUF.Text)
+		F.ODBC.Conx!rstSaveUF.Set!VALUE(V.Screen.F_Main!txtUFV.Text)
+		F.ODBC.Conx!rstSaveUF.Update
+		Gui.F_Main.txtUFV.Text("")
+		F.Intrinsic.UI.Msgbox("User Field Info Saved","User Field Screen Message")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("User Field Already Exists","User Field Screen Message")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstSaveUF.Close
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No User Field Selected","User Field Screen Message")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdsave_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdsave_click.end
+
+program.sub.cmddel_click.start
+F.Intrinsic.Control.SetErrorHandler("cmddel_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sValue.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Main!dlstUF.Text,>,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Main!dlstUF.Text,<,11)
+	F.Intrinsic.String.Concat("Select * FROM GAB_PRJ_UF WHERE TYPE='",V.Screen.F_Main!dlstUF.Text,"' AND VALUE='",V.Screen.F_Main!txtUFV.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstDelUF",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstDelUF.EOF,=,"False")
+		F.ODBC.Conx!rstDelUF.Delete
+		F.ODBC.Conx!rstDelUF.Update
+		F.Intrinsic.UI.Msgbox("User Field Record Deleted","User Field Screen Message")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("User Field Record Doesn't Exists","User Field Screen Message")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstDelUF.Close
+	Gui.F_Main.txtUFV.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No User Field Selected","User Field Screen Message")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmddel_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmddel_click.end
+
+program.sub.dlstuf_click.start
+F.Intrinsic.Control.SetErrorHandler("dlstuf_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sValue.Declare(String)
+V.Local.sBrw.Declare(String)
+V.Local.sEnableUF.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Main!dlstUF.Text,>,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Main!dlstUF.Text,<,11)
+	F.Intrinsic.String.Concat("Select VALUE FROM GAB_PRJ_UF WHERE TYPE='T",V.Screen.F_Main!dlstUF.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!conx.OpenRecordsetRO("rstLoadUF",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstLoadUF.EOF,=,"False")
+	F.Intrinsic.String.Left(V.ODBC.Conx!rstLoadUF.FieldVal!VALUE,1,V.Local.sEnableUF)
+	F.Intrinsic.String.Mid(V.ODBC.Conx!rstLoadUF.FieldVal!VALUE,2,1,V.Local.sBrw)
+	F.Intrinsic.String.Mid(V.ODBC.Conx!rstLoadUF.FieldValRTrim!VALUE,3,30,V.Local.sValue)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rstLoadUF.Close
+	F.Intrinsic.Control.If(V.Local.sEnableUF,=,"Y")
+		Gui.F_Main.chkFieldE.Value("True")
+	F.Intrinsic.Control.Else
+		Gui.F_Main.chkFieldE.Value("False")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Local.sBrw,=,"Y")
+		Gui.F_Main.chkUFBrw.Value("True")
+	F.Intrinsic.Control.Else
+		Gui.F_Main.chkUFBrw.Value("False")
+	F.Intrinsic.Control.EndIf
+	Gui.F_Main.txtUFT.Text(V.Local.sValue)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("dlstuf_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.dlstuf_click.end
+
+program.sub.cmdsavet_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdsavet_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sValue.Declare(String)
+V.Local.sBrw.Declare(String)
+V.Local.sUFT.Declare(String)
+V.Local.sEnableUF.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_Main!dlstUF.Text,>,0)
+F.Intrinsic.Control.AndIf(V.Screen.F_Main!dlstUF.Text,<,11)
+	F.Intrinsic.String.Concat("Select TYPE, VALUE FROM GAB_PRJ_UF WHERE TYPE='T",V.Screen.F_Main!dlstUF.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!conx.OpenRecordsetRW("rstSaveUF",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rstSaveUF.EOF,=,"True")
+		F.ODBC.Conx!rstSaveUF.AddNew
+		F.Intrinsic.String.Concat("T",V.Screen.F_Main!dlstUF.Text,V.Local.sUFT)
+		F.ODBC.Conx!rstSaveUF.Set!TYPE(V.Local.sUFT)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Screen.F_Main!chkFieldE.Value,=,1)
+		V.Local.sEnableUF.Set("Y")
+	F.Intrinsic.Control.Else
+		V.Local.sEnableUF.Set("N")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.Screen.F_Main!chkUFBrw.Value,=,1)
+		V.Local.sBrw.Set("Y")
+	F.Intrinsic.Control.Else
+		V.Local.sBrw.Set("N")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Concat(V.Local.sEnableUF,V.Local.sBrw,V.Screen.F_Main!txtUFT.Text,V.Local.sValue)
+	F.ODBC.Conx!rstSaveUF.Set!VALUE(V.Local.sValue)
+	F.ODBC.Conx!rstSaveUF.Update
+	F.ODBC.conx!rstSaveUF.Close
+	F.Intrinsic.UI.Msgbox("User Field Info Saved","User Field Screen Message")
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("No User Field Selected","User Field Screen Message")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdsavet_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PRJ_FLDS.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdsavet_click.end
+
+Program.Sub.Comments.Start
+${$0$}$GAB_PRJ_FLDS$}$RRC$}$8/21/2014
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20210428164556847$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0TGWyixYf0+RES7YiVvk3cOAV8Wu1/AmMq2D4bHWBijNY=
+Program.Sub.Comments.End
+
