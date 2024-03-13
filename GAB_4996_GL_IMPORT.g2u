@@ -1,0 +1,354 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_GL..Create(BaseForm)
+Gui.F_GL..Caption("Journal Import")
+Gui.F_GL..Size(3780,1470)
+Gui.F_GL..MinX(0)
+Gui.F_GL..MinY(0)
+Gui.F_GL..Position(0,0)
+Gui.F_GL..FontSize(9)
+Gui.F_GL..BackColor(-2147483633)
+Gui.F_GL..MousePointer(0)
+Gui.F_GL..Event(UnLoad,Unload)
+Gui.F_GL..AlwaysOnTop(False)
+Gui.F_GL..FontName("Tahoma")
+Gui.F_GL..ControlBox(True)
+Gui.F_GL..MaxButton(True)
+Gui.F_GL..MinButton(True)
+Gui.F_GL..Moveable(True)
+Gui.F_GL..Sizeable(True)
+Gui.F_GL..ShowInTaskBar(True)
+Gui.F_GL..TitleBar(True)
+Gui.F_GL.dtpPost.Create(DatePicker)
+Gui.F_GL.dtpPost.Size(1470,300)
+Gui.F_GL.dtpPost.Position(120,405)
+Gui.F_GL.dtpPost.Enabled(True)
+Gui.F_GL.dtpPost.Visible(True)
+Gui.F_GL.dtpPost.Zorder(0)
+Gui.F_GL.dtpPost.CheckBox(False)
+Gui.F_GL.dtpPost.FontName("Tahoma")
+Gui.F_GL.dtpPost.FontSize(9)
+Gui.F_GL.lbl1.Create(Label,"Post Date",True,810,225,0,105,180,True,0,"Arial",9,-2147483633,0,0)
+Gui.F_GL.lbl1.BorderStyle(0)
+Gui.F_GL.cmdExcel.Create(Button)
+Gui.F_GL.cmdExcel.Size(1620,570)
+Gui.F_GL.cmdExcel.Position(1785,165)
+Gui.F_GL.cmdExcel.Caption("Excel File")
+Gui.F_GL.cmdExcel.FontSize(9)
+Gui.F_GL.cmdExcel.Event(Click,cmdProcessClick)
+Gui.F_GL.cmdExcel.Enabled(True)
+Gui.F_GL.cmdExcel.Visible(True)
+Gui.F_GL.cmdExcel.Zorder(0)
+Gui.F_GL.cmdExcel.FontName("Tahoma")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sIcon.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,V.Local.sIcon)
+Gui.F_GL..Icon(V.Local.sIcon)
+Gui.F_GL..Show
+Program.Sub.Main.End
+
+Program.Sub.ExtraTextDatatable.Start
+F.Data.DataTable.Create("dtNotes",True)
+F.Data.DataTable.AddColumn("dtNotes","Row","Long")
+F.Data.DataTable.AddColumn("dtNotes","Text","String")
+
+F.Data.DataTable.Create("dtProject",True)
+F.Data.DataTable.AddColumn("dtProject","Row","Long")
+F.Data.DataTable.AddColumn("dtProject","ID","Long")
+F.Data.DataTable.AddColumn("dtProject","TaxCode","String")
+F.Data.DataTable.AddColumn("dtProject","Vendor","String")
+F.Data.DataTable.AddColumn("dtProject","TaxRef","Float")
+F.Data.DataTable.AddColumn("dtProject","InvoiceDate","String")
+F.Data.DataTable.AddColumn("dtProject","SupplyRef","Float")
+Program.Sub.ExtraTextDatatable.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.cmdProcessClick.Start
+V.Local.bUpload.Declare(Boolean,True)
+V.Local.dToday.Declare(Date)
+V.Local.fAmount.Declare
+V.Local.i1.Declare
+V.Local.iCheck.Declare
+V.Local.iLen.Declare
+V.Local.iLine.Declare
+V.Local.iRow.Declare
+V.Local.iRowCnt.Declare
+V.Local.iTRow.Declare
+V.Local.sAmount.Declare
+V.Local.sBatch.Declare
+V.Local.sBatchLine.Declare
+V.Local.sBDF.Declare
+V.Local.sDesc.Declare
+V.Local.sDesc1.Declare
+V.Local.sDesc2.Declare
+V.Local.sField.Declare
+V.Local.sFile.Declare
+V.Local.sFileName.Declare
+V.Local.sFileRow.Declare
+V.Local.sFilter.Declare
+V.Local.sGLAccount.Declare
+V.Local.sMessage.Declare
+V.Local.sMonth.Declare
+V.Local.sParam.Declare
+V.Local.sRet.Declare
+V.Local.sRow.Declare
+V.Local.sSQL.Declare
+V.Local.sTemp.Declare
+V.Local.sUser.Declare
+V.Local.sVATIn.Declare
+V.Local.sYear.Declare
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'Get the excel upload file
+F.Intrinsic.UI.ShowOpenFileDialog("","*.xlsx|","",V.Local.sFileName)
+
+F.Intrinsic.Control.If(V.Local.sFileName,<>,"***CANCEL***")
+	F.Intrinsic.Control.CallSub(extratextdatatable)
+
+	F.Automation.MSExcel.CreateAppObject("MSExcel")
+	F.Automation.MSExcel.OpenWorkbook("MSExcel","UPL",V.Local.sFileName)
+	
+	F.Automation.MSExcel.OpenWorksheet("UPL","UPLSheet",1)
+	F.Automation.MSExcel.RowCount("UPLSheet",V.Local.iTRow)
+	
+	F.Intrinsic.Control.For(V.Local.iRow,2,V.Local.iTRow,1)
+		F.Automation.MSExcel.ReadRow("UPLSheet",V.Local.iRow,1,11,V.Local.sRow)
+		F.Intrinsic.Math.Sub(V.Local.iRow,1,V.Local.iLine)
+		F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)	
+		
+		'Check if project ID is required
+		F.Intrinsic.String.Build("select id, gl_account from GAB_4996_COGS_ACCT where gl_account = '{0}'",V.Local.sRow(0).Trim,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstGL",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstGL.EOF,=,False)
+			F.Intrinsic.Control.If(V.Local.sRow(5).Trim,=,"")
+				F.Intrinsic.String.Build("No project ID is found in row {0}",V.Local.iRow,V.Local.sMessage)
+				F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+				V.Local.bUpload.Set(False)
+			F.Intrinsic.Control.Else
+				'Check if project ID exists
+				F.Intrinsic.String.Build("Select * From GAB_PRJ_MAIN WHERE ID_PRJ='{0}'",V.Local.sRow(5).Trim,V.Local.sSQL)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRO("rstPrj",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.conx!rstPrj.EOF,=,True)
+					F.Intrinsic.String.Build("Invalid project ID in row {0}",V.Local.iRow,V.Local.sMessage)
+					F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+					V.Local.bUpload.Set(False)
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.AddRow("dtProject","Row",V.Local.iRow,"ID",V.Local.sRow(5),"TaxCode","XXX")	
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rstPrj.Close
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstGL.Close
+		
+		'Check if tax code is inputted in column 7
+'		F.ODBC.Connection!conx.ExecuteAndReturn("select text1 from op_header where id = '400079' and sequence = '0000'",V.Local.sVATIn)
+		F.Intrinsic.Control.If(V.Local.sRow(6).Trim,<>,"")
+			F.Intrinsic.Control.CallSub(checktaxcode,"sTaxCode",V.Local.sRow(6).Trim)
+			F.Intrinsic.Control.If(V.Args.iStore,=,0)
+				F.Intrinsic.String.Build("Invalid tax code in row {0}",V.Local.iRow,V.Local.sMessage)
+				F.Intrinsic.UI.Msgbox(V.Local.sMessage)
+				V.Local.bUpload.Set(False)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("Row = {0}",V.Local.iRow,V.Local.sFilter)
+				F.Data.DataTable.Select("dtProject",V.Local.sFilter,V.Local.sRet)
+				F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+					F.Data.DataTable.AddRow("dtProject","Row",V.Local.iRow,"ID",0,"TaxCode",V.Local.sRow(6).Trim,"Vendor",V.Local.sRow(7).Trim,"TaxRef",V.Local.sRow(8),"InvoiceDate",V.Local.sRow(9),"SupplyRef",V.Local.sRow(10))
+				F.Intrinsic.Control.Else
+					F.Data.DataTable.SetValue("dtProject",V.Local.sRet,"TaxCode",V.Local.sRow(6).Trim,"Vendor",V.Local.sRow(7).Trim,"TaxRef",V.Local.sRow(8),"InvoiceDate",V.Local.sRow(9),"SupplyRef",V.Local.sRow(10))
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.Local.bUpload)
+			F.Intrinsic.Control.If(V.Local.sRow(0).Trim,<>,"")
+				'Preparing upload file
+				F.Intrinsic.String.RPad(V.Local.sRow(0).Trim," ",15,V.Local.sFileRow)
+				F.Intrinsic.String.LPad(V.Local.sRow(2)," ",12,V.Local.sField)
+				F.Intrinsic.String.Concat(V.Local.sFileRow,",",V.Local.sField,V.Local.sFileRow)
+	
+				'Ensuring only 30 chars for description
+				F.Intrinsic.String.Len(V.Local.sRow(1).Trim,V.Local.iLen)
+				V.Local.sDesc.Set(V.Local.sRow(1))
+				'If length is greater than 30, look for the last space within 30 chars and separate the first 30 chars
+				F.Intrinsic.Control.If(V.Local.iLen,>,30)
+					F.Intrinsic.String.Mid(V.Local.sDesc,29,1,V.Local.sTemp)
+					F.Intrinsic.String.Instr(V.Local.sTemp," ",0,V.Local.iCheck)
+					F.Intrinsic.Control.If(V.Local.iCheck,>,0)
+						V.Local.iCheck.Set(29)
+						F.Intrinsic.Control.If(V.Local.sTemp,<>," ")
+							F.Intrinsic.Control.DoUntil(V.Local.sTemp,=," ")
+								F.Intrinsic.Math.Sub(V.Local.iCheck,1,V.Local.iCheck)
+								F.Intrinsic.String.Mid(V.Local.sDesc,V.Local.iCheck,1,V.Local.sTemp)
+							F.Intrinsic.Control.Loop
+						F.Intrinsic.Control.EndIf
+						F.Intrinsic.String.Left(V.Local.sDesc,V.Local.iCheck,V.Local.sDesc1)
+						F.Intrinsic.Math.Add(V.Local.iCheck,1,V.Local.iCheck)
+						F.Intrinsic.String.Mid(V.Local.sDesc,V.Local.iCheck,V.Local.sDesc2)
+						F.Data.DataTable.AddRow("dtNotes","Row",V.Local.iLine,"Text",V.Local.sDesc2)
+						F.Intrinsic.String.RPad(V.Local.sDesc1," ",30,V.Local.sTemp)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Left(V.Local.sDesc,30,V.Local.sDesc1)
+						F.Intrinsic.String.Mid(V.Local.sDesc,31,V.Local.sDesc2)
+						F.Data.DataTable.AddRow("dtNotes","Row",V.Local.iLine,"Text",V.Local.sDesc2)
+						F.Intrinsic.String.RPad(V.Local.sDesc1," ",30,V.Local.sTemp)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.RPad(V.Local.sDesc," ",30,V.Local.sTemp)
+				F.Intrinsic.Control.EndIf
+				
+				F.Intrinsic.String.Concat(V.Local.sFileRow,",",V.Local.sTemp,V.Local.sFileRow)
+				
+				F.Intrinsic.String.Format(V.Ambient.Date,"MM",V.Local.sMonth)
+				F.Intrinsic.String.Format(V.Ambient.Date,"YY",V.Local.sYear)
+				F.Intrinsic.String.Concat(V.Local.sFileRow,",",V.Local.sYear.Trim,",",V.Local.sMonth.Trim,V.Local.sFileRow)
+				
+				F.Intrinsic.String.RPad(V.Local.sRow(3)," ",15,V.Local.sField)
+				F.Intrinsic.String.RPad(V.Local.sRow(4)," ",7,V.Local.sTemp)
+				F.Intrinsic.String.Concat(V.Local.sFileRow,",",V.Local.sTemp,",",V.Local.sField,V.Local.sFileRow)
+				
+				F.Intrinsic.Control.If(V.Local.sFile.Trim,=,"")
+					V.Local.sFile.Set(V.Local.sFileRow)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Concat(V.Local.sFile,V.Ambient.NewLine,V.Local.sFileRow,V.Local.sFile)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			'Upload is cancelled due to invalid/missing info
+			F.Intrinsic.Control.ExitFor(V.Local.iRow)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iRow)
+	
+	F.Automation.MSExcel.DestroyAllObjects("MSExcel","UPL","UPLSheet")
+	
+	F.Intrinsic.Control.If(V.Local.bUpload)
+		'Save the file to GLtttccc located in FILES folder
+		F.Intrinsic.String.Concat(V.Caller.FilesDir,"\GL",V.Caller.Terminal,V.Caller.CompanyCode,"1234",V.Local.sFileName)
+		F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sFile)
+		
+		'Preparing the program parameter and run XGL004
+		F.Intrinsic.String.RPad(V.Caller.User," ",8,V.Local.sUser)
+		F.Intrinsic.String.Concat("GL",V.Caller.Terminal,V.Caller.CompanyCode,"1234",V.Local.sParam)
+		F.Intrinsic.String.RPad(V.Local.sParam," ",12,V.Local.sParam)
+		F.Intrinsic.String.Concat(V.Ambient.QuadQuote,V.Caller.CompanyCode,V.Local.sParam,V.Local.sUser.UCase,V.Ambient.QuadQuote,V.Local.sParam)
+		F.Intrinsic.Task.LaunchGSSSync("XGL004","-C",V.Local.sParam)
+	
+		'Get the latest batch number processed
+		V.Local.dToday.Set(V.Ambient.Date)
+		F.Intrinsic.String.Build("select batch from v_gl_jrnl_entry where userid = '{0}' and last_chg_pgm = 'XGL004' and last_chg_date = '{1}' order by last_chg_time desc",V.Local.sUser.Trim,V.Local.dToday.PervasiveDate,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+		V.Local.sBatch.Set(V.ODBC.conx!rst.FieldVal!batch)
+		F.ODBC.conx!rst.Close
+		
+		'Update post date
+		F.Intrinsic.String.Format(V.Screen.F_GL!dtpPost.Value,"YYYYMMDD",V.Local.sTemp)
+		F.Intrinsic.String.Build("update gl_jrnl_entry set p_date = '{0}' where batch = '{1}' and userid = '{2}'",V.Local.sTemp,V.Local.sBatch,V.Local.sUser,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+		'if there are longer GL description
+		F.Intrinsic.Control.If(V.DataTable.dtNotes.RowCount,>,0)
+			F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtNotes.RowCount--,1)
+				F.Intrinsic.String.LPad(V.DataTable.dtNotes(V.Local.i1).Row!FieldValLong,"0",5,V.Local.sBatchLine)
+				F.Intrinsic.String.Build("insert into gl_batch_comments(branch,post_date,batch,line,text) values('','{0}','{1}','{2}','{3}');",V.Local.sTemp,V.Local.sBatch,V.Local.sBatchLine,V.DataTable.dtNotes(V.Local.i1).Text!FieldVal,V.Local.sSQL)
+				F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+			F.Intrinsic.Control.Next(V.Local.i1)
+		F.Intrinsic.Control.EndIf
+		
+		'if there are project and tax info upload
+		F.Intrinsic.String.Format(V.Screen.F_GL!dtpPost.Value,"YYYY-MM-DD",V.Local.sTemp)
+		F.Intrinsic.Control.If(V.DataTable.dtProject.RowCount,>,0)
+			F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtProject.RowCount--,1)
+				F.Intrinsic.Math.Sub(V.DataTable.dtProject(V.Local.i1).Row!FieldVal,1,V.Local.iRow)
+				F.Intrinsic.Control.If(V.DataTable.dtProject(V.Local.i1).TaxCode!FieldValTrim,<>,"XXX")
+					F.Intrinsic.String.Build("insert into GAB_4996_GL_JRNL(batch,line,id_prj,taxcode,vendor,reftaxvalue,basevalue,dateinvoice,post_Date) values('{0}',{1},{2},'{3}','{4}',{5},{6},'{7}','{8}');",V.Local.sBatch.Trim,V.Local.iRow,V.DataTable.dtProject(V.Local.i1).ID!FieldVal,V.DataTable.dtProject(V.Local.i1).TaxCode!FieldValTrim,V.DataTable.dtProject(V.Local.i1).Vendor!FieldValTrim,V.DataTable.dtProject(V.Local.i1).TaxRef!FieldVal,V.DataTable.dtProject(V.Local.i1).SupplyRef!FieldVal,V.DataTable.dtProject(V.Local.i1).InvoiceDate!FieldValPervasiveDate,V.Local.sTemp,V.Local.sSQL)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Build("insert into GAB_4996_GL_JRNL(batch,line,id_prj,post_Date,taxcode) values('{0}',{1},{2},'{3}','');",V.Local.sBatch.Trim,V.Local.iRow,V.DataTable.dtProject(V.Local.i1).ID!FieldVal,V.Local.sTemp,V.Local.sSQL)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+			F.Intrinsic.Control.Next(V.Local.i1)
+		F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.String.Build("Excel file has been processed into batch {0}",V.Local.sBatch,V.Local.sTemp)
+		F.Intrinsic.UI.Msgbox(V.Local.sTemp)
+	F.Intrinsic.Control.EndIf
+
+	F.Data.DataTable.Close("dtProject")
+	F.Data.DataTable.Close("dtNotes")	
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.Close
+Program.Sub.cmdProcessClick.End
+
+Program.Sub.CheckTaxCode.Start
+V.Local.sTaxCode.Declare
+
+V.Local.sTaxCode.Set(V.Args.sTaxCode)
+
+F.Intrinsic.Control.If(V.Local.sTaxCode.Trim,=,"NR")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"AJP")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"AS")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"BL")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"DS")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"EP")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"ES")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"ES43")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"ESN43")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"GP")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"IM")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"IS")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"OP")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"OS")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"RS")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"SR")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"TX")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"TX-E43")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"TX-N43")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"TX-RE")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"ZP")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"ZR")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"ZRE")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.ElseIf(V.Local.sTaxCode.Trim,=,"ZRL")
+	F.Intrinsic.Variable.AddRV("iStore",1)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Variable.AddRV("iStore",0)
+F.Intrinsic.Control.EndIf
+Program.Sub.CheckTaxCode.End
+
+Program.Sub.Comments.Start
+${$0$}$Custom GL Manual Journal Import$}$MHERTANTO$}$23/4/2018 3:52:21 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Custom GL Manual Journal Import for PCA that checks for project ID and Malaysian Tax
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20230419170700465$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0T6HbrhWm5t2hj48iwIAjiZwGU6jA19nrZw1IAAS6SAuo=
+Program.Sub.Comments.End
